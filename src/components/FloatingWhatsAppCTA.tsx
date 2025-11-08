@@ -22,7 +22,7 @@ const FloatingWhatsAppCTA = () => {
         <div className="glass-effect p-4 rounded-2xl shadow-2xl max-w-xs animate-slide-in-left">
           <button
             onClick={() => setIsExpanded(false)}
-            className="absolute -top-2 -right-2 bg-card rounded-full p-1 shadow-lg hover:scale-110 transition-transform"
+            className="absolute -top-2 -right-2 bg-card rounded-full p-2 shadow-lg hover:scale-110 transition-transform min-h-[40px] min-w-[40px] touch-manipulation active:scale-95 flex items-center justify-center"
           >
             <X className="h-4 w-4" />
           </button>
@@ -32,7 +32,7 @@ const FloatingWhatsAppCTA = () => {
           </p>
           <button
             onClick={handleClick}
-            className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white px-4 py-2 rounded-xl text-sm font-semibold transition-colors"
+            className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white px-4 py-3 rounded-xl text-sm font-semibold transition-colors min-h-[48px] touch-manipulation active:scale-95"
           >
             שלחו הודעה
           </button>
@@ -41,7 +41,7 @@ const FloatingWhatsAppCTA = () => {
       
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="relative bg-[#25D366] hover:bg-[#20BA5A] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all group"
+        className="relative bg-[#25D366] hover:bg-[#20BA5A] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all group min-h-[56px] min-w-[56px] touch-manipulation active:scale-95 flex items-center justify-center"
       >
         <MessageCircle className="h-6 w-6 transition-transform" />
         <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
