@@ -64,15 +64,8 @@ const WhatIsSection = () => {
                 באמצעות הקשבה עדינה, עבודה עם התודעה ותת־המודע,
                 <br />
                 התהליך מסייע בשחרור מטענים רגשיים ואנרגטיים וביצירת תחושת הקלה, איזון וחיבור פנימי.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-accent/10 to-peach/10 p-6 md:p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-accent/20 group">
-              <Sparkles className="h-10 w-10 md:h-12 md:w-12 text-sage mx-auto mb-6 transition-all" />
-              <p className="text-base md:text-lg lg:text-xl text-foreground/80 leading-[1.9] text-center font-light">
-                התהליך אינו מהווה טיפול רפואי או תחליף לטיפול רפואי,
                 <br />
-                אך עשוי לשמש תהליך תומך ומשלים לריפוי ולצמיחה אישית.
+                התהליך עשוי לשמש תהליך תומך ומשלים לריפוי ולצמיחה אישית.
               </p>
             </div>
           </div>
