@@ -50,7 +50,7 @@ const FAQSection = () => {
             </div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient font-varela">
-              שאלות שכדאי לדעת
+              שאלות נפוצות
             </h2>
             
             <div className="h-1 w-24 bg-gradient-to-r from-sage to-peach rounded-full mx-auto"></div>
