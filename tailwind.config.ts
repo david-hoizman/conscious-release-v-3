@@ -131,6 +131,24 @@ export default {
           "50%": {
             boxShadow: "0 0 40px hsl(var(--accent) / 0.4)"
           }
+        },
+        "ripple": {
+          "0%": {
+            transform: "scale(0)",
+            opacity: "1"
+          },
+          "100%": {
+            transform: "scale(4)",
+            opacity: "0"
+          }
+        },
+        "shimmer": {
+          "0%": {
+            backgroundPosition: "-200% 0"
+          },
+          "100%": {
+            backgroundPosition: "200% 0"
+          }
         }
       },
       animation: {
@@ -141,6 +159,8 @@ export default {
         "slide-in-left": "slide-in-left 0.6s ease-out",
         "scale-in": "scale-in 0.5s ease-out",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "ripple": "ripple 0.6s ease-out",
+        "shimmer": "shimmer 2s linear infinite",
       },
     },
   },

@@ -164,6 +164,35 @@ All colors MUST be HSL.
     font-family: 'Assistant', 'Rubik', 'Noto Sans Hebrew', system-ui, sans-serif;
     position: relative;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Mobile Typography Improvements */
+  @media (max-width: 768px) {
+    h1 {
+      @apply leading-tight;
+      letter-spacing: -0.02em;
+    }
+    
+    h2 {
+      @apply leading-tight;
+      letter-spacing: -0.01em;
+    }
+    
+    p, li {
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+    }
+    
+    /* Improved spacing for mobile */
+    section {
+      @apply py-16;
+    }
+    
+    .container {
+      @apply px-6;
+    }
   }
 
   html {

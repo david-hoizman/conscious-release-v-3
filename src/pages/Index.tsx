@@ -1,4 +1,7 @@
 import Header from "@/components/Header";
+import MobileMenu from "@/components/MobileMenu";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import StickyCTA from "@/components/StickyCTA";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import HeroSection from "@/components/sections/HeroSection";
 import WhatIsSection from "@/components/sections/WhatIsSection";
@@ -12,7 +15,10 @@ import ContactSection from "@/components/sections/ContactSection";
 const Index = () => {
   return (
     <div className="min-h-screen snap-container">
+      <ScrollProgressBar />
       <Header />
+      <MobileMenu />
+      <StickyCTA />
       <WhatsAppButton />
       <HeroSection />
       <WhatIsSection />
