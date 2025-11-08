@@ -11,8 +11,11 @@ import QuestionnaireSection from "@/components/sections/QuestionnaireSection";
 import WhyHereSection from "@/components/sections/WhyHereSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ContactSection from "@/components/sections/ContactSection";
+import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 const Index = () => {
+  useSmoothScroll();
+  
   return (
     <div className="min-h-screen snap-container">
       <ScrollProgressBar />
