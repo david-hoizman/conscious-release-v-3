@@ -39,7 +39,7 @@ const WhatIsSection = () => {
             <div className="h-1 w-12 bg-gradient-to-l from-transparent to-accent rounded-full"></div>
           </div>
           
-          <div className="space-y-8 pt-12 px-4 max-w-4xl mx-auto">
+          <div className={`space-y-8 pt-12 px-4 max-w-4xl mx-auto grid-stagger ${isVisible ? 'visible' : ''}`}>
             <div className="bg-gradient-to-br from-muted/50 to-background p-6 md:p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50">
               <p className="text-base md:text-lg lg:text-xl text-foreground/80 leading-relaxed text-center">
                 ריפוי תודעתי <span className="text-primary font-semibold">רואה את האדם כמכלול של גוף, נפש ותודעה</span>.

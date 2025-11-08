@@ -62,7 +62,7 @@ const ContactSection = () => {
           
           <div className="h-1 w-32 bg-gradient-to-r from-accent via-peach to-accent mx-auto rounded-full"></div>
           
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 pt-12 px-4">
+          <div className={`grid md:grid-cols-2 gap-6 md:gap-8 pt-12 px-4 grid-stagger ${isVisible ? 'visible' : ''}`}>
             {/* Form */}
             <Card className="p-6 md:p-10 bg-card/80 backdrop-blur-sm shadow-2xl rounded-3xl border-2 border-border/50 hover:border-accent/30 transition-all">
               <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 text-right">

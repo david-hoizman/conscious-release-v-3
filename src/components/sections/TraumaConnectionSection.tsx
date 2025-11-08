@@ -43,7 +43,7 @@ const TraumaConnectionSection = () => {
             </p>
             
             <div className="bg-gradient-to-br from-muted/50 to-background p-6 md:p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50">
-              <ul className="space-y-4 text-right">
+              <ul className={`space-y-4 text-right grid-stagger ${isVisible ? 'visible' : ''}`}>
                 <li className="flex items-start gap-3 group">
                   <CircleDot className="h-6 w-6 text-accent flex-shrink-0 mt-1 group-hover:scale-125 group-hover:rotate-90 transition-all" />
                   <span className="text-base md:text-lg lg:text-xl text-foreground/80 leading-relaxed">זיהוי דפוסים רגשיים ומחשבתיים חוזרים</span>

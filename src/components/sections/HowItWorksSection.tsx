@@ -49,12 +49,11 @@ const HowItWorksSection = () => {
             ומסייע בהתמודדות עם אתגרים רגשיים, מנטליים ופיזיים כמו:
           </p>
           
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto px-4">
+          <div className={`grid md:grid-cols-2 gap-6 max-w-4xl mx-auto px-4 grid-stagger ${isVisible ? 'visible' : ''}`}>
             {challenges.map((challenge, index) => (
               <div
                 key={index}
                 className="group relative bg-gradient-to-br from-muted/50 to-background p-6 md:p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50 hover:border-accent/30 hover:-translate-y-2"
-                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-gradient-to-br from-accent to-peach text-white w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center text-xl md:text-2xl shadow-lg group-hover:scale-110 transition-transform">
                   {challenge.icon}
