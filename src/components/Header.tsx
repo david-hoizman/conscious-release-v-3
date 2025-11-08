@@ -31,7 +31,7 @@ const Header = () => {
           <img 
             src={logo} 
             alt="המרכז לריפוי תודעתי" 
-            className={`h-16 w-16 object-contain transition-all duration-300 ${
+            className={`h-16 w-16 object-contain transition-all duration-300 mix-blend-multiply ${
               isScrolled ? "drop-shadow-lg" : ""
             }`} 
           />

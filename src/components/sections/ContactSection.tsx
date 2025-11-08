@@ -173,7 +173,7 @@ const ContactSection = () => {
         <div className="container mx-auto px-4 text-center space-y-8 relative z-10">
           <div className="flex justify-center">
             <div className="bg-gradient-to-br from-accent/10 to-peach/10 p-4 rounded-3xl">
-              <img src={logo} alt="המרכז לריפוי תודעתי" className="h-24 w-24 mx-auto object-contain" />
+              <img src={logo} alt="המרכז לריפוי תודעתי" className="h-24 w-24 mx-auto object-contain mix-blend-multiply" />
             </div>
           </div>
           
