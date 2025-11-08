@@ -100,7 +100,7 @@ const WhyHereSection = () => {
                 </div>
                 <div className="flex-1 text-right">
                   <p className="text-base md:text-lg text-foreground/80 font-semibold">
-                    וברכות והמלצות התקבלו מרבנים ויועצים רוחניים
+                    ברכות והמלצות התקבלו מרבנים ויועצים רוחניים
                   </p>
                 </div>
               </div>
