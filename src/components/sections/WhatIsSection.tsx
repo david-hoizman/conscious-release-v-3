@@ -1,13 +1,21 @@
 import { Heart, Brain, Sparkles } from "lucide-react";
 import healingWomanImage from "@/assets/healing-woman.jpg";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useParallax } from "@/hooks/use-parallax";
 
 const WhatIsSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  const parallaxOffset = useParallax(0.3);
+  
   return (
-    <section id="what-is" className="py-24 bg-card relative overflow-hidden" dir="rtl">
-      {/* Background image */}
+    <section ref={ref} id="what-is" className="snap-section py-24 bg-card relative overflow-hidden" dir="rtl">
+      {/* Background image with parallax */}
       <div 
-        className="absolute inset-0 opacity-[0.08] md:opacity-[0.08] bg-contain md:bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${healingWomanImage})` }}
+        className="absolute inset-0 opacity-[0.08] md:opacity-[0.08] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out"
+        style={{ 
+          backgroundImage: `url(${healingWomanImage})`,
+          transform: `translateY(${parallaxOffset}px)`
+        }}
       ></div>
       
       {/* Decorative background elements */}
@@ -15,7 +23,7 @@ const WhatIsSection = () => {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-peach/5 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 max-w-5xl relative z-10">
-        <div className="text-center space-y-8">
+        <div className={`text-center space-y-8 scroll-fade-in ${isVisible ? 'visible' : ''}`}>
           <div className="inline-flex items-center gap-2 bg-accent/10 px-6 py-3 rounded-full">
             <Sparkles className="h-5 w-5 text-accent" />
             <span className="text-accent font-semibold">הבסיס שלנו</span>

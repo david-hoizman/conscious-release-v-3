@@ -1,13 +1,21 @@
 import { Heart, Shield, Users, Sparkles } from "lucide-react";
 import healingHandsImage from "@/assets/healing-hands.jpg";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useParallax } from "@/hooks/use-parallax";
 
 const WhyHereSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  const parallaxOffset = useParallax(0.3);
+  
   return (
-    <section className="py-24 bg-card relative overflow-hidden" dir="rtl">
-      {/* Background image */}
+    <section ref={ref} className="snap-section py-24 bg-card relative overflow-hidden" dir="rtl">
+      {/* Background image with parallax */}
       <div 
-        className="absolute inset-0 opacity-[0.06] md:opacity-[0.06] bg-contain md:bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${healingHandsImage})` }}
+        className="absolute inset-0 opacity-[0.06] md:opacity-[0.06] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out"
+        style={{ 
+          backgroundImage: `url(${healingHandsImage})`,
+          transform: `translateY(${parallaxOffset}px)`
+        }}
       ></div>
       
       {/* Background decoration */}
@@ -15,7 +23,7 @@ const WhyHereSection = () => {
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="space-y-8">
+          <div className={`space-y-8 scroll-fade-in ${isVisible ? 'visible' : ''}`}>
             <div className="inline-flex items-center gap-2 bg-peach/20 px-6 py-3 rounded-full">
               <Heart className="h-5 w-5 text-accent" />
               <span className="text-accent font-semibold">הייחודיות שלנו</span>

@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-full.png";
 import { Sparkles } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const HeroSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -15,7 +18,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-24 pb-12 md:pt-32 md:pb-0" dir="rtl">
+    <section ref={ref} className="snap-section relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-24 pb-12 md:pt-32 md:pb-0" dir="rtl">
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-background">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent"></div>

@@ -7,9 +7,13 @@ import { useToast } from "@/hooks/use-toast";
 import { Card } from "@/components/ui/card";
 import lotusImage from "@/assets/lotus-healing.jpg";
 import { Mail, Phone, Send, MessageCircle, MapPin } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useParallax } from "@/hooks/use-parallax";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const { ref, isVisible } = useScrollAnimation();
+  const parallaxOffset = useParallax(0.3);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -31,11 +35,14 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
-      {/* Background image */}
+    <section ref={ref} id="contact" className="snap-section py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
+      {/* Background image with parallax */}
       <div 
-        className="absolute inset-0 opacity-[0.05] md:opacity-[0.05] bg-contain md:bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${lotusImage})` }}
+        className="absolute inset-0 opacity-[0.05] md:opacity-[0.05] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out"
+        style={{ 
+          backgroundImage: `url(${lotusImage})`,
+          transform: `translateY(${parallaxOffset}px)`
+        }}
       ></div>
       
       {/* Decorative elements */}
@@ -43,7 +50,7 @@ const ContactSection = () => {
       <div className="absolute bottom-20 left-20 w-96 h-96 bg-peach/5 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
-        <div className="text-center space-y-10">
+        <div className={`text-center space-y-10 scroll-fade-in ${isVisible ? 'visible' : ''}`}>
           <div className="inline-flex items-center gap-2 bg-accent/10 px-6 py-3 rounded-full">
             <Mail className="h-5 w-5 text-accent" />
             <span className="text-accent font-semibold">בואו נדבר</span>

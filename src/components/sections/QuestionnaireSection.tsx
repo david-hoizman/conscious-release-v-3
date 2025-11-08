@@ -4,8 +4,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Card } from "@/components/ui/card";
 import { ClipboardCheck, Sparkles } from "lucide-react";
 import lotusImage from "@/assets/lotus-healing.jpg";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useParallax } from "@/hooks/use-parallax";
 
 const QuestionnaireSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  const parallaxOffset = useParallax(0.3);
   const [answers, setAnswers] = useState<boolean[]>([false, false, false, false, false]);
   const [showResult, setShowResult] = useState(false);
 
@@ -43,11 +47,14 @@ const QuestionnaireSection = () => {
   };
 
   return (
-    <section id="questionnaire" className="py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
-      {/* Background image */}
+    <section ref={ref} id="questionnaire" className="snap-section py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
+      {/* Background image with parallax */}
       <div 
-        className="absolute inset-0 opacity-[0.05] md:opacity-[0.05] bg-contain md:bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${lotusImage})` }}
+        className="absolute inset-0 opacity-[0.05] md:opacity-[0.05] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out"
+        style={{ 
+          backgroundImage: `url(${lotusImage})`,
+          transform: `translateY(${parallaxOffset}px)`
+        }}
       ></div>
       
       {/* Decorative elements */}
@@ -55,7 +62,7 @@ const QuestionnaireSection = () => {
       <div className="absolute bottom-20 left-20 w-64 h-64 bg-peach/5 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 max-w-4xl relative z-10">
-        <div className="text-center space-y-10">
+        <div className={`text-center space-y-10 scroll-fade-in ${isVisible ? 'visible' : ''}`}>
           <div className="inline-flex items-center gap-2 bg-accent/10 px-6 py-3 rounded-full">
             <ClipboardCheck className="h-5 w-5 text-accent" />
             <span className="text-accent font-semibold">זה בשבילכם?</span>

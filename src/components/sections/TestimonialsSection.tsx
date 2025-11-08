@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import {
   Carousel,
   CarouselContent,
@@ -76,6 +77,7 @@ const initialTestimonials: Testimonial[] = [
 
 const TestimonialsSection = () => {
   const { toast } = useToast();
+  const { ref, isVisible } = useScrollAnimation();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -112,13 +114,13 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section id="testimonials" className="py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
+    <section ref={ref} id="testimonials" className="snap-section py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
       {/* Decorative elements */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl floating"></div>
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-peach/5 rounded-full blur-3xl floating" style={{ animationDelay: '1s' }}></div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="text-center space-y-8 mb-16">
+        <div className={`text-center space-y-8 mb-16 scroll-fade-in ${isVisible ? 'visible' : ''}`}>
           <div className="inline-flex items-center gap-2 bg-accent/10 px-6 py-3 rounded-full animate-fade-in">
             <Heart className="h-5 w-5 text-accent" />
             <span className="text-accent font-semibold">סיפורי הצלחה</span>
