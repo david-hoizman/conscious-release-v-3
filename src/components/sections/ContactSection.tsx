@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -183,6 +184,10 @@ const ContactSection = () => {
             </p>
             <p className="text-xs text-muted-foreground/60 mt-4">
               התוכן והשירותים באתר נועדו לתמיכה רגשית ותודעתית בלבד, ואינם מהווים טיפול רפואי או התחייבות לתוצאה.
+              <br />
+              <Link to="/terms-of-service" className="hover:text-accent transition-colors underline">
+                הטיפול בהתאם לתנאי השימוש
+              </Link>
             </p>
           </div>
         </div>
