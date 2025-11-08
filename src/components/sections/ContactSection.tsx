@@ -9,11 +9,13 @@ import lotusImage from "@/assets/lotus-healing.jpg";
 import { Mail, Phone, Send, MessageCircle, MapPin } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useParallax } from "@/hooks/use-parallax";
+import { useImageReveal } from "@/hooks/use-image-reveal";
 
 const ContactSection = () => {
   const { toast } = useToast();
   const { ref, isVisible } = useScrollAnimation();
   const parallaxOffset = useParallax(0.3);
+  const imageReveal = useImageReveal(200);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -36,14 +38,19 @@ const ContactSection = () => {
 
   return (
     <section ref={ref} id="contact" className="snap-section py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
-      {/* Background image with parallax */}
+      {/* Background image with parallax and reveal */}
       <div 
-        className="absolute inset-0 opacity-[0.05] md:opacity-[0.05] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out"
-        style={{ 
-          backgroundImage: `url(${lotusImage})`,
-          transform: `translateY(${parallaxOffset}px)`
-        }}
-      ></div>
+        ref={imageReveal.ref}
+        className="absolute inset-0 image-reveal-wrapper"
+      >
+        <div 
+          className={`absolute inset-0 opacity-[0.05] md:opacity-[0.05] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out image-reveal-diagonal ${imageReveal.isRevealed ? 'revealed' : ''}`}
+          style={{ 
+            backgroundImage: `url(${lotusImage})`,
+            transform: `translateY(${parallaxOffset}px)`
+          }}
+        ></div>
+      </div>
       
       {/* Decorative elements */}
       <div className="absolute top-20 right-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>

@@ -82,6 +82,60 @@ html {
   transform: translateY(0) scale(1);
 }
 
+/* Image Reveal Animations */
+.image-reveal-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-reveal {
+  position: relative;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.image-reveal.revealed {
+  clip-path: inset(0 0 0 0);
+}
+
+.image-reveal-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    hsl(var(--accent)) 0%, 
+    hsl(var(--peach)) 50%, 
+    hsl(var(--accent)) 100%);
+  transform: translateX(0);
+  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 1;
+}
+
+.image-reveal-mask.revealed {
+  transform: translateX(100%);
+}
+
+/* Alternative reveal styles */
+.image-reveal-diagonal {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition: clip-path 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.image-reveal-diagonal.revealed {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.image-reveal-center {
+  clip-path: inset(50% 50% 50% 50%);
+  transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.image-reveal-center.revealed {
+  clip-path: inset(0 0 0 0);
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */

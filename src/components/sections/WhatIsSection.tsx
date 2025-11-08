@@ -2,21 +2,29 @@ import { Heart, Brain, Sparkles } from "lucide-react";
 import healingWomanImage from "@/assets/healing-woman.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useParallax } from "@/hooks/use-parallax";
+import { useImageReveal } from "@/hooks/use-image-reveal";
 
 const WhatIsSection = () => {
   const { ref, isVisible } = useScrollAnimation();
   const parallaxOffset = useParallax(0.3);
+  const imageReveal = useImageReveal(200);
   
   return (
     <section ref={ref} id="what-is" className="snap-section py-24 bg-card relative overflow-hidden" dir="rtl">
-      {/* Background image with parallax */}
+      {/* Background image with parallax and reveal */}
       <div 
-        className="absolute inset-0 opacity-[0.08] md:opacity-[0.08] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out"
-        style={{ 
-          backgroundImage: `url(${healingWomanImage})`,
-          transform: `translateY(${parallaxOffset}px)`
-        }}
-      ></div>
+        ref={imageReveal.ref}
+        className="absolute inset-0 image-reveal-wrapper"
+      >
+        <div 
+          className={`absolute inset-0 opacity-[0.08] md:opacity-[0.08] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out image-reveal ${imageReveal.isRevealed ? 'revealed' : ''}`}
+          style={{ 
+            backgroundImage: `url(${healingWomanImage})`,
+            transform: `translateY(${parallaxOffset}px)`
+          }}
+        ></div>
+        <div className={`image-reveal-mask ${imageReveal.isRevealed ? 'revealed' : ''}`}></div>
+      </div>
       
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>

@@ -3,10 +3,12 @@ import healingHandsImage from "@/assets/healing-hands.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useParallax } from "@/hooks/use-parallax";
 import { useTilt } from "@/hooks/use-tilt";
+import { useImageReveal } from "@/hooks/use-image-reveal";
 
 const HowItWorksSection = () => {
   const { ref, isVisible } = useScrollAnimation();
   const parallaxOffset = useParallax(0.3);
+  const imageReveal = useImageReveal(200);
   
   const challenges = [
     { text: "חרדות, חוסר שקט ופחדים", icon: "😰" },
@@ -19,14 +21,19 @@ const HowItWorksSection = () => {
 
   return (
     <section ref={ref} id="how-it-works" className="snap-section py-24 bg-card relative overflow-hidden" dir="rtl">
-      {/* Background image with parallax */}
+      {/* Background image with parallax and reveal */}
       <div 
-        className="absolute inset-0 opacity-[0.06] md:opacity-[0.06] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out"
-        style={{ 
-          backgroundImage: `url(${healingHandsImage})`,
-          transform: `translateY(${parallaxOffset}px)`
-        }}
-      ></div>
+        ref={imageReveal.ref}
+        className="absolute inset-0 image-reveal-wrapper"
+      >
+        <div 
+          className={`absolute inset-0 opacity-[0.06] md:opacity-[0.06] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out image-reveal-center ${imageReveal.isRevealed ? 'revealed' : ''}`}
+          style={{ 
+            backgroundImage: `url(${healingHandsImage})`,
+            transform: `translateY(${parallaxOffset}px)`
+          }}
+        ></div>
+      </div>
       
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/5 via-transparent to-transparent"></div>

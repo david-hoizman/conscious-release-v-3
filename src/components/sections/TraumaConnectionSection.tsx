@@ -2,21 +2,28 @@ import { CircleDot, Sparkles } from "lucide-react";
 import healingHandsImage from "@/assets/healing-hands.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useParallax } from "@/hooks/use-parallax";
+import { useImageReveal } from "@/hooks/use-image-reveal";
 
 const TraumaConnectionSection = () => {
   const { ref, isVisible } = useScrollAnimation();
   const parallaxOffset = useParallax(0.3);
+  const imageReveal = useImageReveal(200);
   
   return (
     <section ref={ref} className="snap-section py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
-      {/* Background image with parallax */}
+      {/* Background image with parallax and reveal */}
       <div 
-        className="absolute inset-0 opacity-[0.06] md:opacity-[0.06] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out"
-        style={{ 
-          backgroundImage: `url(${healingHandsImage})`,
-          transform: `translateY(${parallaxOffset}px)`
-        }}
-      ></div>
+        ref={imageReveal.ref}
+        className="absolute inset-0 image-reveal-wrapper"
+      >
+        <div 
+          className={`absolute inset-0 opacity-[0.06] md:opacity-[0.06] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out image-reveal-diagonal ${imageReveal.isRevealed ? 'revealed' : ''}`}
+          style={{ 
+            backgroundImage: `url(${healingHandsImage})`,
+            transform: `translateY(${parallaxOffset}px)`
+          }}
+        ></div>
+      </div>
       
       {/* Decorative elements */}
       <div className="absolute top-1/2 right-10 w-2 h-32 bg-gradient-to-b from-accent to-transparent rounded-full"></div>
