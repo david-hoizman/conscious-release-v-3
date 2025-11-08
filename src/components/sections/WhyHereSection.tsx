@@ -33,8 +33,8 @@ const WhyHereSection = () => {
                   <Heart className="h-5 w-5 md:h-6 md:w-6 text-accent" />
                 </div>
                 <div className="flex-1 text-right">
-                  <p className="text-base md:text-lg text-foreground/80">
-                    <span className="text-primary font-semibold">גישה רכה, רגישה ומכילה</span>
+                  <p className="text-base md:text-lg text-foreground/80 font-semibold">
+                    גישה רכה, רגישה ומכילה
                   </p>
                 </div>
               </div>
@@ -44,8 +44,8 @@ const WhyHereSection = () => {
                   <Shield className="h-5 w-5 md:h-6 md:w-6 text-accent" />
                 </div>
                 <div className="flex-1 text-right">
-                  <p className="text-base md:text-lg text-foreground/80">
-                    <span className="text-primary font-semibold">שילוב של עבודה תודעתית, רגשית ופיזית</span>
+                  <p className="text-base md:text-lg text-foreground/80 font-semibold">
+                    שילוב של עבודה תודעתית, רגשית ופיזית
                   </p>
                 </div>
               </div>
@@ -55,8 +55,8 @@ const WhyHereSection = () => {
                   <Users className="h-5 w-5 md:h-6 md:w-6 text-accent" />
                 </div>
                 <div className="flex-1 text-right">
-                  <p className="text-base md:text-lg text-foreground/80">
-                    <span className="text-accent font-semibold">טיפול מותאם אישית – בקליניקה או בזום</span>
+                  <p className="text-base md:text-lg text-foreground/80 font-semibold">
+                    טיפול מותאם אישית – בקליניקה או בזום
                   </p>
                 </div>
               </div>
@@ -66,8 +66,8 @@ const WhyHereSection = () => {
                   <Sparkles className="h-5 w-5 md:h-6 md:w-6 text-accent" />
                 </div>
                 <div className="flex-1 text-right">
-                  <p className="text-base md:text-lg text-foreground/80">
-                    <span className="text-primary font-semibold">תוצאות עמוקות ומחזיקות לאורך זמן</span>
+                  <p className="text-base md:text-lg text-foreground/80 font-semibold">
+                    תוצאות עמוקות ומחזיקות לאורך זמן
                   </p>
                 </div>
               </div>
@@ -77,8 +77,19 @@ const WhyHereSection = () => {
                   <Shield className="h-5 w-5 md:h-6 md:w-6 text-accent" />
                 </div>
                 <div className="flex-1 text-right">
-                  <p className="text-base md:text-lg text-foreground/80">
-                    <span className="text-accent font-semibold">דיסקרטיות מלאה ואמון מלא בתהליך</span>
+                  <p className="text-base md:text-lg text-foreground/80 font-semibold">
+                    דיסקרטיות מלאה ואמון מלא בתהליך
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 md:gap-4 p-4 md:p-6 bg-gradient-to-br from-accent/10 to-peach/10 rounded-2xl border border-accent/20 hover:border-accent/40 transition-all hover:scale-105 shadow-lg">
+                <div className="bg-accent/10 p-2 md:p-3 rounded-xl flex-shrink-0">
+                  <Heart className="h-5 w-5 md:h-6 md:w-6 text-accent" />
+                </div>
+                <div className="flex-1 text-right">
+                  <p className="text-base md:text-lg text-foreground/80 font-semibold">
+                    🕊️ מומלץ על־ידי אנשי מקצוע מתחום הנפש והבריאות, וברכות והמלצות התקבלו מרבנים ויועצים רוחניים
                   </p>
                 </div>
               </div>
