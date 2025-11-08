@@ -10,12 +10,15 @@ import { Mail, Phone, Send, MessageCircle, MapPin } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useParallax } from "@/hooks/use-parallax";
 import { useImageReveal } from "@/hooks/use-image-reveal";
+import { useMagnetic } from "@/hooks/use-magnetic";
 
 const ContactSection = () => {
   const { toast } = useToast();
   const { ref, isVisible } = useScrollAnimation();
   const parallaxOffset = useParallax(0.3);
   const imageReveal = useImageReveal(200);
+  const magneticSubmit = useMagnetic({ strength: 0.25, tolerance: 100 });
+  const magneticWhatsApp = useMagnetic({ strength: 0.3, tolerance: 120 });
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -121,8 +124,10 @@ const ContactSection = () => {
                 </div>
                 
                 <Button 
+                  ref={magneticSubmit as any}
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground py-5 md:py-7 text-lg md:text-xl rounded-2xl shadow-lg hover:shadow-xl transition-all hover:scale-105 group"
+                  className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground py-5 md:py-7 text-lg md:text-xl rounded-2xl shadow-lg hover:shadow-xl transition-all group"
+                  style={{ transition: 'transform 0.2s ease-out' }}
                 >
                   <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   שלחו ונחזור אליכם
@@ -133,9 +138,11 @@ const ContactSection = () => {
             {/* Contact info and WhatsApp */}
             <div className="space-y-4 md:space-y-6 flex flex-col justify-center">
               <Button
+                ref={magneticWhatsApp as any}
                 onClick={handleWhatsAppClick}
                 size="lg"
-                className="group relative bg-[#25D366] hover:bg-[#20BA5A] text-white w-full py-6 md:py-10 text-lg md:text-2xl rounded-2xl shadow-2xl hover:shadow-[#25D366]/30 transition-all hover:scale-105 overflow-hidden"
+                className="group relative bg-[#25D366] hover:bg-[#20BA5A] text-white w-full py-6 md:py-10 text-lg md:text-2xl rounded-2xl shadow-2xl hover:shadow-[#25D366]/30 transition-all overflow-hidden"
+                style={{ transition: 'transform 0.2s ease-out' }}
               >
                 <MessageCircle className="ml-2 md:ml-3 h-6 w-6 md:h-7 md:w-7 group-hover:rotate-12 group-hover:scale-110 transition-all" />
                 שיחה מיידית בוואטסאפ

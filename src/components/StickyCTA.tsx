@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useMagnetic } from "@/hooks/use-magnetic";
 
 const StickyCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const magneticCTA = useMagnetic({ strength: 0.4, tolerance: 150 });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,9 +39,11 @@ const StickyCTA = () => {
       }`}
     >
       <Button
+        ref={magneticCTA as any}
         onClick={scrollToContact}
         size="lg"
         className="rounded-full shadow-2xl hover:shadow-accent/40 animate-glow-pulse group"
+        style={{ transition: 'transform 0.2s ease-out' }}
       >
         <Phone className="h-5 w-5 ml-2 group-hover:rotate-12 transition-transform" />
         <span className="font-semibold">קבעו פגישה</span>

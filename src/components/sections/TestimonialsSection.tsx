@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useTilt } from "@/hooks/use-tilt";
+import { useMagnetic } from "@/hooks/use-magnetic";
 import {
   Carousel,
   CarouselContent,
@@ -79,6 +80,7 @@ const initialTestimonials: Testimonial[] = [
 const TestimonialsSection = () => {
   const { toast } = useToast();
   const { ref, isVisible } = useScrollAnimation();
+  const magneticBtn = useMagnetic({ strength: 0.3, tolerance: 120 });
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -196,8 +198,10 @@ const TestimonialsSection = () => {
           <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <DialogTrigger asChild>
               <Button
+                ref={magneticBtn as any}
                 size="lg"
-                className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground px-8 py-6 text-lg rounded-2xl shadow-lg hover:shadow-xl transition-all hover:scale-105 gap-2 group"
+                className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground px-8 py-6 text-lg rounded-2xl shadow-lg hover:shadow-xl transition-all gap-2 group"
+                style={{ transition: 'transform 0.2s ease-out' }}
               >
                 <Plus className="h-5 w-5 group-hover:rotate-90 transition-transform" />
                 הוסף המלצה שלך

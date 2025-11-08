@@ -3,6 +3,7 @@ import logo from "@/assets/logo-full.png";
 import { Sparkles } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useTypingEffect } from "@/hooks/use-typing-effect";
+import { useMagnetic } from "@/hooks/use-magnetic";
 
 const HeroSection = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -11,6 +12,8 @@ const HeroSection = () => {
     speed: 100,
     delay: 800
   });
+  const magneticBtn1 = useMagnetic({ strength: 0.25, tolerance: 120 });
+  const magneticBtn2 = useMagnetic({ strength: 0.25, tolerance: 120 });
   
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -69,19 +72,23 @@ const HeroSection = () => {
         
         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center pt-4 md:pt-6 animate-fade-in px-4" style={{ animationDelay: '0.4s' }}>
           <Button
+            ref={magneticBtn1 as any}
             size="lg"
             onClick={() => scrollToSection("questionnaire")}
-            className="w-full sm:w-auto group relative bg-primary hover:bg-primary/90 text-primary-foreground px-4 sm:px-6 md:px-8 py-4 md:py-6 text-sm sm:text-base md:text-lg rounded-2xl shadow-2xl hover:shadow-accent/20 transition-all duration-300 hover:scale-105 overflow-hidden"
+            className="w-full sm:w-auto group relative bg-primary hover:bg-primary/90 text-primary-foreground px-4 sm:px-6 md:px-8 py-4 md:py-6 text-sm sm:text-base md:text-lg rounded-2xl shadow-2xl hover:shadow-accent/20 transition-all duration-300 overflow-hidden"
+            style={{ transition: 'transform 0.2s ease-out' }}
           >
             <span className="relative z-10">בדקו אם התהליך מתאים לכם</span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
           </Button>
           
           <Button
+            ref={magneticBtn2 as any}
             size="lg"
             variant="outline"
             onClick={handleWhatsAppClick}
-            className="w-full sm:w-auto border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-4 sm:px-6 md:px-8 py-4 md:py-6 text-sm sm:text-base md:text-lg rounded-2xl shadow-lg hover:shadow-accent/30 transition-all duration-300 hover:scale-105"
+            className="w-full sm:w-auto border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-4 sm:px-6 md:px-8 py-4 md:py-6 text-sm sm:text-base md:text-lg rounded-2xl shadow-lg hover:shadow-accent/30 transition-all duration-300"
+            style={{ transition: 'transform 0.2s ease-out' }}
           >
             שיחה בוואטסאפ
           </Button>
