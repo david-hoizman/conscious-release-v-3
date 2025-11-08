@@ -1,4 +1,4 @@
-import lotusImage from "@/assets/lotus-healing.jpg";
+import healingImage from "@/assets/healing-woman.jpg";
 import { Heart, Shield, Users } from "lucide-react";
 
 const WhyHereSection = () => {
@@ -52,7 +52,7 @@ const WhyHereSection = () => {
           
           <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl order-1 md:order-2 group">
             <img
-              src={lotusImage}
+              src={healingImage}
               alt="ריפוי תודעתי"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
