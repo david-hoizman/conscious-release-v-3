@@ -16,7 +16,7 @@ const LogoIntro = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-background logo-intro-overlay">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/0 backdrop-blur-0 logo-intro-overlay pointer-events-none">
       <div className="logo-intro-content">
         <img 
           src={logo} 
