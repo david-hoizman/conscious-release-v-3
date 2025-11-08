@@ -47,8 +47,6 @@ const WhatIsSection = () => {
             <div className="bg-gradient-to-br from-accent/10 to-peach/10 p-6 md:p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-accent/20">
               <Sparkles className="h-10 w-10 md:h-12 md:w-12 text-accent mx-auto mb-6" />
               <p className="text-base md:text-lg lg:text-xl text-foreground/80 leading-relaxed text-center">
-                <span className="text-muted-foreground font-semibold">⚠️ הערה חשובה:</span>
-                <br /><br />
                 התהליך אינו מהווה טיפול רפואי או תחליף לטיפול רפואי,
                 <br />
                 אך עשוי לשמש תהליך תומך ומשלים לריפוי ולצמיחה אישית.
