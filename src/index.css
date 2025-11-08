@@ -458,53 +458,6 @@ All colors MUST be HSL.
     }
   }
   
-  /* Logo Intro Animation */
-  @keyframes logoIntroScale {
-    0% {
-      transform: scale(1.2) translateY(0);
-      opacity: 1;
-    }
-    70% {
-      transform: scale(1) translateY(0);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(0.3) translateY(-40vh);
-      opacity: 0;
-    }
-  }
-
-  @keyframes logoIntroGlow {
-    0%, 70% {
-      filter: drop-shadow(0 0 15px hsl(var(--sage) / 0.4));
-    }
-    100% {
-      filter: drop-shadow(0 0 0px hsl(var(--sage) / 0));
-    }
-  }
-
-  @keyframes logoIntroOverlay {
-    0% {
-      opacity: 1;
-    }
-    70% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      pointer-events: none;
-    }
-  }
-
-  .logo-intro-overlay {
-    animation: logoIntroOverlay 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-
-  .logo-intro-content {
-    animation: logoIntroScale 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards,
-               logoIntroGlow 1.5s ease-out forwards;
-  }
-  
   .scroll-reveal {
     opacity: 0;
     transform: translateY(30px);
