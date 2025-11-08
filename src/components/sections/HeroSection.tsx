@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.jpg";
+import { Sparkles } from "lucide-react";
 
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
@@ -14,45 +15,71 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-muted px-4 pt-24" dir="rtl">
-      <div className="container mx-auto max-w-4xl text-center space-y-8 animate-fade-in">
-        <img src={logo} alt="המרכז לריפוי תודעתי" className="h-32 w-32 mx-auto object-contain" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-24" dir="rtl">
+      {/* Animated background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-background">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-peach/10 via-transparent to-transparent"></div>
+      </div>
+
+      {/* Decorative floating elements */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl floating"></div>
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-peach/5 rounded-full blur-3xl floating" style={{ animationDelay: '1s' }}></div>
+
+      <div className="container mx-auto max-w-5xl text-center space-y-10 relative z-10">
+        <div className="animate-scale-in">
+          <img 
+            src={logo} 
+            alt="המרכז לריפוי תודעתי" 
+            className="h-40 w-40 mx-auto object-contain drop-shadow-2xl animate-glow-pulse" 
+          />
+        </div>
         
-        <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">
-          המרכז לריפוי תודעתי
-        </h1>
+        <div className="space-y-6 animate-fade-in">
+          <h1 className="text-6xl md:text-8xl font-bold leading-tight">
+            <span className="text-gradient">המרכז לריפוי תודעתי</span>
+          </h1>
+          
+          <div className="flex items-center justify-center gap-3">
+            <Sparkles className="text-accent h-6 w-6 animate-pulse" />
+            <p className="text-3xl md:text-4xl font-semibold text-gradient-accent">
+              להשתחרר. להתחבר. להתרפא.
+            </p>
+            <Sparkles className="text-accent h-6 w-6 animate-pulse" />
+          </div>
+        </div>
         
-        <p className="text-2xl md:text-3xl text-accent font-medium">
-          להשתחרר. להתחבר. להתרפא.
-        </p>
-        
-        <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
           כל ריפוי אמיתי מתחיל בתודעה.
           <br />
-          כאן נוצר מרחב רגוע ומכיל, שבו אפשר לשחרר עומסים רגשיים ודפוסים מעכבים,
+          <span className="text-primary font-medium">מרחב רגוע ומכיל</span> שבו אפשר לשחרר עומסים רגשיים ודפוסים מעכבים,
           <br />
           ולהתחבר מחדש לשקט ולחופש הפנימי.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
           <Button
             size="lg"
             onClick={() => scrollToSection("questionnaire")}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg"
+            className="group relative bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-7 text-xl rounded-2xl shadow-2xl hover:shadow-accent/20 transition-all duration-300 hover:scale-105 overflow-hidden"
           >
-            בדקו אם התהליך מתאים לכם
+            <span className="relative z-10">בדקו אם התהליך מתאים לכם</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
           </Button>
           
           <Button
             size="lg"
             variant="outline"
             onClick={handleWhatsAppClick}
-            className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-6 text-lg"
+            className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-10 py-7 text-xl rounded-2xl shadow-lg hover:shadow-accent/30 transition-all duration-300 hover:scale-105"
           >
             שיחה בוואטסאפ
           </Button>
         </div>
       </div>
+
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-card to-transparent"></div>
     </section>
   );
 };

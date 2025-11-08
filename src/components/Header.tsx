@@ -22,39 +22,36 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-sm shadow-md" : "bg-transparent"
+        isScrolled ? "bg-card/95 backdrop-blur-lg shadow-xl border-b border-border/50" : "bg-transparent"
       }`}
       dir="rtl"
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <img src={logo} alt="המרכז לריפוי תודעתי" className="h-16 w-16 object-contain" />
+          <img 
+            src={logo} 
+            alt="המרכז לריפוי תודעתי" 
+            className={`h-16 w-16 object-contain transition-all duration-300 ${
+              isScrolled ? "drop-shadow-lg" : ""
+            }`} 
+          />
           
           <nav className="hidden md:flex gap-8">
-            <button
-              onClick={() => scrollToSection("what-is")}
-              className="text-sm font-medium hover:text-accent transition-colors"
-            >
-              מה זה ריפוי תודעתי
-            </button>
-            <button
-              onClick={() => scrollToSection("how-it-works")}
-              className="text-sm font-medium hover:text-accent transition-colors"
-            >
-              איך זה עובד
-            </button>
-            <button
-              onClick={() => scrollToSection("questionnaire")}
-              className="text-sm font-medium hover:text-accent transition-colors"
-            >
-              שאלון
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-sm font-medium hover:text-accent transition-colors"
-            >
-              יצירת קשר
-            </button>
+            {[
+              { id: "what-is", label: "מה זה ריפוי תודעתי" },
+              { id: "how-it-works", label: "איך זה עובד" },
+              { id: "questionnaire", label: "שאלון" },
+              { id: "contact", label: "יצירת קשר" }
+            ].map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="relative text-sm font-medium text-foreground/70 hover:text-accent transition-colors group"
+              >
+                {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-accent to-peach group-hover:w-full transition-all duration-300"></span>
+              </button>
+            ))}
           </nav>
         </div>
       </div>

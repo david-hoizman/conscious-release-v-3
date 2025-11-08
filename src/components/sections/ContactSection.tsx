@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Card } from "@/components/ui/card";
 import logo from "@/assets/logo.jpg";
+import { Mail, Phone, Send, MessageCircle, MapPin } from "lucide-react";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -29,20 +30,30 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-muted to-background" dir="rtl">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="text-center space-y-8 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary">
+    <section id="contact" className="py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
+      {/* Decorative elements */}
+      <div className="absolute top-20 right-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-peach/5 rounded-full blur-3xl"></div>
+
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+        <div className="text-center space-y-10">
+          <div className="inline-flex items-center gap-2 bg-accent/10 px-6 py-3 rounded-full">
+            <Mail className="h-5 w-5 text-accent" />
+            <span className="text-accent font-semibold">בואו נדבר</span>
+          </div>
+
+          <h2 className="text-5xl md:text-7xl font-bold text-gradient leading-tight">
             צרו קשר
           </h2>
           
-          <div className="h-1 w-24 bg-accent mx-auto rounded-full"></div>
+          <div className="h-1 w-32 bg-gradient-to-r from-accent via-peach to-accent mx-auto rounded-full"></div>
           
-          <div className="grid md:grid-cols-2 gap-8 pt-8">
-            <Card className="p-8">
+          <div className="grid md:grid-cols-2 gap-8 pt-12">
+            {/* Form */}
+            <Card className="p-10 bg-card/80 backdrop-blur-sm shadow-2xl rounded-3xl border-2 border-border/50 hover:border-accent/30 transition-all">
               <form onSubmit={handleSubmit} className="space-y-6 text-right">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  <label htmlFor="name" className="block text-sm font-semibold mb-3 text-foreground/80">
                     שם מלא
                   </label>
                   <Input
@@ -50,43 +61,49 @@ const ContactSection = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
-                    className="text-right"
+                    className="text-right text-lg p-6 rounded-xl border-2 focus:border-accent transition-all"
                     dir="rtl"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                  <label htmlFor="phone" className="block text-sm font-semibold mb-3 text-foreground/80">
                     טלפון
                   </label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    required
-                    className="text-right"
-                    dir="rtl"
-                  />
+                  <div className="relative">
+                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                    <Input
+                      id="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      required
+                      className="text-right text-lg p-6 pl-12 rounded-xl border-2 focus:border-accent transition-all"
+                      dir="rtl"
+                    />
+                  </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  <label htmlFor="email" className="block text-sm font-semibold mb-3 text-foreground/80">
                     אימייל
                   </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    required
-                    className="text-right"
-                    dir="rtl"
-                  />
+                  <div className="relative">
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                    <Input
+                      id="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                      className="text-right text-lg p-6 pl-12 rounded-xl border-2 focus:border-accent transition-all"
+                      dir="rtl"
+                    />
+                  </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  <label htmlFor="message" className="block text-sm font-semibold mb-3 text-foreground/80">
                     הודעה
                   </label>
                   <Textarea
@@ -94,46 +111,83 @@ const ContactSection = () => {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={4}
-                    className="text-right"
+                    className="text-right text-lg p-6 rounded-xl border-2 focus:border-accent transition-all resize-none"
                     dir="rtl"
                   />
                 </div>
                 
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Button 
+                  type="submit" 
+                  className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground py-7 text-xl rounded-2xl shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                >
+                  <Send className="ml-2 h-5 w-5" />
                   שלחו ונחזור אליכם
                 </Button>
               </form>
             </Card>
             
+            {/* Contact info and WhatsApp */}
             <div className="space-y-6 flex flex-col justify-center">
               <Button
                 onClick={handleWhatsAppClick}
                 size="lg"
-                className="bg-[#25D366] hover:bg-[#20BA5A] text-white w-full py-8 text-xl"
+                className="group relative bg-[#25D366] hover:bg-[#20BA5A] text-white w-full py-10 text-2xl rounded-2xl shadow-2xl hover:shadow-[#25D366]/30 transition-all hover:scale-105 overflow-hidden"
               >
+                <MessageCircle className="ml-3 h-7 w-7" />
                 שיחה מיידית בוואטסאפ
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               </Button>
               
-              <div className="text-center p-6 bg-card rounded-lg">
-                <p className="text-foreground/70">
-                  הטיפול מתקיים בקליניקה (בני ברק)
-                  <br />
-                  ובמפגשי זום
-                </p>
-              </div>
+              <Card className="p-8 bg-gradient-to-br from-accent/10 to-peach/10 rounded-3xl border-2 border-accent/20 shadow-xl">
+                <div className="space-y-6 text-center">
+                  <MapPin className="h-12 w-12 text-accent mx-auto" />
+                  <div>
+                    <p className="text-xl font-semibold text-primary mb-2">מיקום הטיפולים</p>
+                    <p className="text-lg text-foreground/70">
+                      קליניקה בבני ברק
+                      <br />
+                      או מפגשי זום
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-8 bg-card/80 backdrop-blur-sm rounded-3xl border-2 border-border/50 shadow-xl">
+                <div className="space-y-4 text-center">
+                  <Phone className="h-10 w-10 text-accent mx-auto" />
+                  <div>
+                    <p className="text-sm font-semibold text-muted-foreground mb-2">צרו קשר</p>
+                    <a href="tel:052-717-6000" className="text-xl font-bold text-primary hover:text-accent transition-colors">
+                      052-717-6000
+                    </a>
+                  </div>
+                </div>
+              </Card>
             </div>
           </div>
         </div>
       </div>
       
-      <footer className="mt-20 pt-12 border-t border-border" dir="rtl">
-        <div className="container mx-auto px-4 text-center space-y-6">
-          <img src={logo} alt="המרכז לריפוי תודעתי" className="h-20 w-20 mx-auto object-contain" />
-          <p className="text-2xl font-semibold text-primary">המרכז לריפוי תודעתי</p>
-          <p className="text-lg text-accent">להשתחרר. להתחבר. להתרפא.</p>
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} כל הזכויות שמורות
+      {/* Footer */}
+      <footer className="mt-24 pt-16 border-t border-border/50" dir="rtl">
+        <div className="container mx-auto px-4 text-center space-y-8 relative z-10">
+          <div className="flex justify-center">
+            <div className="bg-gradient-to-br from-accent/10 to-peach/10 p-4 rounded-3xl">
+              <img src={logo} alt="המרכז לריפוי תודעתי" className="h-24 w-24 mx-auto object-contain" />
+            </div>
+          </div>
+          
+          <h3 className="text-3xl font-bold text-gradient">המרכז לריפוי תודעתי</h3>
+          
+          <p className="text-xl text-gradient-accent font-semibold">
+            להשתחרר. להתחבר. להתרפא.
           </p>
+          
+          <div className="pt-8 pb-4">
+            <p className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} כל הזכויות שמורות
+            </p>
+          </div>
         </div>
       </footer>
     </section>

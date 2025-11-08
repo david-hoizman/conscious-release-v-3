@@ -8,10 +8,13 @@ const WhatsAppButton = () => {
   return (
     <button
       onClick={handleWhatsAppClick}
-      className="fixed bottom-6 left-6 z-50 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110"
+      className="fixed bottom-8 left-8 z-50 group bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full p-5 shadow-2xl hover:shadow-[#25D366]/50 transition-all duration-300 hover:scale-110 animate-glow-pulse"
       aria-label="שיחה בוואטסאפ"
     >
-      <MessageCircle className="h-6 w-6" />
+      <MessageCircle className="h-7 w-7 group-hover:rotate-12 transition-transform" />
+      
+      {/* Ripple effect */}
+      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20"></span>
     </button>
   );
 };

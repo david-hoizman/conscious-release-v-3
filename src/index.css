@@ -8,39 +8,44 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 30 25% 95%;
-    --foreground: 160 22% 35%;
+    --background: 30 25% 97%;
+    --foreground: 160 28% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 160 22% 35%;
+    --card-foreground: 160 28% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 160 22% 35%;
+    --popover-foreground: 160 28% 25%;
 
-    --primary: 160 22% 35%;
-    --primary-foreground: 30 25% 95%;
+    --primary: 160 28% 30%;
+    --primary-foreground: 30 25% 98%;
 
-    --secondary: 160 15% 60%;
-    --secondary-foreground: 30 25% 95%;
+    --secondary: 160 18% 55%;
+    --secondary-foreground: 30 25% 98%;
 
-    --muted: 160 10% 90%;
-    --muted-foreground: 160 12% 45%;
+    --muted: 160 12% 92%;
+    --muted-foreground: 160 15% 40%;
 
-    --accent: 35 38% 63%;
-    --accent-foreground: 160 22% 35%;
+    --accent: 35 45% 60%;
+    --accent-foreground: 160 28% 25%;
 
-    --peach: 15 60% 82%;
-    --peach-foreground: 160 22% 35%;
+    --peach: 15 65% 80%;
+    --peach-foreground: 160 28% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 160 10% 85%;
-    --input: 160 10% 85%;
-    --ring: 160 22% 35%;
+    --border: 160 15% 88%;
+    --input: 160 15% 88%;
+    --ring: 160 28% 30%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(160 28% 30%) 0%, hsl(160 28% 40%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(35 45% 60%) 0%, hsl(15 65% 80%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(30 25% 97%) 0%, hsl(160 12% 92%) 100%);
+    
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -52,36 +57,40 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 160 22% 15%;
+    --background: 160 28% 12%;
     --foreground: 30 25% 95%;
 
-    --card: 160 22% 20%;
+    --card: 160 28% 18%;
     --card-foreground: 30 25% 95%;
 
-    --popover: 160 22% 20%;
+    --popover: 160 28% 18%;
     --popover-foreground: 30 25% 95%;
 
     --primary: 30 25% 95%;
-    --primary-foreground: 160 22% 35%;
+    --primary-foreground: 160 28% 25%;
 
-    --secondary: 160 15% 30%;
+    --secondary: 160 18% 28%;
     --secondary-foreground: 30 25% 95%;
 
-    --muted: 160 10% 25%;
-    --muted-foreground: 160 12% 65%;
+    --muted: 160 12% 22%;
+    --muted-foreground: 160 15% 65%;
 
-    --accent: 35 38% 63%;
-    --accent-foreground: 160 22% 35%;
+    --accent: 35 45% 60%;
+    --accent-foreground: 160 28% 25%;
 
-    --peach: 15 60% 82%;
-    --peach-foreground: 160 22% 35%;
+    --peach: 15 65% 80%;
+    --peach-foreground: 160 28% 25%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 160 10% 30%;
-    --input: 160 10% 30%;
+    --border: 160 12% 28%;
+    --input: 160 12% 28%;
     --ring: 212.7 26.8% 83.9%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(30 25% 95%) 0%, hsl(160 18% 55%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(35 45% 60%) 0%, hsl(15 65% 80%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(160 28% 12%) 0%, hsl(160 12% 22%) 100%);
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -106,5 +115,49 @@ All colors MUST be HSL.
 
   html {
     scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+  
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+  
+  .bg-gradient-soft {
+    background-image: var(--gradient-soft);
+  }
+  
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+  
+  .glow {
+    box-shadow: 0 0 30px hsl(var(--accent) / 0.3);
+  }
+  
+  @keyframes floating {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

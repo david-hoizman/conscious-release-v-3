@@ -1,45 +1,57 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, CircleDot } from "lucide-react";
 
 const TraumaConnectionSection = () => {
   return (
-    <section className="py-20 bg-muted" dir="rtl">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="text-center space-y-8 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary">
-            למה אנחנו מרגישים מה שאנחנו מרגישים?
+    <section className="py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
+      {/* Decorative elements */}
+      <div className="absolute top-1/2 right-10 w-2 h-32 bg-gradient-to-b from-accent to-transparent rounded-full"></div>
+      <div className="absolute top-1/2 left-10 w-2 h-32 bg-gradient-to-b from-peach to-transparent rounded-full"></div>
+
+      <div className="container mx-auto px-4 max-w-5xl relative z-10">
+        <div className="text-center space-y-10">
+          <h2 className="text-5xl md:text-7xl font-bold leading-tight">
+            <span className="text-primary">למה אנחנו מרגישים</span>
+            <br />
+            <span className="text-gradient-accent">מה שאנחנו מרגישים?</span>
           </h2>
           
-          <div className="h-1 w-24 bg-accent mx-auto rounded-full"></div>
+          <div className="h-1 w-32 bg-gradient-to-r from-accent via-peach to-accent mx-auto rounded-full"></div>
           
-          <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
-            אירועים מהעבר, גם כאלה שנראים "קטנים",
-            <br />
-            יכולים להישמר כתבניות בתת־המודע ולהמשיך להשפיע על תחושת הערך, הביטחון והקשר עם עצמנו.
-          </p>
+          <div className="grid md:grid-cols-2 gap-8 pt-8">
+            <div className="bg-card/80 backdrop-blur-sm p-10 rounded-3xl shadow-xl border border-border/50 hover:scale-105 transition-transform duration-300">
+              <CircleDot className="h-10 w-10 text-primary mx-auto mb-6" />
+              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
+                אירועים מהעבר, גם כאלה שנראים <span className="text-accent font-semibold">"קטנים"</span>,
+                יכולים להישמר כתבניות בתת־המודע ולהמשיך להשפיע על תחושת הערך, הביטחון והקשר עם עצמנו.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-accent/10 to-primary/5 p-10 rounded-3xl shadow-xl border border-accent/20 hover:scale-105 transition-transform duration-300">
+              <CircleDot className="h-10 w-10 text-accent mx-auto mb-6" />
+              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
+                בתהליך תודעתי נכון, <span className="text-primary font-semibold">ניגשים אל השורש ברגישות</span>,
+                משנים את המטען הרגשי סביבו,
+                ומאפשרים למערכת כולה להירגע.
+              </p>
+            </div>
+          </div>
           
-          <p className="text-lg md:text-xl text-foreground/80 leading-relaxed pt-4">
-            בתהליך תודעתי נכון, ניגשים אל השורש ברגישות,
-            <br />
-            משנים את המטען הרגשי סביבו,
-            <br />
-            ומאפשרים למערכת כולה להירגע.
-          </p>
-          
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 pt-8">
-            <div className="bg-card p-6 rounded-lg shadow-sm">
-              <p className="text-primary font-semibold text-lg">עבר</p>
+          {/* Process flow */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 pt-12">
+            <div className="bg-card p-8 rounded-2xl shadow-lg border-2 border-primary/20 hover:border-primary/40 transition-colors">
+              <p className="text-primary font-bold text-xl">עבר</p>
             </div>
-            <ArrowLeft className="h-6 w-6 text-accent rotate-180 md:rotate-0" />
-            <div className="bg-card p-6 rounded-lg shadow-sm">
-              <p className="text-primary font-semibold text-lg">תת־מודע</p>
+            <ArrowLeft className="h-8 w-8 text-accent rotate-180 md:rotate-0 animate-pulse" />
+            <div className="bg-card p-8 rounded-2xl shadow-lg border-2 border-primary/20 hover:border-primary/40 transition-colors">
+              <p className="text-primary font-bold text-xl">תת־מודע</p>
             </div>
-            <ArrowLeft className="h-6 w-6 text-accent rotate-180 md:rotate-0" />
-            <div className="bg-card p-6 rounded-lg shadow-sm">
-              <p className="text-primary font-semibold text-lg">רגש/התנהגות</p>
+            <ArrowLeft className="h-8 w-8 text-accent rotate-180 md:rotate-0 animate-pulse" style={{ animationDelay: '0.2s' }} />
+            <div className="bg-card p-8 rounded-2xl shadow-lg border-2 border-primary/20 hover:border-primary/40 transition-colors">
+              <p className="text-primary font-bold text-xl">רגש/התנהגות</p>
             </div>
-            <ArrowLeft className="h-6 w-6 text-accent rotate-180 md:rotate-0" />
-            <div className="bg-card p-6 rounded-lg shadow-sm">
-              <p className="text-accent font-semibold text-lg">ריפוי</p>
+            <ArrowLeft className="h-8 w-8 text-accent rotate-180 md:rotate-0 animate-pulse" style={{ animationDelay: '0.4s' }} />
+            <div className="bg-gradient-to-br from-accent to-peach p-8 rounded-2xl shadow-xl glow">
+              <p className="text-white font-bold text-xl">ריפוי</p>
             </div>
           </div>
         </div>
