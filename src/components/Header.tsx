@@ -27,16 +27,8 @@ const Header = () => {
       dir="rtl"
     >
       <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <img 
-            src={logo} 
-            alt="המרכז לריפוי תודעתי" 
-            className={`h-20 w-auto object-contain transition-all duration-300 ${
-              isScrolled ? "drop-shadow-lg h-16" : ""
-            }`} 
-          />
-          
-          <nav className="hidden md:flex gap-8">
+        <div className="flex items-center justify-center">
+          <nav className="flex gap-8">
             {[
               { id: "what-is", label: "מה זה ריפוי תודעתי" },
               { id: "how-it-works", label: "איך זה עובד" },
