@@ -2,11 +2,13 @@ import { Check, Flower2 } from "lucide-react";
 import healingHandsImage from "@/assets/healing-hands.jpg";
 
 const HowItWorksSection = () => {
-  const steps = [
-    { text: "שיחה והקשבה למצב הרגשי והתחושות.", icon: "💭" },
-    { text: "זיהוי נקודות עומס, דפוסים חוזרים ומקורות רגשיים.", icon: "🔍" },
-    { text: "עבודה תודעתית עדינה עם תת־המודע לשחרור והקלה.", icon: "✨" },
-    { text: "חיבור מחודש לשקט, לבהירות ולחוסן פנימי.", icon: "🌸" },
+  const challenges = [
+    { text: "חרדה, חוסר שקט, פחדים או קושי להירדם", icon: "😰" },
+    { text: "כאבים כרוניים שלא נמצאה להם סיבה רפואית", icon: "🩹" },
+    { text: "תחושת כבדות, תקיעות או עייפות מתמשכת", icon: "😔" },
+    { text: "דפוסים רגשיים שחוזרים שוב ושוב", icon: "🔄" },
+    { text: "קשיי ריכוז, מתח או עומס פנימי", icon: "🌀" },
+    { text: "רצון להתחבר מחדש לשקט ולבהירות פנימית", icon: "🌸" },
   ];
 
   return (
@@ -28,20 +30,32 @@ const HowItWorksSection = () => {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gradient leading-tight px-4">
-            איך זה עובד בפועל?
+            למי זה מתאים
           </h2>
           
           <div className="h-1 w-32 bg-gradient-to-r from-accent via-peach to-accent mx-auto rounded-full"></div>
           
-          <div className="grid md:grid-cols-2 gap-6 pt-12 max-w-4xl mx-auto px-4">
-            {steps.map((step, index) => (
+          <p className="text-lg md:text-xl lg:text-2xl text-foreground/80 leading-relaxed max-w-3xl mx-auto px-4">
+            הריפוי התודעתי מתאים לכל מי שמרגיש תקיעות, עומס, מתח או כאב — רגשי או גופני —
+            <br />
+            ומחפש דרך אחרת, עדינה ומדויקת יותר להבין, לשחרר ולהתרפא.
+          </p>
+          
+          <div className="pt-8 px-4">
+            <p className="text-xl md:text-2xl font-bold text-primary mb-6">
+              מטופלים רבים מגיעים עם אתגרים כמו:
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto px-4">
+            {challenges.map((challenge, index) => (
               <div
                 key={index}
                 className="group relative bg-gradient-to-br from-muted/50 to-background p-6 md:p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50 hover:border-accent/30 hover:-translate-y-2"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-gradient-to-br from-accent to-peach text-white w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center text-xl md:text-2xl shadow-lg group-hover:scale-110 transition-transform">
-                  {step.icon}
+                  {challenge.icon}
                 </div>
                 
                 <div className="flex items-start gap-3 md:gap-4 pt-2">
@@ -49,7 +63,7 @@ const HowItWorksSection = () => {
                     <Check className="h-5 w-5 md:h-6 md:w-6" />
                   </div>
                   <p className="text-base md:text-lg text-foreground/80 text-right flex-1 leading-relaxed group-hover:text-foreground transition-colors">
-                    {step.text}
+                    {challenge.text}
                   </p>
                 </div>
 
@@ -57,12 +71,6 @@ const HowItWorksSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-peach/0 group-hover:from-accent/5 group-hover:to-peach/5 rounded-3xl transition-all duration-300 pointer-events-none"></div>
               </div>
             ))}
-          </div>
-          
-          <div className="pt-8 px-4">
-            <p className="text-lg md:text-xl lg:text-2xl font-medium bg-gradient-to-r from-accent to-peach bg-clip-text text-transparent inline-block">
-              התהליך מותאם באופן אישי, ויכול לשלב כלים שונים בהתאם לצורך.
-            </p>
           </div>
         </div>
       </div>

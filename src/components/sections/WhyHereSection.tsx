@@ -1,5 +1,5 @@
 import healingImage from "@/assets/healing-woman.jpg";
-import { Heart, Shield, Users } from "lucide-react";
+import { Heart, Shield, Users, Sparkles } from "lucide-react";
 
 const WhyHereSection = () => {
   return (
@@ -16,34 +16,63 @@ const WhyHereSection = () => {
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gradient leading-tight">
-              למה דווקא כאן
+              למה לבחור במרכז לריפוי תודעתי
             </h2>
             
             <div className="h-1 w-24 bg-gradient-to-r from-accent to-peach rounded-full"></div>
-            
-            <p className="text-lg md:text-xl lg:text-2xl text-foreground/80 leading-relaxed">
-              המרכז לריפוי תודעתי שם במרכז את <span className="text-primary font-semibold">האדם, לא את השיטה</span>.
-            </p>
 
             <div className="space-y-4 md:space-y-6">
               <div className="flex items-start gap-3 md:gap-4 p-4 md:p-6 bg-gradient-to-br from-muted/50 to-background rounded-2xl border border-border/50 hover:border-accent/30 transition-all hover:scale-105 shadow-lg">
                 <div className="bg-accent/10 p-2 md:p-3 rounded-xl flex-shrink-0">
-                  <Shield className="h-5 w-5 md:h-6 md:w-6 text-accent" />
+                  <Heart className="h-5 w-5 md:h-6 md:w-6 text-accent" />
                 </div>
                 <div className="flex-1 text-right">
                   <p className="text-base md:text-lg text-foreground/80">
-                    כלים עדינים ומדויקים במרחב <span className="text-primary font-semibold">מכיל ולא שיפוטי</span>
+                    <span className="text-primary font-semibold">גישה רכה, רגישה ומכילה</span>
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3 md:gap-4 p-4 md:p-6 bg-gradient-to-br from-accent/10 to-peach/10 rounded-2xl border border-accent/20 hover:border-accent/40 transition-all hover:scale-105 shadow-lg">
                 <div className="bg-accent/10 p-2 md:p-3 rounded-xl flex-shrink-0">
+                  <Shield className="h-5 w-5 md:h-6 md:w-6 text-accent" />
+                </div>
+                <div className="flex-1 text-right">
+                  <p className="text-base md:text-lg text-foreground/80">
+                    <span className="text-primary font-semibold">שילוב של עבודה תודעתית, רגשית ופיזית</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 md:gap-4 p-4 md:p-6 bg-gradient-to-br from-muted/50 to-background rounded-2xl border border-border/50 hover:border-accent/30 transition-all hover:scale-105 shadow-lg">
+                <div className="bg-accent/10 p-2 md:p-3 rounded-xl flex-shrink-0">
                   <Users className="h-5 w-5 md:h-6 md:w-6 text-accent" />
                 </div>
                 <div className="flex-1 text-right">
                   <p className="text-base md:text-lg text-foreground/80">
-                    מפגשים בקליניקה או אונליין – <span className="text-accent font-semibold">בקצב שנכון לכם</span>
+                    <span className="text-accent font-semibold">טיפול מותאם אישית – בקליניקה או בזום</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 md:gap-4 p-4 md:p-6 bg-gradient-to-br from-accent/10 to-peach/10 rounded-2xl border border-accent/20 hover:border-accent/40 transition-all hover:scale-105 shadow-lg">
+                <div className="bg-accent/10 p-2 md:p-3 rounded-xl flex-shrink-0">
+                  <Sparkles className="h-5 w-5 md:h-6 md:w-6 text-accent" />
+                </div>
+                <div className="flex-1 text-right">
+                  <p className="text-base md:text-lg text-foreground/80">
+                    <span className="text-primary font-semibold">תוצאות עמוקות ומחזיקות לאורך זמן</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 md:gap-4 p-4 md:p-6 bg-gradient-to-br from-muted/50 to-background rounded-2xl border border-border/50 hover:border-accent/30 transition-all hover:scale-105 shadow-lg">
+                <div className="bg-accent/10 p-2 md:p-3 rounded-xl flex-shrink-0">
+                  <Shield className="h-5 w-5 md:h-6 md:w-6 text-accent" />
+                </div>
+                <div className="flex-1 text-right">
+                  <p className="text-base md:text-lg text-foreground/80">
+                    <span className="text-accent font-semibold">דיסקרטיות מלאה ואמון מלא בתהליך</span>
                   </p>
                 </div>
               </div>

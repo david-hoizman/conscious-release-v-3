@@ -149,11 +149,15 @@ const ContactSection = () => {
                 <div className="space-y-4 md:space-y-6 text-center">
                   <MapPin className="h-10 w-10 md:h-12 md:w-12 text-accent mx-auto" />
                   <div>
-                    <p className="text-lg md:text-xl font-semibold text-primary mb-2">מיקום הטיפולים</p>
+                    <p className="text-lg md:text-xl font-semibold text-primary mb-2">איך מתחילים</p>
                     <p className="text-base md:text-lg text-foreground/70">
-                      קליניקה בבני ברק
+                      הטיפול מתקיים בקליניקה או בזום,
                       <br />
-                      או מפגשי זום
+                      באווירה רגועה, בטוחה ומלאת אמון.
+                      <br /><br />
+                      אפשר להתחיל בשיחה קצרה ללא התחייבות,
+                      <br />
+                      כדי להבין יחד מה מתאים לכם.
                     </p>
                   </div>
                 </div>
@@ -182,7 +186,18 @@ const ContactSection = () => {
             <img src={logo} alt="המרכז לריפוי תודעתי" className="h-24 md:h-32 w-auto mx-auto object-contain" />
           </div>
           
-          <div className="pt-6 md:pt-8 pb-4">
+          <div className="space-y-4 text-center">
+            <p className="text-lg md:text-xl font-semibold text-primary">המרכז לריפוי תודעתי</p>
+            <p className="text-base md:text-lg text-foreground/70">
+              כנרת 15, בני ברק
+              <br />
+              📱 052-717-6000
+              <br />
+              🌐 mindcenter.co.il
+            </p>
+          </div>
+          
+          <div className="pt-6 md:pt-8 pb-4 border-t border-border/30 mt-8">
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} כל הזכויות שמורות
             </p>

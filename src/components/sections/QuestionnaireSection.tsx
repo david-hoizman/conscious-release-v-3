@@ -5,15 +5,14 @@ import { Card } from "@/components/ui/card";
 import { ClipboardCheck, Sparkles } from "lucide-react";
 
 const QuestionnaireSection = () => {
-  const [answers, setAnswers] = useState<boolean[]>([false, false, false, false, false]);
+  const [answers, setAnswers] = useState<boolean[]>([false, false, false, false]);
   const [showResult, setShowResult] = useState(false);
 
   const questions = [
-    "האם אתם מרגישים עומס רגשי או מחשבתי שקשה לשחרר?",
-    "האם יש תחושות שחוזרות על עצמן למרות שניסיתם \"להמשיך הלאה\"?",
-    "האם אתם מרגישים לפעמים תקיעות, חוסר שקט או חוסר מיקוד?",
-    "האם אתם מרגישים שאתם מחזיקים בפנים יותר ממה שנוח לכם להודות?",
-    "האם הייתם רוצים להרגיש יותר שלווה, חופש וביטחון פנימי?",
+    "האם אתם חווים עומס רגשי, מחשבות בלתי פוסקות או מתח בגוף?",
+    "האם יש כאבים גופניים שחוזרים שוב ושוב, בלי סיבה רפואית ברורה?",
+    "האם אתם מרגישים שמגיע לכם יותר שקט, חופש ואיזון?",
+    "האם אתם רוצים להבין את עצמכם לעומק וליצור שינוי אמיתי מבפנים?",
   ];
 
   const handleCheckboxChange = (index: number, checked: boolean) => {
@@ -55,8 +54,12 @@ const QuestionnaireSection = () => {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gradient leading-tight px-4">
-            שאלון קצר: האם זה מתאים לכם?
+            שאלון עצמי — האם זה הזמן לטפל בעצמכם?
           </h2>
+          
+          <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto px-4">
+            ענו לעצמכם בכנות:
+          </p>
           
           <div className="h-1 w-32 bg-gradient-to-r from-accent via-peach to-accent mx-auto rounded-full"></div>
           
@@ -98,11 +101,13 @@ const QuestionnaireSection = () => {
                   
                   <p className="text-xl md:text-2xl font-bold text-primary">
                     {isMatch
-                      ? "נראה שהתיאור שלכם מתאים לתהליך של ריפוי תודעתי."
+                      ? "אם עניתם \"כן\" על יותר משתי שאלות – זה סימן שהגיע הזמן להקשיב פנימה."
                       : "תודה שמילאתם את השאלון."}
                   </p>
                   <p className="text-base md:text-lg text-foreground/70">
-                    זה לא אבחון – זו הזמנה להקשעה פנימה.
+                    {isMatch 
+                      ? "במרכז לריפוי תודעתי תגלו גישה אחרת: רכה, לא שיפוטית, שמאפשרת שינוי עמוק ויציב מבפנים."
+                      : "זה לא אבחון – זו הזמנה להקשבה פנימה."}
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center pt-4">

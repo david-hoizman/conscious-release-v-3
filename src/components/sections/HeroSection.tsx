@@ -48,9 +48,13 @@ const HeroSection = () => {
         <p className="text-lg sm:text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed animate-fade-in px-4" style={{ animationDelay: '0.2s' }}>
           כל ריפוי אמיתי מתחיל בתודעה.
           <br />
-          <span className="text-primary font-medium">מרחב רגוע ומכיל</span> שבו אפשר לשחרר עומסים רגשיים ודפוסים מעכבים,
+          כאן נוצר <span className="text-primary font-medium">מרחב רגוע ומכיל</span>, שבו ניתן לשחרר עומסים רגשיים ודפוסים מעכבים —
           <br className="hidden sm:block" />
-          ולהתחבר מחדש לשקט ולחופש הפנימי.
+          ולאפשר ריפוי עמוק גם לנפש וגם לגוף.
+          <br />
+          דרך חיבור עדין לתת־המודע, אנחנו מזהים את שורש הבעיה ומשחררים את מה שכבר לא משרת אותנו,
+          <br className="hidden sm:block" />
+          כדי להתחבר מחדש לשקט, לבהירות ולחיוניות מבפנים.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center pt-4 md:pt-6 animate-fade-in px-4" style={{ animationDelay: '0.4s' }}>
