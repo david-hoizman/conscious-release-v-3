@@ -181,6 +181,9 @@ const ContactSection = () => {
               <br />
               mindcenter.co.il
             </p>
+            <p className="text-xs text-muted-foreground/60 mt-4">
+              התוכן והשירותים באתר נועדו לתמיכה רגשית ותודעתית בלבד, ואינם מהווים טיפול רפואי או התחייבות לתוצאה.
+            </p>
           </div>
         </div>
       </footer>
