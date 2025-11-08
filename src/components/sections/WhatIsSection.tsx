@@ -1,8 +1,15 @@
 import { Heart, Brain, Sparkles } from "lucide-react";
+import healingWomanImage from "@/assets/healing-woman.jpg";
 
 const WhatIsSection = () => {
   return (
     <section id="what-is" className="py-24 bg-card relative overflow-hidden" dir="rtl">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 opacity-[0.08] bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${healingWomanImage})` }}
+      ></div>
+      
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-peach/5 rounded-full blur-3xl"></div>

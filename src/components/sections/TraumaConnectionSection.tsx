@@ -1,8 +1,15 @@
 import { ArrowLeft, CircleDot } from "lucide-react";
+import healingHandsImage from "@/assets/healing-hands.jpg";
 
 const TraumaConnectionSection = () => {
   return (
     <section className="py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 opacity-[0.06] bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${healingHandsImage})` }}
+      ></div>
+      
       {/* Decorative elements */}
       <div className="absolute top-1/2 right-10 w-2 h-32 bg-gradient-to-b from-accent to-transparent rounded-full"></div>
       <div className="absolute top-1/2 left-10 w-2 h-32 bg-gradient-to-b from-peach to-transparent rounded-full"></div>

@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Card } from "@/components/ui/card";
 import logo from "@/assets/logo-full.png";
+import lotusImage from "@/assets/lotus-healing.jpg";
 import { Mail, Phone, Send, MessageCircle, MapPin } from "lucide-react";
 
 const ContactSection = () => {
@@ -31,6 +32,12 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 opacity-[0.05] bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${lotusImage})` }}
+      ></div>
+      
       {/* Decorative elements */}
       <div className="absolute top-20 right-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-20 w-96 h-96 bg-peach/5 rounded-full blur-3xl"></div>
