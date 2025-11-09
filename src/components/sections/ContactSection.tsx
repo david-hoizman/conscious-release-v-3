@@ -38,7 +38,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section ref={ref} id="contact" className="snap-section py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
+    <section ref={ref} id="contact" className="snap-section py-24 bg-background/80 relative overflow-hidden" dir="rtl">
       {/* Background image with parallax */}
       <div className="absolute inset-0">
         <div 

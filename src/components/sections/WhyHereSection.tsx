@@ -17,7 +17,7 @@ const WhyHereSection = () => {
   const tilt7 = useTilt({ maxTilt: 8, scale: 1.03 });
   
   return (
-    <section ref={ref} className="snap-section py-24 bg-card relative overflow-hidden" dir="rtl">
+    <section ref={ref} className="snap-section py-24 bg-background/80 relative overflow-hidden" dir="rtl">
       {/* Background image with parallax */}
       <div className="absolute inset-0">
         <div 

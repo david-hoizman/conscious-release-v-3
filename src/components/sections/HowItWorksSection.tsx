@@ -24,7 +24,7 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section ref={ref} id="how-it-works" className="snap-section py-24 bg-card relative overflow-hidden" dir="rtl">
+    <section ref={ref} id="how-it-works" className="snap-section py-24 bg-background/80 relative overflow-hidden" dir="rtl">
       {/* Background image with parallax */}
       <div className="absolute inset-0">
         <div 
