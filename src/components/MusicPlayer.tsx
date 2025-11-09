@@ -33,8 +33,12 @@ const MusicPlayer = () => {
         onClick={toggleMute}
         size="icon"
         variant="outline"
-        className="rounded-full w-14 h-14 bg-background/80 backdrop-blur-sm border-2 shadow-lg hover:scale-110 transition-transform"
-        title={isMuted ? "הפעל מוזיקה" : "השתק מוזיקה"}
+        className={`rounded-full w-14 h-14 backdrop-blur-sm border-2 shadow-lg hover:scale-110 transition-all ${
+          isMuted 
+            ? 'bg-red-500/20 border-red-500/50 text-red-500 hover:bg-red-500/30' 
+            : 'bg-background/80 text-foreground'
+        }`}
+        title={isMuted ? "לחץ להפעלת המוזיקה" : "לחץ להשתקת המוזיקה"}
       >
         {isMuted ? (
           <VolumeX className="h-6 w-6" />
