@@ -64,7 +64,7 @@ const Header = () => {
           {/* Navigation */}
           <nav className="grid grid-cols-4 md:flex gap-1 md:gap-3 lg:gap-4 justify-center flex-1 max-w-md md:max-w-none mx-auto">
             {[
-              { id: "what-is", label: "מה זה ריפוי תודעתי" },
+              { id: "what-is", label: "ריפוי תודעתי" },
               { id: "how-it-works", label: "איך זה עובד", scrollTo: "trauma-connection" },
               { id: "why-here", label: "למה כאן" },
               { id: "next-steps", label: "איך מתקדמים", scrollTo: "faq" }
