@@ -10,7 +10,7 @@ const Header = () => {
       setShowLogo(window.scrollY > 100);
 
       // Detect which section is currently in view
-      const sections = ["what-is", "how-it-works", "why-here", "testimonials", "faq", "questionnaire", "contact"];
+      const sections = ["what-is", "trauma-connection", "how-it-works", "questionnaire", "why-here", "testimonials", "faq", "contact"];
       const scrollPosition = window.scrollY + window.innerHeight / 2.5;
 
       for (const sectionId of sections) {
@@ -57,11 +57,12 @@ const Header = () => {
           <nav className="flex gap-1 md:gap-3 lg:gap-4 flex-wrap justify-center flex-1">
             {[
               { id: "what-is", label: "מה זה ריפוי תודעתי" },
-              { id: "how-it-works", label: "איך זה עובד" },
+              { id: "trauma-connection", label: "איך זה עובד" },
+              { id: "how-it-works", label: "למי זה מתאים" },
+              { id: "questionnaire", label: "שאלון" },
               { id: "why-here", label: "למה כאן" },
               { id: "testimonials", label: "המלצות" },
               { id: "faq", label: "שאלות נפוצות" },
-              { id: "questionnaire", label: "שאלון" },
               { id: "contact", label: "יצירת קשר" }
             ].map((item) => (
               <button
