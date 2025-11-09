@@ -18,7 +18,7 @@ const Header = () => {
           <img 
             src={logoHeader} 
             alt="המרכז לריפוי תודעתי" 
-            className="h-20 w-auto object-contain absolute right-0"
+            className="h-60 w-auto object-contain absolute right-0"
           />
           
           <nav className="flex gap-6 lg:gap-8 mx-auto">
