@@ -48,7 +48,7 @@ const Header = () => {
           <img 
             src={logoHeader} 
             alt="המרכז לריפוי תודעתי" 
-            className={`h-12 md:h-20 w-auto object-contain transition-opacity duration-500 ${
+            className={`h-14 md:h-24 w-auto object-contain transition-opacity duration-500 ${
               showLogo ? "opacity-100" : "opacity-0"
             }`}
           />
@@ -67,7 +67,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative text-[0.45rem] md:text-sm lg:text-base transition-all group whitespace-nowrap px-0.5 md:px-0 ${
+                className={`relative text-[0.54rem] md:text-[1.05rem] lg:text-[1.2rem] transition-all group whitespace-nowrap px-0.5 md:px-0 ${
                   activeSection === item.id 
                     ? "text-foreground opacity-100 font-bold" 
                     : "text-foreground/70 opacity-40 hover:opacity-70 hover:text-accent font-medium"
