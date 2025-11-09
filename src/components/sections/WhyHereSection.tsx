@@ -21,7 +21,7 @@ const WhyHereSection = () => {
       {/* Background image with parallax */}
       <div className="absolute inset-0">
         <div 
-          className="absolute inset-0 opacity-[0.35] md:opacity-[0.40] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out"
+          className="absolute inset-0 opacity-[0.55] md:opacity-[0.70] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out"
           style={{ 
             backgroundImage: `url(${healingHandsImage})`,
             transform: `translateY(${parallaxOffset}px)`,
