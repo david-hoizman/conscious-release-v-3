@@ -29,11 +29,10 @@ const TermsOfService = () => {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient">
               ⚖️ תנאי שימוש והצהרת אחריות
             </h1>
-            <p className="text-lg text-foreground/70">
-              המרכז לריפוי תודעתי
-              <br />
-              עודכן לאחרונה: נובמבר 2025
-            </p>
+            <div className="text-lg text-foreground/70 space-y-1">
+              <p>המרכז לריפוי תודעתי</p>
+              <p>עודכן לאחרונה: נובמבר 2025</p>
+            </div>
           </div>
 
           {/* Sections */}

@@ -62,13 +62,14 @@ const HeroSection = () => {
           </div>
         </div>
         
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed animate-fade-in px-4" style={{ animationDelay: '0.2s' }}>
-          כל תהליך של שינוי וריפוי אמיתי מתחיל בתודעה.
-          <br />
-          כאן נוצר <span className="text-primary font-medium">מרחב רגוע ומכיל</span>, שבו ניתן לשחרר עומסים רגשיים ודפוסים מעכבים,
-          <br className="hidden sm:block" />
-          ולתמוך באיזון של הגוף והנפש בדרך נעימה, מכבדת ולא שיפוטית.
-        </p>
+        <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/70 max-w-3xl mx-auto animate-fade-in px-4 space-y-2 md:space-y-3" style={{ animationDelay: '0.2s' }}>
+          <p className="leading-[1.7] md:leading-relaxed">
+            כל תהליך של שינוי וריפוי אמיתי מתחיל בתודעה.
+          </p>
+          <p className="leading-[1.7] md:leading-relaxed">
+            כאן נוצר <span className="text-primary font-medium">מרחב רגוע ומכיל</span>, שבו ניתן לשחרר עומסים רגשיים ודפוסים מעכבים, ולתמוך באיזון של הגוף והנפש בדרך נעימה, מכבדת ולא שיפוטית.
+          </p>
+        </div>
         
         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center pt-4 md:pt-6 animate-fade-in px-4" style={{ animationDelay: '0.4s' }}>
           <Button

@@ -157,16 +157,15 @@ const ContactSection = () => {
                 <div className="space-y-4 md:space-y-6 text-center">
                   <MapPin className="h-10 w-10 md:h-12 md:w-12 text-sage mx-auto transition-all" />
                   <div>
-                    <p className="text-lg md:text-xl font-semibold text-primary mb-2">איך מתחילים</p>
-                    <p className="text-base md:text-lg text-foreground/70">
-                      הטיפול מתקיים בקליניקה או בזום,
-                      <br />
-                      באווירה רגועה, בטוחה ומלאת אמון.
-                      <br /><br />
-                      אפשר להתחיל בשיחה קצרה ללא התחייבות,
-                      <br />
-                      כדי להבין יחד מה מתאים לכם.
-                    </p>
+                    <p className="text-lg md:text-xl font-semibold text-primary mb-3">איך מתחילים</p>
+                    <div className="text-base md:text-lg text-foreground/70 space-y-3 md:space-y-4">
+                      <p className="leading-[1.7] md:leading-relaxed">
+                        הטיפול מתקיים בקליניקה או בזום, באווירה רגועה, בטוחה ומלאת אמון.
+                      </p>
+                      <p className="leading-[1.7] md:leading-relaxed">
+                        אפשר להתחיל בשיחה קצרה ללא התחייבות, כדי להבין יחד מה מתאים לכם.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </Card>
@@ -192,28 +191,26 @@ const ContactSection = () => {
         <div className="container mx-auto px-4 text-center space-y-6 md:space-y-8 relative z-10">
           <div className="space-y-4 text-center">
             <p className="text-lg md:text-xl font-semibold text-primary">המרכז לריפוי תודעתי</p>
-            <p className="text-base md:text-lg text-foreground/70">
-              כנרת 15, בני ברק
-              <br />
-              📱 052-717-6000
-              <br />
-              💬 <a href="https://wa.me/972527176000" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">לחצו לשיחה בוואטסאפ</a>
-            </p>
+            <div className="text-base md:text-lg text-foreground/70 space-y-2">
+              <p>כנרת 15, בני ברק</p>
+              <p>📱 052-717-6000</p>
+              <p>💬 <a href="https://wa.me/972527176000" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">לחצו לשיחה בוואטסאפ</a></p>
+            </div>
           </div>
           
           <div className="pt-6 md:pt-8 pb-4 border-t border-border/30 mt-8">
-            <p className="text-sm text-muted-foreground">
-              © כל הזכויות שמורות — המרכז לריפוי תודעתי 🌿
-              <br />
-              mindcenter.co.il
-            </p>
-            <p className="text-xs text-muted-foreground/60 mt-4">
-              התוכן והשירותים באתר נועדו לתמיכה רגשית ותודעתית בלבד, ואינם מהווים טיפול רפואי או התחייבות לתוצאה.
-              <br />
-              <Link to="/terms-of-service" className="hover:text-accent transition-colors underline">
-                הטיפול בהתאם לתנאי השימוש
-              </Link>
-            </p>
+            <div className="text-sm text-muted-foreground space-y-1">
+              <p>© כל הזכויות שמורות — המרכז לריפוי תודעתי 🌿</p>
+              <p>mindcenter.co.il</p>
+            </div>
+            <div className="text-xs text-muted-foreground/60 mt-4 space-y-2">
+              <p>התוכן והשירותים באתר נועדו לתמיכה רגשית ותודעתית בלבד, ואינם מהווים טיפול רפואי או התחייבות לתוצאה.</p>
+              <p>
+                <Link to="/terms-of-service" className="hover:text-accent transition-colors underline">
+                  הטיפול בהתאם לתנאי השימוש
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
       </footer>
