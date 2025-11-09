@@ -10,8 +10,8 @@ const Header = () => {
       setShowLogo(window.scrollY > 100);
 
       // Detect which section is currently in view
-      const sections = ["what-is", "how-it-works", "questionnaire", "contact"];
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      const sections = ["what-is", "how-it-works", "why-here", "testimonials", "faq", "questionnaire", "contact"];
+      const scrollPosition = window.scrollY + window.innerHeight / 2.5;
 
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
@@ -53,20 +53,23 @@ const Header = () => {
       
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center justify-center relative">
-          <nav className="flex gap-1 md:gap-6 lg:gap-8 flex-wrap justify-center mr-28 md:mx-auto">
+          <nav className="flex gap-1 md:gap-3 lg:gap-4 flex-wrap justify-center mr-28 md:mx-auto">
             {[
               { id: "what-is", label: "מה זה ריפוי תודעתי" },
               { id: "how-it-works", label: "איך זה עובד" },
+              { id: "why-here", label: "למה כאן" },
+              { id: "testimonials", label: "המלצות" },
+              { id: "faq", label: "שאלות נפוצות" },
               { id: "questionnaire", label: "שאלון" },
               { id: "contact", label: "יצירת קשר" }
             ].map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative text-xs md:text-xl lg:text-2xl font-medium transition-all group whitespace-nowrap px-0.5 md:px-0 ${
+                className={`relative text-[0.45rem] md:text-sm lg:text-base transition-all group whitespace-nowrap px-0.5 md:px-0 ${
                   activeSection === item.id 
-                    ? "text-foreground opacity-100" 
-                    : "text-foreground/70 opacity-40 hover:opacity-70 hover:text-accent"
+                    ? "text-foreground opacity-100 font-bold" 
+                    : "text-foreground/70 opacity-40 hover:opacity-70 hover:text-accent font-medium"
                 }`}
               >
                 {item.label}
