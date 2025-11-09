@@ -54,7 +54,7 @@ const Header = () => {
           />
           
           {/* Navigation */}
-          <nav className="flex gap-1 md:gap-3 lg:gap-4 flex-wrap justify-center flex-1">
+          <nav className="flex gap-1 md:gap-3 lg:gap-4 flex-wrap justify-center flex-1 max-w-md md:max-w-none mx-auto">
             {[
               { id: "what-is", label: "מה זה ריפוי תודעתי" },
               { id: "trauma-connection", label: "איך זה עובד" },
@@ -68,7 +68,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative text-[0.54rem] md:text-[1.05rem] lg:text-[1.2rem] transition-all group whitespace-nowrap px-0.5 md:px-0 ${
+                className={`relative text-[0.648rem] md:text-[1.05rem] lg:text-[1.2rem] transition-all group whitespace-nowrap px-0.5 md:px-0 flex-shrink-0 basis-[calc(25%-0.25rem)] md:basis-auto ${
                   activeSection === item.id 
                     ? "text-foreground opacity-100 font-bold" 
                     : "text-foreground/70 opacity-40 hover:opacity-70 hover:text-accent font-medium"
