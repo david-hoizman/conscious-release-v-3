@@ -1,6 +1,18 @@
+import { useState, useEffect } from "react";
 import logoHeader from "@/assets/logo-header-dark.png";
 
 const Header = () => {
+  const [showLogo, setShowLogo] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowLogo(window.scrollY > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -16,7 +28,9 @@ const Header = () => {
       <img 
         src={logoHeader} 
         alt="המרכז לריפוי תודעתי" 
-        className="h-60 w-auto object-contain fixed z-50"
+        className={`h-60 w-auto object-contain fixed z-50 transition-opacity duration-500 ${
+          showLogo ? "opacity-100" : "opacity-0"
+        }`}
         style={{ top: '-2rem', right: '-1rem' }}
       />
       
