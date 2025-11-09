@@ -169,8 +169,25 @@ const TestimonialsSection = () => {
                     onMouseMove={tilt.handleMouseMove}
                     onMouseLeave={tilt.handleMouseLeave}
                     style={tilt.tiltStyle}
-                    className="relative"
+                    className="relative space-y-3"
                   >
+                    {/* Patient info above the message */}
+                    <div className="text-right space-y-1 px-2">
+                      <div className="flex items-baseline gap-2 justify-end">
+                        <h3 className="font-bold text-lg text-foreground">
+                          {testimonial.name}
+                        </h3>
+                        {testimonial.age && (
+                          <span className="text-sm text-foreground/60">
+                            {testimonial.gender === "female" ? "בת" : "בן"} {testimonial.age}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-sm font-semibold text-accent">
+                        {testimonial.issue}
+                      </p>
+                    </div>
+
                     {/* WhatsApp-style message bubble */}
                     <div className="bg-[#DCF8C6] rounded-lg p-4 shadow-lg relative hover:shadow-xl transition-shadow">
                       {/* Tail/Triangle */}
@@ -181,24 +198,6 @@ const TestimonialsSection = () => {
                         <div className="flex items-center gap-1 text-gray-500 text-xs pb-2 border-b border-gray-300/30">
                           <Forward className="h-3 w-3" />
                           <span className="font-medium">הועברה</span>
-                        </div>
-                        {/* Name (like contact name in WhatsApp) */}
-                        <div className="flex items-baseline gap-2">
-                          <h3 className="font-bold text-base text-[#075E54]">
-                            {testimonial.name}
-                          </h3>
-                          {testimonial.age && (
-                            <span className="text-xs text-gray-600">
-                              {testimonial.gender === "female" ? "בת" : "בן"} {testimonial.age}
-                            </span>
-                          )}
-                        </div>
-
-                        {/* Issue tag */}
-                        <div className="inline-block bg-white/60 px-3 py-1 rounded-full">
-                          <p className="text-xs font-semibold text-[#075E54]">
-                            {testimonial.issue}
-                          </p>
                         </div>
 
                         {/* Message text */}
