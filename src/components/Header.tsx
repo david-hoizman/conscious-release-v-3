@@ -42,13 +42,13 @@ const Header = () => {
       className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border/30"
       dir="rtl"
     >
-      <div className="container mx-auto px-4 py-3 md:py-4">
+      <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between relative">
           {/* Logo */}
           <img 
             src={logoHeader} 
             alt="המרכז לריפוי תודעתי" 
-            className={`h-16 md:h-28 w-auto object-contain transition-opacity duration-500 ${
+            className={`h-12 md:h-20 w-auto object-contain transition-opacity duration-500 ${
               showLogo ? "opacity-100" : "opacity-0"
             }`}
           />
