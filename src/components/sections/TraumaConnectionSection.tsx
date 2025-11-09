@@ -1,5 +1,5 @@
 import { CircleDot, Sparkles } from "lucide-react";
-import healingHandsImage from "@/assets/healing-hands.jpg";
+import healingHandsImage from "@/assets/woman-flowers.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useParallax } from "@/hooks/use-parallax";
 import { useImageReveal } from "@/hooks/use-image-reveal";

@@ -1,5 +1,5 @@
 import { Check, Flower2 } from "lucide-react";
-import healingHandsImage from "@/assets/healing-hands.jpg";
+import healingHandsImage from "@/assets/hands-butterflies.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useParallax } from "@/hooks/use-parallax";
 import { useTilt } from "@/hooks/use-tilt";

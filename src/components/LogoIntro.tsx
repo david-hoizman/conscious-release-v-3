@@ -1,4 +1,4 @@
-import logo from "@/assets/logo-full.png";
+import logo from "@/assets/logo-main.png";
 
 interface LogoIntroProps {
   showIntro: boolean;

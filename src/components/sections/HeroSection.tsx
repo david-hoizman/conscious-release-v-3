@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo-full.png";
+import logo from "@/assets/logo-main.png";
 import { Sparkles } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useTypingEffect } from "@/hooks/use-typing-effect";

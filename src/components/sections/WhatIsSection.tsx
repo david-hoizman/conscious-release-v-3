@@ -1,5 +1,5 @@
 import { Heart, Brain, Sparkles } from "lucide-react";
-import healingWomanImage from "@/assets/healing-woman.jpg";
+import healingWomanImage from "@/assets/flower-pastel.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useParallax } from "@/hooks/use-parallax";
 import { useImageReveal } from "@/hooks/use-image-reveal";
