@@ -48,7 +48,7 @@ const Header = () => {
           <img 
             src={logoHeader} 
             alt="המרכז לריפוי תודעתי" 
-            className={`h-[4.375rem] md:h-[5.625rem] w-auto object-contain transition-opacity duration-500 max-h-full ${
+            className={`h-[5.46875rem] md:h-[7.03125rem] w-auto object-contain transition-opacity duration-500 max-h-full ${
               showLogo ? "opacity-100" : "opacity-0"
             }`}
           />
