@@ -7,7 +7,11 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsVisible(window.scrollY > 300);
+      const scrollHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const clientHeight = window.innerHeight;
+      const isNearBottom = scrollTop + clientHeight >= scrollHeight - 100;
+      setIsVisible(isNearBottom);
     };
 
     window.addEventListener("scroll", handleScroll);
