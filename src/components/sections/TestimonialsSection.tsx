@@ -15,7 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Star, Plus, Heart } from "lucide-react";
+import { Star, Plus, Heart, CheckCheck } from "lucide-react";
 
 interface Testimonial {
   id: number;
@@ -163,38 +163,52 @@ const TestimonialsSection = () => {
                 const tilt = useTilt({ maxTilt: 8, scale: 1.02 });
                 return (
                 <CarouselItem key={testimonial.id} className="pl-4 md:basis-1/2 lg:basis-1/2">
-                  <Card 
+                  {/* WhatsApp Message Bubble */}
+                  <div
                     ref={tilt.ref}
                     onMouseMove={tilt.handleMouseMove}
                     onMouseLeave={tilt.handleMouseLeave}
                     style={tilt.tiltStyle}
-                    className="p-6 md:p-8 bg-card/80 backdrop-blur-sm shadow-xl rounded-3xl border-2 border-border/50 hover:border-accent/30 transition-colors hover:shadow-2xl h-full"
+                    className="relative"
                   >
-                    <div className="space-y-4 text-center">
-                      {/* Stars */}
-                      <StarRating rating={testimonial.rating} />
+                    {/* WhatsApp-style message bubble */}
+                    <div className="bg-[#DCF8C6] rounded-lg p-4 shadow-lg relative hover:shadow-xl transition-shadow">
+                      {/* Tail/Triangle */}
+                      <div className="absolute left-0 top-3 w-0 h-0 border-t-[8px] border-t-transparent border-r-[12px] border-r-[#DCF8C6] border-b-[8px] border-b-transparent -translate-x-3"></div>
+                      
+                      <div className="space-y-3">
+                        {/* Name (like contact name in WhatsApp) */}
+                        <div className="flex items-baseline gap-2">
+                          <h3 className="font-bold text-base text-[#075E54]">
+                            {testimonial.name}
+                          </h3>
+                          {testimonial.age && (
+                            <span className="text-xs text-gray-600">
+                              {testimonial.gender === "female" ? "בת" : "בן"} {testimonial.age}
+                            </span>
+                          )}
+                        </div>
 
-                      {/* Name and Issue */}
-                      <div>
-                        <h3 className="font-bold text-lg text-primary">
-                          {testimonial.name}
-                          {testimonial.age && `, ${testimonial.gender === "female" ? "בת" : "בן"} ${testimonial.age}`}
-                        </h3>
-                        <p className="text-sm text-accent font-semibold mt-1">
-                          {testimonial.issue}
-                        </p>
-                      </div>
+                        {/* Issue tag */}
+                        <div className="inline-block bg-white/60 px-3 py-1 rounded-full">
+                          <p className="text-xs font-semibold text-[#075E54]">
+                            {testimonial.issue}
+                          </p>
+                        </div>
 
-                      {/* Testimonial Text with Quote Marks */}
-                      <div className="relative">
-                        <span className="absolute -top-4 -right-2 text-6xl text-accent/20 font-serif leading-none">"</span>
-                        <p className="text-foreground/80 leading-relaxed text-base lg:text-lg px-4">
+                        {/* Message text */}
+                        <p className="text-gray-800 leading-relaxed text-sm lg:text-base text-right">
                           {testimonial.text}
                         </p>
-                        <span className="absolute -bottom-8 -left-2 text-6xl text-accent/20 font-serif leading-none">"</span>
+
+                        {/* Time and checkmarks (WhatsApp style) */}
+                        <div className="flex items-center justify-end gap-1 text-xs text-gray-600">
+                          <span>15:42</span>
+                          <CheckCheck className="h-4 w-4 text-[#53BDEB]" />
+                        </div>
                       </div>
                     </div>
-                  </Card>
+                  </div>
                 </CarouselItem>
                 );
               })}
