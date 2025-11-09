@@ -49,14 +49,16 @@ const QuestionnaireSection = () => {
   return (
     <section ref={ref} id="questionnaire" className="snap-section py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
       {/* Background image with parallax */}
-      <div 
-        className="absolute inset-0 opacity-[0.35] md:opacity-[0.40] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out"
-        style={{ 
-          backgroundImage: `url(${lotusImage})`,
-          transform: `translateY(${parallaxOffset}px)`,
-          filter: 'saturate(1.2) contrast(1.1)'
-        }}
-      ></div>
+      <div className="absolute inset-0">
+        <div 
+          className="absolute inset-0 opacity-[0.35] md:opacity-[0.40] bg-contain md:bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out"
+          style={{ 
+            backgroundImage: `url(${lotusImage})`,
+            transform: `translateY(${parallaxOffset}px)`,
+            filter: 'saturate(1.2) contrast(1.1)'
+          }}
+        ></div>
+      </div>
       
       {/* Decorative elements */}
       <div className="absolute top-20 right-20 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
