@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card } from "@/components/ui/card";
 import { ClipboardCheck, Sparkles } from "lucide-react";
-import lotusImage from "@/assets/lotus-healing.jpg";
+import lotusImage from "@/assets/lotus-water.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useParallax } from "@/hooks/use-parallax";
 

@@ -1,5 +1,5 @@
 import { Heart, Shield, Users, Sparkles } from "lucide-react";
-import healingHandsImage from "@/assets/healing-hands.jpg";
+import healingHandsImage from "@/assets/healing-woman.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useParallax } from "@/hooks/use-parallax";
 import { useTilt } from "@/hooks/use-tilt";
