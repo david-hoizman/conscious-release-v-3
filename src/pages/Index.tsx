@@ -9,6 +9,7 @@ import FloatingWhatsAppCTA from "@/components/FloatingWhatsAppCTA";
 import FloatingBubbles from "@/components/FloatingBubbles";
 import LogoIntro from "@/components/LogoIntro";
 import LoadingSkeleton from "@/components/LoadingSkeleton";
+import ScrollToTop from "@/components/ScrollToTop";
 import HeroSection from "@/components/sections/HeroSection";
 import WhatIsSection from "@/components/sections/WhatIsSection";
 import TraumaConnectionSection from "@/components/sections/TraumaConnectionSection";
@@ -56,6 +57,7 @@ const Index = () => {
         <StickyCTA />
         <WhatsAppButton />
         <FloatingWhatsAppCTA />
+        <ScrollToTop />
         <HeroSection />
         <WhatIsSection />
         <TraumaConnectionSection />
