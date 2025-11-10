@@ -42,44 +42,6 @@ const HeroSection = () => {
             תהליך עדין של ריפוי תודעתי שמסייע לשחרר עומסים רגשיים
           </p>
         </div>
-        
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-2 md:gap-3 justify-center items-center pt-2 md:pt-4">
-          <Button
-            onClick={scrollToContact}
-            size="lg"
-            className="w-full sm:w-auto bg-sage hover:bg-sage/90 text-white px-8 py-5 md:py-6 text-base md:text-lg rounded-xl shadow-lg group"
-          >
-            בואו נדבר
-            <ArrowLeft className="mr-2 h-4 w-4 md:h-5 md:w-5 group-hover:-translate-x-1 transition-transform" />
-          </Button>
-          
-          <Link to="/questionnaire" className="w-full sm:w-auto">
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full border-2 border-sage text-sage hover:bg-sage hover:text-white px-8 py-5 md:py-6 text-base md:text-lg rounded-xl"
-            >
-              שאלון התאמה
-            </Button>
-          </Link>
-        </div>
-
-        {/* Quick stats */}
-        <div className="pt-4 md:pt-6 flex flex-wrap justify-center gap-4 md:gap-6 text-center">
-          <div>
-            <div className="text-2xl md:text-3xl font-bold text-sage">15+</div>
-            <div className="text-xs md:text-sm text-foreground/60">שנות ניסיון</div>
-          </div>
-          <div>
-            <div className="text-2xl md:text-3xl font-bold text-sage">500+</div>
-            <div className="text-xs md:text-sm text-foreground/60">לקוחות מרוצים</div>
-          </div>
-          <div>
-            <div className="text-2xl md:text-3xl font-bold text-sage">95%</div>
-            <div className="text-xs md:text-sm text-foreground/60">שביעות רצון</div>
-          </div>
-        </div>
       </div>
     </section>
   );
