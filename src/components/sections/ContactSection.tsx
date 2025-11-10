@@ -186,9 +186,13 @@ const ContactSection = () => {
             </div>
             <div className="text-xs text-muted-foreground/60 mt-4 space-y-2">
               <p>התוכן והשירותים באתר נועדו לתמיכה רגשית ותודעתית בלבד, ואינם מהווים טיפול רפואי או התחייבות לתוצאה.</p>
-              <p>
+              <p className="flex items-center justify-center gap-2 flex-wrap">
                 <Link to="/terms-of-service" className="hover:text-accent transition-colors underline">
                   הטיפול בהתאם לתנאי השימוש
+                </Link>
+                <span>•</span>
+                <Link to="/landing" className="hover:text-accent transition-colors underline">
+                  נחיתה
                 </Link>
               </p>
             </div>
