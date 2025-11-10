@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header
-      className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border/30 h-16 md:h-20"
+      className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border/30 h-14 md:h-16"
       dir="rtl"
     >
       <div className="container mx-auto px-4 h-full flex items-center">
@@ -27,22 +27,22 @@ const Header = () => {
           <img 
             src={logoHeader} 
             alt="המרכז לריפוי תודעתי" 
-            className={`h-[5.46875rem] md:h-[7.03125rem] w-auto object-contain transition-opacity duration-500 max-h-full ${
+            className={`h-[4rem] md:h-[5rem] w-auto object-contain transition-opacity duration-500 max-h-full ${
               showLogo ? "opacity-100" : "opacity-0"
             }`}
           />
           
           {/* Navigation Tabs */}
-          <nav className="flex gap-2 md:gap-3 justify-center flex-1 max-w-md md:max-w-none mx-auto">
+          <nav className="flex gap-1.5 md:gap-2 justify-center flex-1 max-w-md md:max-w-none mx-auto">
             {[
-              { path: "/", label: "עמוד ראשי" },
-              { path: "/questionnaire", label: "שאלון התאמה" },
-              { path: "/faq", label: "שאלות ותשובות" }
+              { path: "/", label: "ראשי" },
+              { path: "/questionnaire", label: "שאלון" },
+              { path: "/faq", label: "שאלות" }
             ].map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`relative text-sm md:text-base transition-all whitespace-nowrap px-3 md:px-5 py-2.5 rounded-full ${
+                className={`relative text-xs md:text-sm transition-all whitespace-nowrap px-2.5 md:px-4 py-1.5 md:py-2 rounded-full ${
                   location.pathname === item.path
                     ? "text-white bg-sage font-semibold shadow-md" 
                     : "text-foreground/70 hover:text-foreground hover:bg-sage/10 font-medium"
