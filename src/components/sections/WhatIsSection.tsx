@@ -9,7 +9,7 @@ const WhatIsSection = () => {
   const typingText = useTypingEffect({ 
     text: "מהו ריפוי תודעתי",
     speed: 120,
-    delay: 300
+    delay: 10000
   });
   
   return (

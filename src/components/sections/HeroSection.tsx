@@ -7,7 +7,7 @@ const HeroSection = () => {
   const typingText = useTypingEffect({ 
     text: "ריפוי תודעתי, בגישה עדינה ומדויקת.",
     speed: 100,
-    delay: 800
+    delay: 6500
   });
 
   return (

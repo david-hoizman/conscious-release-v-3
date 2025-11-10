@@ -10,7 +10,7 @@ const TraumaConnectionSection = () => {
   const typingText = useTypingEffect({ 
     text: "איך זה עובד",
     speed: 150,
-    delay: 300
+    delay: 12000
   });
   
   return (
