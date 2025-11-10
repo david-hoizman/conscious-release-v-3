@@ -233,7 +233,7 @@ const LandingPage = () => {
             📞 רוצים לדעת אם זה מתאים לכם?
           </h2>
           <p className="text-lg text-foreground/70">
-            אפשר להתחיל בשיחה קצרה, ללא התחייבות:
+            אפשר להתחיל בשיחה קצרה או בהודעה, ללא התחייבות:
           </p>
           <div className="space-y-3">
             <p className="text-xl font-semibold text-foreground">📱 052-717-6000</p>
