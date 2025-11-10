@@ -14,7 +14,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 const LandingPage = () => {
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/972527176000?text=שלום 🌿 הגעתי מהמודעה ורציתי לשמוע פרטים על התהליך", "_blank");
+    window.open("https://wa.me/972527176000?text=שלום 🌿 ראיתי את הפרסום ואשמח לקבל מידע נוסף על התהליך", "_blank");
   };
 
 
@@ -282,6 +282,15 @@ const LandingPage = () => {
           </div>
         </div>
       </footer>
+
+      {/* Floating WhatsApp Button */}
+      <button
+        onClick={handleWhatsAppClick}
+        className="fixed bottom-6 left-6 z-50 bg-[#25D366] hover:bg-[#20BA5A] text-white p-4 rounded-full shadow-2xl hover:shadow-[#25D366]/50 transition-all hover:scale-110 active:scale-95 group"
+        aria-label="שלח הודעת וואטסאפ"
+      >
+        <MessageCircle className="h-7 w-7 group-hover:animate-pulse" />
+      </button>
     </div>
   );
 };
