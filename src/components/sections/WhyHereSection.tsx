@@ -131,7 +131,7 @@ const WhyHereSection = () => {
                 </div>
                 <div className="flex-1 text-right">
                   <p className="text-base md:text-lg text-foreground/80 font-semibold">
-                    🕊️ מומלץ על־ידי אנשי מקצוע מתחום הנפש והבריאות
+                    מומלץ על־ידי אנשי מקצוע מתחום הנפש והבריאות
                   </p>
                 </div>
               </div>
