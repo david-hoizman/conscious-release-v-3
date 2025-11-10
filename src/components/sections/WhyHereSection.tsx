@@ -32,8 +32,8 @@ const WhyHereSection = () => {
             
             <div className="h-0.5 w-20 bg-gradient-to-r from-sage to-peach rounded-full"></div>
 
-            {/* Desktop List */}
-            <div className={`hidden md:block space-y-2 md:space-y-3 grid-stagger ${isVisible ? 'visible' : ''}`}>
+            {/* Desktop Grid */}
+            <div className={`hidden md:grid md:grid-cols-2 gap-2 md:gap-3 grid-stagger ${isVisible ? 'visible' : ''}`}>
               <div 
                 ref={tilt1.ref}
                 onMouseMove={tilt1.handleMouseMove}
