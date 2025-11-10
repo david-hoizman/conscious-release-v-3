@@ -38,25 +38,25 @@ const FAQSection = () => {
   ];
 
   return (
-    <section ref={ref} id="faq" className="py-16 md:py-20 bg-background relative overflow-hidden" dir="rtl">
+    <section ref={ref} id="faq" className="py-4 md:py-6 bg-background relative overflow-hidden" dir="rtl">
       <div className="absolute top-20 left-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 max-w-4xl relative z-10">
-        <div className={`space-y-8 section-slide-up ${isVisible ? 'visible' : ''}`}>
-          <div className="text-center space-y-4">
+        <div className={`space-y-4 section-slide-up ${isVisible ? 'visible' : ''}`}>
+          <div className="text-center space-y-2 md:space-y-3">
             <div className="inline-flex items-center gap-2 bg-accent/10 px-6 py-3 rounded-full">
               <HelpCircle className="h-5 w-5 text-sage" />
               <span className="text-sage font-semibold">שאלות נפוצות</span>
             </div>
             
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient font-varela">
+            <h2 className="text-2xl md:text-3xl font-bold text-gradient font-varela">
               שאלות נפוצות
             </h2>
             
             <div className="h-1 w-24 bg-gradient-to-r from-sage to-peach rounded-full mx-auto"></div>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-3 mt-6">
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 

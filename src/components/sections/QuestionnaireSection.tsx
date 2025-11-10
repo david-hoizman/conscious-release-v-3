@@ -44,33 +44,33 @@ const QuestionnaireSection = () => {
   };
 
   return (
-    <section ref={ref} id="questionnaire" className="py-16 md:py-20 bg-background relative overflow-hidden" dir="rtl">
+    <section ref={ref} id="questionnaire" className="py-4 md:py-6 bg-background relative overflow-hidden" dir="rtl">
       {/* Decorative elements */}
       <div className="absolute top-20 right-20 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-20 w-64 h-64 bg-peach/5 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 max-w-4xl relative z-10">
-        <div className={`text-center space-y-10 section-scale ${isVisible ? 'visible' : ''}`}>
+        <div className={`text-center space-y-4 md:space-y-6 section-scale ${isVisible ? 'visible' : ''}`}>
           <div className="inline-flex items-center gap-2 bg-accent/10 px-6 py-3 rounded-full">
             <ClipboardCheck className="h-5 w-5 text-sage" />
             <span className="text-sage font-semibold">זה בשבילכם?</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-shimmer leading-tight px-4 font-varela">
+          <h2 className="text-2xl md:text-3xl font-bold text-gradient-shimmer leading-tight px-4 font-varela">
             שאלון קצר להקשבה פנימה
           </h2>
           
-          <p className="text-lg md:text-xl text-foreground/60 max-w-2xl mx-auto px-4 font-light">
+          <p className="text-sm md:text-base text-foreground/60 max-w-2xl mx-auto px-4 font-light">
             בחרו את התשובות המתאימות לכם
           </p>
           
           <div className="h-1 w-32 bg-gradient-to-r from-sage via-peach to-sage mx-auto rounded-full shadow-lg"></div>
           
-          <Card className="p-8 md:p-12 space-y-8 md:space-y-10 text-right bg-card/90 backdrop-blur-md shadow-2xl rounded-[2.5rem] border-2 border-border/30">
+          <Card className="p-6 md:p-8 space-y-4 md:space-y-6 text-right bg-card/90 backdrop-blur-md shadow-2xl rounded-[2.5rem] border-2 border-border/30">
             {questions.map((question, index) => (
               <div
                 key={index}
-                className="group relative flex items-center gap-4 md:gap-6 p-6 md:p-8 hover:bg-gradient-to-r hover:from-sage/10 hover:to-primary/10 rounded-3xl transition-all duration-500 border-2 border-border/30 hover:border-sage/40 hover:shadow-xl hover:scale-[1.02] cursor-pointer min-h-[80px] touch-manipulation active:scale-100"
+                className="group relative flex items-center gap-4 md:gap-6 p-4 md:p-6 hover:bg-gradient-to-r hover:from-sage/10 hover:to-primary/10 rounded-3xl transition-all duration-500 border-2 border-border/30 hover:border-sage/40 hover:shadow-xl hover:scale-[1.02] cursor-pointer min-h-[60px] touch-manipulation active:scale-100"
                 onClick={() => handleCheckboxChange(index, !answers[index])}
               >
                 {/* Decorative Number */}
@@ -101,7 +101,7 @@ const QuestionnaireSection = () => {
             
             <Button
               onClick={handleSubmit}
-              className="w-full bg-gradient-to-r from-primary via-sage to-primary hover:from-primary/90 hover:via-sage/90 hover:to-primary/90 text-primary-foreground py-7 md:py-9 text-xl md:text-2xl font-bold rounded-3xl shadow-2xl hover:shadow-sage/50 transition-all duration-500 hover:scale-[1.03] border-2 border-sage/30 min-h-[56px] touch-manipulation active:scale-100"
+              className="w-full bg-gradient-to-r from-primary via-sage to-primary hover:from-primary/90 hover:via-sage/90 hover:to-primary/90 text-primary-foreground py-5 md:py-6 text-lg md:text-xl font-bold rounded-3xl shadow-2xl hover:shadow-sage/50 transition-all duration-500 hover:scale-[1.03] border-2 border-sage/30 min-h-[48px] touch-manipulation active:scale-100"
             >
               <Sparkles className="ml-2 h-6 w-6" />
               הצג תוצאה
