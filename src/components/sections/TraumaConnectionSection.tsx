@@ -8,7 +8,7 @@ const TraumaConnectionSection = () => {
   const { ref, isVisible } = useScrollAnimation({ variant: "slide-right", threshold: 0.1 });
   const imageReveal = useImageReveal(200);
   const typingText = useTypingEffect({ 
-    text: "איך זה עובד",
+    text: "התהליך שלנו",
     speed: 150,
     delay: 300
   });
@@ -34,6 +34,9 @@ const TraumaConnectionSection = () => {
           <div className="h-1 w-32 bg-gradient-to-r from-sage via-primary to-sage mx-auto rounded-full"></div>
           
           <div className="space-y-6 pt-8 px-4 max-w-3xl mx-auto">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gradient-shimmer leading-tight text-center font-varela">
+              איך זה עובד
+            </h3>
           <div className="text-lg md:text-xl lg:text-2xl text-foreground/80 font-light space-y-3 md:space-y-4">
             <p className="leading-[1.8] md:leading-[1.9]">
               בתהליך של ריפוי תודעתי אנחנו ניגשים למקום שבו נוצר הקושי – בתודעה, ברגש ובזיכרון.

@@ -40,14 +40,17 @@ const WhatIsSection = () => {
             <div className="bg-gradient-to-br from-muted/50 to-background p-6 md:p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50">
               <div className="text-base md:text-lg lg:text-xl text-foreground/80 text-center font-light space-y-4 md:space-y-6">
                 <p className="leading-[1.8] md:leading-[1.9]">
-                  ריפוי תודעתי <span className="text-primary font-semibold">רואה את האדם כמכלול של גוף, נפש ותודעה</span>.
-                  <span className="block mt-3 md:mt-4">חוויות, טראומות, דפוסים ואמונות שנצרבו בעבר עשויים להשפיע עלינו גם היום.</span>
+                  ריפוי תודעתי רואה את האדם כמכלול של גוף, נפש ותודעה.
+                </p>
+                <p className="leading-[1.8] md:leading-[1.9]">
+                  חוויות, טראומות, דפוסים ואמונות שנצרבו בעבר עשויים להשפיע עלינו גם היום.
                 </p>
                 
                 <p className="leading-[1.8] md:leading-[1.9]">
-                  באמצעות הקשבה עדינה, עבודה עם התודעה ותת־המודע,
-                  <span className="block mt-3 md:mt-4">התהליך מסייע בשחרור מטענים רגשיים ואנרגטיים וביצירת תחושת הקלה, איזון וחיבור פנימי.</span>
-                  <span className="block mt-3 md:mt-4">התהליך עשוי לשמש תהליך תומך ומשלים לריפוי ולצמיחה אישית.</span>
+                  באמצעות הקשבה עדינה, עבודה עם התודעה ותת־המודע, התהליך מסייע בשחרור מטענים רגשיים ואנרגטיים וביצירת תחושת הקלה, איזון וחיבור פנימי.
+                </p>
+                <p className="leading-[1.8] md:leading-[1.9]">
+                  התהליך עשוי לשמש תהליך תומך ומשלים לריפוי ולצמיחה אישית.
                 </p>
               </div>
             </div>
