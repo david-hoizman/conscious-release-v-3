@@ -23,6 +23,7 @@ import ContactSection from "@/components/sections/ContactSection";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 const Index = () => {
+  // Version checkpoint
   const [isLoading, setIsLoading] = useState(true);
   const [showIntro, setShowIntro] = useState(true);
   useSmoothScroll();
