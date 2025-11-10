@@ -14,13 +14,13 @@ const TraumaConnectionSection = () => {
   });
   
   return (
-    <section ref={ref} id="trauma-connection" className="snap-section py-4 md:py-6 bg-background/10 relative overflow-hidden" dir="rtl">
+    <section ref={ref} id="trauma-connection" className="snap-section py-3 md:py-4 bg-background/10 relative overflow-hidden" dir="rtl">
       {/* Decorative elements */}
       <div className="absolute top-1/2 right-10 w-2 h-32 bg-gradient-to-b from-accent to-transparent rounded-full"></div>
       <div className="absolute top-1/2 left-10 w-2 h-32 bg-gradient-to-b from-peach to-transparent rounded-full"></div>
 
       <div className="container mx-auto px-4 max-w-5xl relative z-10">
-        <div className={`text-center space-y-4 section-slide-right ${isVisible ? 'visible' : ''}`}>
+        <div className={`text-center space-y-2 md:space-y-3 section-slide-right ${isVisible ? 'visible' : ''}`}>
           <div className="inline-flex items-center gap-2 bg-peach/20 px-4 py-2 rounded-full">
             <Sparkles className="h-4 w-4 text-sage transition-all" />
             <span className="text-sage font-semibold text-sm">התהליך שלנו</span>
@@ -33,7 +33,7 @@ const TraumaConnectionSection = () => {
           
           <div className="h-0.5 w-24 bg-gradient-to-r from-sage via-primary to-sage mx-auto rounded-full"></div>
           
-          <div className="space-y-4 pt-4 px-4 max-w-3xl mx-auto">
+          <div className="space-y-3 pt-3 px-4 max-w-3xl mx-auto">
           <div className="text-sm md:text-base lg:text-lg text-foreground/80 font-light space-y-2">
             <p className="leading-[1.7] md:leading-[1.8]">
               בתהליך של ריפוי תודעתי אנחנו ניגשים למקום שבו נוצר הקושי – בתודעה, ברגש ובזיכרון.

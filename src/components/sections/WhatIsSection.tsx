@@ -13,13 +13,13 @@ const WhatIsSection = () => {
   });
   
   return (
-    <section ref={ref} className="snap-section py-4 md:py-6 bg-gradient-to-b from-background/30 to-background/10 relative overflow-hidden" dir="rtl">
+    <section ref={ref} className="snap-section py-3 md:py-4 bg-gradient-to-b from-background/30 to-background/10 relative overflow-hidden" dir="rtl">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-peach/5 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 max-w-5xl relative z-10">
-        <div className={`text-center space-y-4 section-slide-up ${isVisible ? 'visible' : ''}`}>
+        <div className={`text-center space-y-2 md:space-y-3 section-slide-up ${isVisible ? 'visible' : ''}`}>
           <div className="inline-flex items-center gap-2 bg-accent/10 px-4 py-2 rounded-full">
             <Sparkles className="h-4 w-4 text-sage transition-all" />
             <span className="text-sage font-semibold text-sm">הבסיס שלנו</span>
@@ -36,7 +36,7 @@ const WhatIsSection = () => {
             <div className="h-0.5 w-10 bg-gradient-to-l from-transparent to-sage rounded-full"></div>
           </div>
           
-          <div className={`space-y-4 pt-6 px-4 max-w-4xl mx-auto grid-stagger ${isVisible ? 'visible' : ''}`}>
+          <div className={`space-y-3 pt-3 px-4 max-w-4xl mx-auto grid-stagger ${isVisible ? 'visible' : ''}`}>
             <div className="bg-gradient-to-br from-muted/50 to-background p-5 md:p-7 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50">
               <div className="text-sm md:text-base lg:text-lg text-foreground/80 text-center font-light space-y-2 md:space-y-3">
                 <p className="leading-[1.7] md:leading-[1.8]">

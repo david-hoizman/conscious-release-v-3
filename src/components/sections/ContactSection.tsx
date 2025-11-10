@@ -35,13 +35,13 @@ const ContactSection = () => {
   };
 
   return (
-    <section ref={ref} id="contact" className="snap-section py-4 md:py-6 bg-gradient-to-b from-background/10 to-background/30 relative overflow-hidden" dir="rtl">
+    <section ref={ref} id="contact" className="snap-section py-3 md:py-4 bg-gradient-to-b from-background/10 to-background/30 relative overflow-hidden" dir="rtl">
       {/* Decorative elements */}
       <div className="absolute top-20 right-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-20 w-96 h-96 bg-peach/5 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
-        <div className={`text-center space-y-4 section-slide-down ${isVisible ? 'visible' : ''}`}>
+        <div className={`text-center space-y-2 md:space-y-3 section-slide-down ${isVisible ? 'visible' : ''}`}>
           <div className="inline-flex items-center gap-2 bg-accent/10 px-4 py-2 rounded-full">
             <Mail className="h-4 w-4 text-sage transition-all" />
             <span className="text-sage font-semibold text-sm">בואו נדבר</span>
@@ -53,7 +53,7 @@ const ContactSection = () => {
           
           <div className="h-0.5 w-24 bg-gradient-to-r from-sage via-peach to-sage mx-auto rounded-full"></div>
           
-          <div className={`grid md:grid-cols-2 gap-4 md:gap-6 pt-6 px-4 grid-stagger ${isVisible ? 'visible' : ''}`}>
+          <div className={`grid md:grid-cols-2 gap-4 md:gap-6 pt-4 px-4 grid-stagger ${isVisible ? 'visible' : ''}`}>
             {/* Form */}
             <Card className="p-4 md:p-6 bg-card/80 backdrop-blur-sm shadow-2xl rounded-2xl border-2 border-border/50 hover:border-accent/30 transition-all">
               <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4 text-right">
@@ -168,8 +168,8 @@ const ContactSection = () => {
       </div>
       
       {/* Footer */}
-      <footer className="mt-8 md:mt-12 pt-8 md:pt-10 border-t border-border/50" dir="rtl">
-        <div className="container mx-auto px-4 text-center space-y-4 md:space-y-6 relative z-10">
+      <footer className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-border/50" dir="rtl">
+        <div className="container mx-auto px-4 text-center space-y-3 md:space-y-4 relative z-10">
           <div className="space-y-3 text-center">
             <p className="text-base md:text-lg font-semibold text-primary">המרכז לריפוי תודעתי</p>
             <div className="text-sm md:text-base text-foreground/70 space-y-1">

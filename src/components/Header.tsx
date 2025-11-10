@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header
-      className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border/30 h-16 md:h-20"
+      className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border/30 h-14 md:h-16"
       dir="rtl"
     >
       <div className="container mx-auto px-4 h-full flex items-center">
@@ -28,7 +28,7 @@ const Header = () => {
             <img 
               src={logoHeader} 
               alt="המרכז לריפוי תודעתי" 
-              className={`h-12 md:h-16 w-auto object-contain transition-opacity duration-500 max-h-full ${
+              className={`h-10 md:h-12 w-auto object-contain transition-opacity duration-500 max-h-full ${
                 showLogo ? "opacity-100" : "opacity-0"
               }`}
             />
