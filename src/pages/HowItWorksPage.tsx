@@ -33,14 +33,14 @@ const HowItWorksPage = () => {
   return (
     <div className="pt-20" dir="rtl">
       {/* Hero Section */}
-      <section className="py-4 md:py-6 bg-gradient-to-br from-background via-muted/20 to-background">
-        <div className="container mx-auto px-4 max-w-4xl text-center space-y-2 md:space-y-3">
+      <section className="py-3 md:py-4 bg-gradient-to-br from-background via-muted/20 to-background">
+        <div className="container mx-auto px-4 max-w-4xl text-center space-y-1 md:space-y-2">
           <div className="inline-flex items-center gap-2 bg-sage/10 px-4 py-2 rounded-full">
             <Brain className="h-4 w-4 text-sage" />
             <span className="text-sage font-semibold text-sm">איך זה עובד</span>
           </div>
           
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground">
+          <h1 className="text-xl md:text-2xl font-bold text-foreground">
             תהליך הריפוי התודעתי
           </h1>
           
@@ -52,13 +52,13 @@ const HowItWorksPage = () => {
       </section>
 
       {/* Process Steps */}
-      <section className="py-4 md:py-6 bg-background">
+      <section className="py-3 md:py-4 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl md:text-2xl font-bold text-center mb-4 md:mb-6 text-foreground">
+          <h2 className="text-lg md:text-xl font-bold text-center mb-3 md:mb-4 text-foreground">
             שלבי התהליך
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+          <div className="grid md:grid-cols-2 gap-3 md:gap-4">
             {steps.map((step, index) => (
               <div 
                 key={index}
@@ -66,7 +66,7 @@ const HowItWorksPage = () => {
                 <div className="absolute -top-3 -right-3 bg-sage text-white rounded-full w-7 h-7 md:w-9 md:h-9 flex items-center justify-center font-bold text-sm">
                   {index + 1}
                 </div>
-                <h3 className="text-lg md:text-xl font-bold mb-2 text-foreground">
+                <h3 className="text-base md:text-lg font-bold mb-1 text-foreground">
                   {step.title}
                 </h3>
                 <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
@@ -79,14 +79,14 @@ const HowItWorksPage = () => {
       </section>
 
       {/* What to Expect */}
-      <section className="py-4 md:py-6 bg-gradient-to-br from-primary/5 to-peach/5">
+      <section className="py-3 md:py-4 bg-gradient-to-br from-primary/5 to-peach/5">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-4 md:mb-6 space-y-2">
+          <div className="text-center mb-3 md:mb-4 space-y-1">
             <div className="inline-flex items-center gap-2 bg-sage/10 px-4 py-2 rounded-full">
               <Sparkles className="h-4 w-4 text-sage" />
               <span className="text-sage font-semibold text-sm">תוצאות</span>
             </div>
-            <h2 className="text-xl md:text-2xl font-bold text-foreground">
+            <h2 className="text-lg md:text-xl font-bold text-foreground">
               מה אפשר לצפות מהתהליך?
             </h2>
           </div>
@@ -108,12 +108,12 @@ const HowItWorksPage = () => {
       </section>
 
       {/* Additional Info */}
-      <section className="py-4 md:py-6 bg-background">
+      <section className="py-3 md:py-4 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="bg-gradient-to-br from-sage/5 to-primary/5 p-4 md:p-6 rounded-2xl border border-sage/20 space-y-3">
+          <div className="bg-gradient-to-br from-sage/5 to-primary/5 p-3 md:p-4 rounded-2xl border border-sage/20 space-y-2">
             <div className="flex items-center gap-3">
               <Heart className="h-6 w-6 text-sage" />
-              <h3 className="text-lg md:text-xl font-bold text-foreground">חשוב לדעת</h3>
+              <h3 className="text-base md:text-lg font-bold text-foreground">חשוב לדעת</h3>
             </div>
             
             <div className="space-y-2 text-sm md:text-base text-foreground/80 leading-relaxed">

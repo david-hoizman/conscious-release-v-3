@@ -29,10 +29,10 @@ const QuickContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-4 md:py-6 bg-muted/30" dir="rtl">
+    <section id="contact" className="py-3 md:py-4 bg-muted/30" dir="rtl">
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="text-center space-y-2 mb-4 md:mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+        <div className="text-center space-y-1 mb-3 md:mb-4">
+          <h2 className="text-xl md:text-2xl font-bold text-foreground">
             בואו נדבר
           </h2>
           <p className="text-sm md:text-base text-foreground/70">
@@ -40,19 +40,19 @@ const QuickContactSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+        <div className="grid md:grid-cols-2 gap-3 md:gap-4">
           {/* WhatsApp CTA */}
-          <div className="space-y-3 md:space-y-4">
+          <div className="space-y-2 md:space-y-3">
             <Button
               onClick={handleWhatsAppClick}
-              className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white py-6 md:py-7 text-lg md:text-xl font-semibold rounded-xl shadow-lg"
+              className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white py-4 md:py-5 text-base md:text-lg font-semibold rounded-xl shadow-lg"
             >
               <MessageCircle className="ml-2 h-5 w-5" />
               שיחה בוואטסאפ
             </Button>
 
-            <Card className="p-4 md:p-5 bg-gradient-to-br from-sage/10 to-primary/10 border-sage/20">
-              <div className="space-y-2 md:space-y-3 text-center">
+            <Card className="p-3 md:p-4 bg-gradient-to-br from-sage/10 to-primary/10 border-sage/20">
+              <div className="space-y-1 md:space-y-2 text-center">
                 <Phone className="h-8 w-8 md:h-9 md:w-9 text-sage mx-auto" />
                 <div>
                   <p className="text-xs md:text-sm font-semibold text-muted-foreground mb-1">או התקשרו</p>
@@ -63,8 +63,8 @@ const QuickContactSection = () => {
               </div>
             </Card>
 
-            <Card className="p-4 md:p-5 bg-card border-border/50">
-              <div className="space-y-2 text-center">
+            <Card className="p-3 md:p-4 bg-card border-border/50">
+              <div className="space-y-1 text-center">
                 <MapPin className="h-6 w-6 md:h-7 md:w-7 text-sage mx-auto" />
                 <div className="text-xs md:text-sm text-foreground/70">
                   <p className="font-semibold mb-1">הטיפול מתקיים</p>
@@ -76,15 +76,15 @@ const QuickContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="p-4 md:p-6 bg-card/80 backdrop-blur-sm border-2 border-border/50">
-            <form onSubmit={handleSubmit} className="space-y-3 text-right">
+          <Card className="p-3 md:p-4 bg-card/80 backdrop-blur-sm border-2 border-border/50">
+            <form onSubmit={handleSubmit} className="space-y-2 text-right">
               <div>
                 <Input
                   placeholder="שם מלא"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="text-right text-sm md:text-base p-4 md:p-5 rounded-xl"
+                  className="text-right text-sm md:text-base p-3 md:p-4 rounded-xl"
                   dir="rtl"
                 />
               </div>
@@ -96,7 +96,7 @@ const QuickContactSection = () => {
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   required
-                  className="text-right text-sm md:text-base p-4 md:p-5 rounded-xl"
+                  className="text-right text-sm md:text-base p-3 md:p-4 rounded-xl"
                   dir="rtl"
                 />
               </div>
@@ -106,15 +106,15 @@ const QuickContactSection = () => {
                   placeholder="הודעה (אופציונלי)"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  rows={3}
-                  className="text-right text-sm md:text-base p-4 md:p-5 rounded-xl resize-none"
+                  rows={2}
+                  className="text-right text-sm md:text-base p-3 md:p-4 rounded-xl resize-none"
                   dir="rtl"
                 />
               </div>
               
               <Button 
                 type="submit" 
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-4 md:py-5 text-base md:text-lg rounded-xl"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 md:py-4 text-sm md:text-base rounded-xl"
               >
                 <Send className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                 שלחו ונחזור אליכם
@@ -124,7 +124,7 @@ const QuickContactSection = () => {
         </div>
 
         {/* Footer */}
-        <footer className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-border/50 text-center space-y-2">
+        <footer className="mt-4 md:mt-6 pt-3 md:pt-4 border-t border-border/50 text-center space-y-1">
           <p className="text-base md:text-lg font-semibold text-primary">המרכז לריפוי תודעתי</p>
           <p className="text-xs md:text-sm text-muted-foreground">
             © כל הזכויות שמורות • mindcenter.co.il

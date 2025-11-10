@@ -20,17 +20,17 @@ const QuickInfoSection = () => {
   ];
 
   return (
-    <section className="py-4 md:py-6 bg-background" dir="rtl">
+    <section className="py-2 md:py-3 bg-background" dir="rtl">
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="space-y-6 md:space-y-8">
+        <div className="space-y-3 md:space-y-4">
           {/* מהו ריפוי תודעתי */}
-          <div className="text-center space-y-3 md:space-y-4">
+          <div className="text-center space-y-2 md:space-y-2">
             <div className="inline-flex items-center gap-2 bg-sage/10 px-3 py-1.5 rounded-full">
               <Sparkles className="h-3.5 w-3.5 text-sage" />
               <span className="text-sage font-semibold text-xs md:text-sm">מהו ריפוי תודעתי</span>
             </div>
             
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+            <h2 className="text-xl md:text-2xl font-bold text-foreground">
               שינוי מבפנים
             </h2>
             
@@ -41,9 +41,9 @@ const QuickInfoSection = () => {
           </div>
 
           {/* למי זה מתאים */}
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-            <div className="bg-gradient-to-br from-sage/5 to-primary/5 p-4 md:p-6 rounded-2xl border border-sage/20">
-              <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-foreground">למי זה מתאים?</h3>
+          <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+            <div className="bg-gradient-to-br from-sage/5 to-primary/5 p-3 md:p-4 rounded-2xl border border-sage/20">
+              <h3 className="text-base md:text-lg font-bold mb-2 md:mb-3 text-foreground">למי זה מתאים?</h3>
               <div className="grid grid-cols-2 gap-2">
                 {suitableFor.map((item, index) => (
                   <div key={index} className="flex items-center gap-1.5 text-foreground/80">
@@ -54,9 +54,9 @@ const QuickInfoSection = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-primary/5 to-peach/5 p-4 md:p-6 rounded-2xl border border-primary/20">
-              <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-foreground">למה כאן?</h3>
-              <div className="space-y-2.5 md:space-y-3">
+            <div className="bg-gradient-to-br from-primary/5 to-peach/5 p-3 md:p-4 rounded-2xl border border-primary/20">
+              <h3 className="text-base md:text-lg font-bold mb-2 md:mb-3 text-foreground">למה כאן?</h3>
+              <div className="space-y-2 md:space-y-2">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <div className="bg-sage/10 p-1.5 rounded-lg">
@@ -70,16 +70,16 @@ const QuickInfoSection = () => {
           </div>
 
           {/* CTA */}
-          <div className="text-center space-y-2 md:space-y-3">
-            <p className="text-sm md:text-base text-foreground/70">רוצים לדעת עוד?</p>
+          <div className="text-center space-y-1 md:space-y-2">
+            <p className="text-xs md:text-sm text-foreground/70">רוצים לדעת עוד?</p>
             <div className="flex flex-col sm:flex-row gap-2 justify-center">
               <Link to="/how-it-works" className="w-full sm:w-auto">
-                <Button className="w-full bg-sage hover:bg-sage/90 text-white px-6 py-4 md:py-5 text-sm md:text-base rounded-xl">
+                <Button className="w-full bg-sage hover:bg-sage/90 text-white px-4 py-3 md:py-4 text-sm md:text-base rounded-xl">
                   איך זה עובד
                 </Button>
               </Link>
               <Link to="/questionnaire" className="w-full sm:w-auto">
-                <Button variant="outline" className="w-full border-2 border-sage text-sage hover:bg-sage hover:text-white px-6 py-4 md:py-5 text-sm md:text-base rounded-xl">
+                <Button variant="outline" className="w-full border-2 border-sage text-sage hover:bg-sage hover:text-white px-4 py-3 md:py-4 text-sm md:text-base rounded-xl">
                   שאלון התאמה
                 </Button>
               </Link>
