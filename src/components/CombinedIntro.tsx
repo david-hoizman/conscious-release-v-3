@@ -35,7 +35,7 @@ const CombinedIntro = ({ showIntro, onContinue }: CombinedIntroProps) => {
   return (
     <div className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-background backdrop-blur-sm px-4" dir="rtl">
       {/* Logo - stays visible throughout */}
-      <div className="logo-intro-content mb-6 md:mb-8 animate-scale-in">
+      <div className="mb-6 md:mb-8 animate-scale-in">
         <img 
           src={logo} 
           alt="המרכז לריפוי תודעתי" 
