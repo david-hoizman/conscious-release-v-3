@@ -236,7 +236,12 @@ const LandingPage = () => {
             אפשר להתחיל בשיחה קצרה או בהודעה, ללא התחייבות:
           </p>
           <div className="space-y-3">
-            <p className="text-xl font-semibold text-foreground">📱 052-717-6000</p>
+            <a 
+              href="tel:052-717-6000"
+              className="inline-block text-xl font-semibold text-foreground hover:text-sage transition-colors cursor-pointer"
+            >
+              📱 052-717-6000
+            </a>
             <Button
               onClick={handleWhatsAppClick}
               size="lg"
@@ -257,7 +262,12 @@ const LandingPage = () => {
             <p className="text-lg md:text-xl font-semibold text-primary">המרכז לריפוי תודעתי</p>
             <div className="text-base md:text-lg text-foreground/70 space-y-2">
               <p>כנרת 15, בני ברק</p>
-              <p>📱 052-717-6000</p>
+              <a 
+                href="tel:052-717-6000"
+                className="block hover:text-sage transition-colors cursor-pointer"
+              >
+                📱 052-717-6000
+              </a>
               <p>💬 <a href="https://wa.me/972527176000" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">לחצו לשיחה בוואטסאפ</a></p>
             </div>
           </div>
