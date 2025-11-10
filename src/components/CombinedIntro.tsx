@@ -10,6 +10,7 @@ interface CombinedIntroProps {
 
 const CombinedIntro = ({ showIntro, onContinue }: CombinedIntroProps) => {
   const [showText, setShowText] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
     if (showIntro) {
@@ -18,6 +19,11 @@ const CombinedIntro = ({ showIntro, onContinue }: CombinedIntroProps) => {
         setShowText(true);
       }, 3000);
 
+      // Start fade-out before auto-continue
+      const fadeTimer = setTimeout(() => {
+        setFadeOut(true);
+      }, 12500);
+
       // Auto-continue after 13 seconds total (3 for logo + 10 for text)
       const autoTimer = setTimeout(() => {
         onContinue();
@@ -25,17 +31,25 @@ const CombinedIntro = ({ showIntro, onContinue }: CombinedIntroProps) => {
       
       return () => {
         clearTimeout(textTimer);
+        clearTimeout(fadeTimer);
         clearTimeout(autoTimer);
       };
     }
   }, [showIntro, onContinue]);
 
+  const handleContinueClick = () => {
+    setFadeOut(true);
+    setTimeout(() => {
+      onContinue();
+    }, 500);
+  };
+
   if (!showIntro) return null;
 
   return (
-    <div className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-background backdrop-blur-sm px-4" dir="rtl">
-      {/* Logo - stays visible throughout */}
-      <div className="mb-6 md:mb-8 animate-scale-in">
+    <div className={`fixed inset-0 z-[60] flex flex-col items-center justify-center bg-background backdrop-blur-sm px-4 transition-opacity duration-700 ${fadeOut ? 'opacity-0' : 'opacity-100'}`} dir="rtl">
+      {/* Logo - stays in same position, fades in */}
+      <div className="mb-6 md:mb-8 transition-opacity duration-1000 opacity-0 animate-fade-in">
         <img 
           src={logo} 
           alt="המרכז לריפוי תודעתי" 
@@ -43,9 +57,8 @@ const CombinedIntro = ({ showIntro, onContinue }: CombinedIntroProps) => {
         />
       </div>
 
-      {/* Text - appears after 3 seconds and stays with logo */}
-      {showText && (
-        <div className="max-w-4xl text-center space-y-4 md:space-y-6 animate-fade-in">
+      {/* Text - appears after 3 seconds with fade-in */}
+      <div className={`max-w-4xl text-center space-y-4 md:space-y-6 transition-opacity duration-1000 ${showText ? 'opacity-100' : 'opacity-0'}`}>
           <div className="space-y-3 md:space-y-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gradient-shimmer leading-tight font-varela">
               ריפוי תודעתי, בגישה עדינה ומדויקת.
@@ -72,7 +85,7 @@ const CombinedIntro = ({ showIntro, onContinue }: CombinedIntroProps) => {
           <div className="pt-4 md:pt-6">
             <Button
               size="lg"
-              onClick={onContinue}
+              onClick={handleContinueClick}
               className="group relative bg-primary hover:bg-primary/90 text-primary-foreground px-6 md:px-10 py-5 md:py-6 text-base md:text-lg rounded-2xl shadow-2xl hover:shadow-sage/20 transition-all duration-300 overflow-hidden min-h-[56px] touch-manipulation active:scale-95"
             >
               <span className="relative z-10">להמשך</span>
@@ -84,7 +97,6 @@ const CombinedIntro = ({ showIntro, onContinue }: CombinedIntroProps) => {
             ממשיך אוטומטית בעוד מספר שניות...
           </p>
         </div>
-      )}
     </div>
   );
 };
