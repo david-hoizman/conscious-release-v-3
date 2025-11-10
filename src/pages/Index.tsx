@@ -14,7 +14,6 @@ import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import StatsSection from "@/components/sections/StatsSection";
 import WhyHereSection from "@/components/sections/WhyHereSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import ContactSection from "@/components/sections/ContactSection";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 const Index = () => {
@@ -54,7 +53,6 @@ const Index = () => {
         <WhyHereSection />
         <TestimonialsSection />
         <StatsSection />
-        <ContactSection />
       </div>
     </div>
   );
