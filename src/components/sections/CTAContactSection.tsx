@@ -1,16 +1,35 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const CTAContactSection = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollToContact = () => {
     const element = document.getElementById("contact");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     } else {
-      // If contact section doesn't exist on this page, go to home page
-      window.location.href = "/#contact";
+      // Navigate to home page and then scroll to contact
+      navigate("/?scrollTo=contact");
     }
   };
+
+  // Handle scroll after navigation
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const scrollTo = params.get("scrollTo");
+    if (scrollTo === "contact") {
+      setTimeout(() => {
+        const element = document.getElementById("contact");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   return (
     <section className="py-12 md:py-16 bg-gradient-to-br from-sage/5 to-primary/5" dir="rtl">
