@@ -38,7 +38,7 @@ const Counter = ({ end, duration = 2000, suffix = "", isVisible }: CounterProps)
   }, [isVisible, end, duration]);
 
   return (
-    <span className="text-gradient-shimmer font-bold text-2xl md:text-3xl">
+    <span className="text-gradient-shimmer font-bold text-3xl md:text-4xl">
       {count}{suffix}
     </span>
   );
@@ -67,11 +67,11 @@ const StatsSection = () => {
               className="glass-effect p-4 md:p-5 rounded-2xl text-center space-y-2 hover:scale-105 transition-transform duration-300 group"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <stat.icon className={`h-7 w-7 md:h-8 md:w-8 mx-auto ${stat.color} transition-all`} />
+              <stat.icon className={`h-8 w-8 md:h-10 md:w-10 mx-auto ${stat.color} transition-all`} />
               <div>
                 <Counter end={stat.value} suffix={stat.suffix} isVisible={isVisible} />
               </div>
-              <p className="text-xs md:text-sm font-medium text-foreground/60">
+              <p className="text-sm md:text-base font-medium text-foreground/60">
                 {stat.label}
               </p>
             </div>

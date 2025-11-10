@@ -63,9 +63,9 @@ const HowItWorksSection = () => {
               >
                 <div className="flex items-start gap-2 md:gap-3">
                   <div className="flex-shrink-0 bg-sage/10 text-sage rounded-full p-1.5 md:p-2 group-hover:bg-sage group-hover:text-white transition-all">
-                    <Check className="h-4 w-4 md:h-5 md:w-5 group-hover:scale-110 transition-transform" />
+                    <Check className="h-5 w-5 md:h-6 md:w-6 group-hover:scale-110 transition-transform" />
                   </div>
-                  <p className="text-xs md:text-sm text-foreground/80 text-right flex-1 leading-relaxed group-hover:text-foreground transition-colors">
+                  <p className="text-sm md:text-base text-foreground/80 text-right flex-1 leading-relaxed group-hover:text-foreground transition-colors">
                     {challenge.text}
                   </p>
                 </div>

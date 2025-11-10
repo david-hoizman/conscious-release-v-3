@@ -179,15 +179,15 @@ const TestimonialsSection = () => {
                   >
                     {/* Patient info above the message */}
                     <div className="text-right space-y-1 px-2">
-                      <p className="text-sm font-semibold text-accent">
+                      <p className="text-base font-semibold text-accent">
                         {testimonial.issue}
                       </p>
                       <div className="flex items-baseline gap-2 justify-end">
-                        <h3 className="font-bold text-lg text-foreground">
+                        <h3 className="font-bold text-xl text-foreground">
                           {testimonial.name}
                         </h3>
                         {testimonial.age && (
-                          <span className="text-sm text-foreground/60">
+                          <span className="text-base text-foreground/60">
                             {testimonial.gender === "female" ? "בת" : "בן"} {testimonial.age}
                           </span>
                         )}
@@ -207,7 +207,7 @@ const TestimonialsSection = () => {
                         </div>
 
                         {/* Message text */}
-                        <p className="text-gray-800 leading-relaxed text-sm lg:text-base text-right">
+                        <p className="text-gray-800 leading-relaxed text-base lg:text-lg text-right">
                           {testimonial.text}
                         </p>
 
