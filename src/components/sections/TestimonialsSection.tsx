@@ -125,23 +125,23 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section ref={ref} id="testimonials" className="snap-section py-3 md:py-4 bg-gradient-soft relative overflow-hidden" dir="rtl">
+    <section ref={ref} id="testimonials" className="snap-section py-24 bg-gradient-soft relative overflow-hidden" dir="rtl">
       {/* Decorative elements */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl floating"></div>
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-peach/5 rounded-full blur-3xl floating" style={{ animationDelay: '1s' }}></div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className={`text-center space-y-2 mb-4 section-scale ${isVisible ? 'visible' : ''}`}>
+        <div className={`text-center space-y-8 mb-16 section-scale ${isVisible ? 'visible' : ''}`}>
           <div className="inline-flex items-center gap-2 bg-accent/10 px-6 py-3 rounded-full animate-fade-in">
             <Heart className="h-5 w-5 text-sage transition-all" />
             <span className="text-sage font-semibold">סיפורי הצלחה</span>
           </div>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gradient-shimmer leading-tight px-4 animate-scale-in font-varela">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gradient-shimmer leading-tight px-4 animate-scale-in font-varela">
             המלצות מלקוחות מרוצים
           </h2>
 
-          <p className="text-sm md:text-base text-foreground/70 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-foreground/70 max-w-3xl mx-auto">
             אנשים אמיתיים, סיפורים אמיתיים של שינוי וריפוי
           </p>
 

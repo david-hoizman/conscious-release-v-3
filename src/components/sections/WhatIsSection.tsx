@@ -13,7 +13,7 @@ const WhatIsSection = () => {
   });
   
   return (
-    <section ref={ref} id="what-is" className="snap-section py-12 md:py-16 bg-background/20 relative overflow-hidden" dir="rtl">
+    <section ref={ref} id="what-is" className="snap-section py-24 bg-background/20 relative overflow-hidden" dir="rtl">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-peach/5 rounded-full blur-3xl"></div>
@@ -40,17 +40,14 @@ const WhatIsSection = () => {
             <div className="bg-gradient-to-br from-muted/50 to-background p-6 md:p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50">
               <div className="text-base md:text-lg lg:text-xl text-foreground/80 text-center font-light space-y-4 md:space-y-6">
                 <p className="leading-[1.8] md:leading-[1.9]">
-                  ריפוי תודעתי רואה את האדם כמכלול של גוף, נפש ותודעה.
-                </p>
-                <p className="leading-[1.8] md:leading-[1.9]">
-                  חוויות, טראומות, דפוסים ואמונות שנצרבו בעבר עשויים להשפיע עלינו גם היום.
+                  ריפוי תודעתי <span className="text-primary font-semibold">רואה את האדם כמכלול של גוף, נפש ותודעה</span>.
+                  <span className="block mt-3 md:mt-4">חוויות, טראומות, דפוסים ואמונות שנצרבו בעבר עשויים להשפיע עלינו גם היום.</span>
                 </p>
                 
                 <p className="leading-[1.8] md:leading-[1.9]">
-                  באמצעות הקשבה עדינה, עבודה עם התודעה ותת־המודע, התהליך מסייע בשחרור מטענים רגשיים ואנרגטיים וביצירת תחושת הקלה, איזון וחיבור פנימי.
-                </p>
-                <p className="leading-[1.8] md:leading-[1.9]">
-                  התהליך עשוי לשמש תהליך תומך ומשלים לריפוי ולצמיחה אישית.
+                  באמצעות הקשבה עדינה, עבודה עם התודעה ותת־המודע,
+                  <span className="block mt-3 md:mt-4">התהליך מסייע בשחרור מטענים רגשיים ואנרגטיים וביצירת תחושת הקלה, איזון וחיבור פנימי.</span>
+                  <span className="block mt-3 md:mt-4">התהליך עשוי לשמש תהליך תומך ומשלים לריפוי ולצמיחה אישית.</span>
                 </p>
               </div>
             </div>

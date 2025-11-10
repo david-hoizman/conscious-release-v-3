@@ -8,13 +8,13 @@ const TraumaConnectionSection = () => {
   const { ref, isVisible } = useScrollAnimation({ variant: "slide-right", threshold: 0.1 });
   const imageReveal = useImageReveal(200);
   const typingText = useTypingEffect({ 
-    text: "התהליך שלנו",
+    text: "איך זה עובד",
     speed: 150,
     delay: 300
   });
   
   return (
-    <section ref={ref} id="trauma-connection" className="snap-section py-12 md:py-16 bg-background/20 relative overflow-hidden" dir="rtl">
+    <section ref={ref} id="trauma-connection" className="snap-section py-24 bg-background/20 relative overflow-hidden" dir="rtl">
       {/* Decorative elements */}
       <div className="absolute top-1/2 right-10 w-2 h-32 bg-gradient-to-b from-accent to-transparent rounded-full"></div>
       <div className="absolute top-1/2 left-10 w-2 h-32 bg-gradient-to-b from-peach to-transparent rounded-full"></div>
@@ -34,9 +34,6 @@ const TraumaConnectionSection = () => {
           <div className="h-1 w-32 bg-gradient-to-r from-sage via-primary to-sage mx-auto rounded-full"></div>
           
           <div className="space-y-6 pt-8 px-4 max-w-3xl mx-auto">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gradient-shimmer leading-tight text-center font-varela">
-              איך זה עובד
-            </h3>
           <div className="text-lg md:text-xl lg:text-2xl text-foreground/80 font-light space-y-3 md:space-y-4">
             <p className="leading-[1.8] md:leading-[1.9]">
               בתהליך של ריפוי תודעתי אנחנו ניגשים למקום שבו נוצר הקושי – בתודעה, ברגש ובזיכרון.
