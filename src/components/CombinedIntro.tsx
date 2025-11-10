@@ -47,18 +47,19 @@ const CombinedIntro = ({ showIntro, onContinue }: CombinedIntroProps) => {
   if (!showIntro) return null;
 
   return (
-    <div className={`fixed inset-0 z-[60] flex flex-col items-center justify-center bg-background backdrop-blur-sm px-4 transition-opacity duration-700 ${fadeOut ? 'opacity-0' : 'opacity-100'}`} dir="rtl">
-      {/* Logo - stays in same position, fades in */}
-      <div className="mb-6 md:mb-8 transition-opacity duration-1000 opacity-0 animate-fade-in">
-        <img 
-          src={logo} 
-          alt="המרכז לריפוי תודעתי" 
-          className="w-48 md:w-64 h-auto object-contain"
-        />
-      </div>
+    <div className={`fixed inset-0 z-[60] flex items-center justify-center bg-background backdrop-blur-sm px-4 transition-opacity duration-700 ${fadeOut ? 'opacity-0' : 'opacity-100'}`} dir="rtl">
+      <div className="flex flex-col items-center justify-center max-w-4xl">
+        {/* Logo - stays visible throughout with fade-in */}
+        <div className="mb-6 md:mb-8 transition-opacity duration-1000 animate-fade-in">
+          <img 
+            src={logo} 
+            alt="המרכז לריפוי תודעתי" 
+            className="w-48 md:w-64 h-auto object-contain"
+          />
+        </div>
 
-      {/* Text - appears after 3 seconds with fade-in */}
-      <div className={`max-w-4xl text-center space-y-4 md:space-y-6 transition-opacity duration-1000 ${showText ? 'opacity-100' : 'opacity-0'}`}>
+        {/* Text - appears after 3 seconds with fade-in */}
+        <div className={`text-center space-y-4 md:space-y-6 transition-opacity duration-1000 ${showText ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
           <div className="space-y-3 md:space-y-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gradient-shimmer leading-tight font-varela">
               ריפוי תודעתי, בגישה עדינה ומדויקת.
@@ -97,6 +98,7 @@ const CombinedIntro = ({ showIntro, onContinue }: CombinedIntroProps) => {
             ממשיך אוטומטית בעוד מספר שניות...
           </p>
         </div>
+      </div>
     </div>
   );
 };
