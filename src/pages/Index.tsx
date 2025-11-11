@@ -36,27 +36,29 @@ const Index = () => {
   return (
     <div className="min-h-screen snap-container">
       <LogoIntro showIntro={showIntro} />
-      <div className={showIntro ? 'opacity-0 invisible pointer-events-none' : 'opacity-100 visible pointer-events-auto'}>
-        <FloatingBubbles />
-        <ScrollProgressBar />
-        <ScrollProgressDots />
-        <Header />
-        <MobileMenu />
-        <StickyCTA />
-        <WhatsAppButton />
-        <FloatingWhatsAppCTA />
-        <ScrollToTop />
-        <HeroSection />
-        <WhatIsSection />
-        <TraumaConnectionSection />
-        <HowItWorksSection />
-        <StatsSection />
-        <QuestionnaireSection />
-        <WhyHereSection />
-        <TestimonialsSection />
-        <FAQSection />
-        <ContactSection />
-      </div>
+      {!showIntro && (
+        <>
+          <FloatingBubbles />
+          <ScrollProgressBar />
+          <ScrollProgressDots />
+          <Header />
+          <MobileMenu />
+          <StickyCTA />
+          <WhatsAppButton />
+          <FloatingWhatsAppCTA />
+          <ScrollToTop />
+          <HeroSection />
+          <WhatIsSection />
+          <TraumaConnectionSection />
+          <HowItWorksSection />
+          <StatsSection />
+          <QuestionnaireSection />
+          <WhyHereSection />
+          <TestimonialsSection />
+          <FAQSection />
+          <ContactSection />
+        </>
+      )}
     </div>
   );
 };
