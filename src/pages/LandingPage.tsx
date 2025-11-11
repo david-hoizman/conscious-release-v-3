@@ -73,29 +73,29 @@ const LandingPage = () => {
       {/* Gradient overlay */}
       <div className="fixed inset-0 bg-gradient-to-b from-background/70 via-background/70 to-background/70 backdrop-blur-sm" style={{ zIndex: -1 }} />
 
-      {/* Header with logo */}
-      <header className="py-6 px-4 md:px-8 opacity-0" style={{ animation: 'fade-in 1.5s ease-out forwards' }}>
-        <Link to="/" className="inline-block">
-          <img src={logoHeader} alt="המרכז לריפוי תודעתי" className="h-48 md:h-60 hover:opacity-80 transition-opacity" />
-        </Link>
-      </header>
-
       {/* Main content */}
       <div className="container mx-auto px-4 py-4 md:py-6 max-w-5xl">
         
         {/* Hero Section */}
         <section className="text-center space-y-4 mb-8 md:mb-12">
+          {/* Logo - fades in first */}
+          <div className="opacity-0" style={{ animation: 'fade-in 1.5s ease-out forwards' }}>
+            <Link to="/" className="inline-block">
+              <img src={logoHeader} alt="המרכז לריפוי תודעתי" className="h-48 md:h-60 hover:opacity-80 transition-opacity mx-auto" />
+            </Link>
+          </div>
+
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight opacity-0 min-h-[1.2em]" style={{ animation: 'fade-in 1s ease-out 1.8s forwards' }}>
             {displayedText}
           </h1>
           
-          <p className="text-2xl md:text-4xl font-semibold text-sage opacity-0" style={{ animation: 'fade-in 1s ease-out 2s forwards' }}>
+          <p className="text-2xl md:text-4xl font-semibold text-sage opacity-0" style={{ animation: 'fade-in 1s ease-out 1.8s forwards' }}>
             להשתחרר. להתחבר. להתרפא.
           </p>
           
           <div className="max-w-3xl mx-auto space-y-3 opacity-0" style={{ animation: 'fade-in 1s ease-out 2.3s forwards' }}>
             <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
-              🩵 <strong>כשהגוף מבקש שקט, והנפש רוצה ריפוי.</strong>
+              <strong>כשהגוף מבקש שקט, והנפש רוצה ריפוי.</strong>
             </p>
             
             <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
