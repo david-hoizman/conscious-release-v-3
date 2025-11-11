@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { X } from "lucide-react";
+import { X, Maximize2, Minimize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import FloatingBubbles from "@/components/FloatingBubbles";
 import HeroSection from "@/components/sections/HeroSection";
@@ -14,80 +14,113 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactSection from "@/components/sections/ContactSection";
 
-const sections = [
-  "hero",
-  "what-is",
-  "trauma-connection",
-  "how-it-works",
-  "stats",
-  "questionnaire",
-  "why-here",
-  "testimonials",
-  "faq",
-  "contact"
-];
-
 const AutoDisplayPage = () => {
   const navigate = useNavigate();
-  const [currentSection, setCurrentSection] = useState(0);
-  const isScrollingRef = useRef(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Start auto-scroll after 2 seconds
+    // Start continuous smooth scroll after 2 seconds
     const startDelay = setTimeout(() => {
-      scrollToNextSection();
+      startAutoScroll();
     }, 2000);
 
-    return () => clearTimeout(startDelay);
+    return () => {
+      clearTimeout(startDelay);
+      if (scrollIntervalRef.current) {
+        clearInterval(scrollIntervalRef.current);
+      }
+    };
   }, []);
 
-  const scrollToNextSection = () => {
-    if (isScrollingRef.current) return;
-    
-    isScrollingRef.current = true;
-    
-    setCurrentSection(prev => {
-      const nextIndex = (prev + 1) % sections.length;
-      const element = document.getElementById(sections[nextIndex]);
+  const startAutoScroll = () => {
+    // Continuous smooth scroll - 1 pixel every 50ms = very slow and readable
+    scrollIntervalRef.current = setInterval(() => {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const currentScroll = window.scrollY;
       
-      if (element) {
-        element.scrollIntoView({ 
-          behavior: "smooth",
-          block: "start"
-        });
+      if (currentScroll >= maxScroll) {
+        // Loop back to top smoothly
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        // Scroll down by 1 pixel for ultra-smooth movement
+        window.scrollBy({ top: 1, behavior: "auto" });
       }
-      
-      // Schedule next scroll after viewing time
-      setTimeout(() => {
-        isScrollingRef.current = false;
-        scrollToNextSection();
-      }, 8000); // 8 seconds per section
-      
-      return nextIndex;
-    });
+    }, 50); // 50ms interval = smooth 20fps scrolling
   };
 
   const handleExit = () => {
     navigate("/");
   };
 
-  return (
-    <div className="min-h-screen relative">
-      {/* Exit Button */}
-      <Button
-        onClick={handleExit}
-        variant="outline"
-        size="lg"
-        className="fixed top-6 left-6 z-[200] bg-background/95 backdrop-blur-sm hover:bg-destructive hover:text-destructive-foreground border-2 shadow-xl transition-all"
-      >
-        <X className="h-5 w-5 ml-2" />
-        יציאה ממצב תצוגה
-      </Button>
+  const toggleFullscreen = async () => {
+    if (!document.fullscreenElement) {
+      try {
+        await document.documentElement.requestFullscreen();
+        setIsFullscreen(true);
+      } catch (err) {
+        console.error("Error entering fullscreen:", err);
+      }
+    } else {
+      try {
+        await document.exitFullscreen();
+        setIsFullscreen(false);
+      } catch (err) {
+        console.error("Error exiting fullscreen:", err);
+      }
+    }
+  };
 
-      {/* Progress Indicator */}
-      <div className="fixed top-6 right-6 z-[200] bg-background/95 backdrop-blur-sm px-6 py-3 rounded-full border-2 border-primary/20 shadow-xl">
-        <span className="text-sm font-semibold text-primary">
-          {currentSection + 1} / {sections.length}
+  // Listen for fullscreen changes
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="min-h-screen relative">
+      {/* Control Buttons */}
+      <div className="fixed top-6 left-6 z-[200] flex gap-3">
+        <Button
+          onClick={handleExit}
+          variant="outline"
+          size="lg"
+          className="bg-background/95 backdrop-blur-sm hover:bg-destructive hover:text-destructive-foreground border-2 shadow-xl transition-all"
+        >
+          <X className="h-5 w-5 ml-2" />
+          יציאה
+        </Button>
+        
+        <Button
+          onClick={toggleFullscreen}
+          variant="outline"
+          size="lg"
+          className="bg-background/95 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground border-2 shadow-xl transition-all"
+        >
+          {isFullscreen ? (
+            <>
+              <Minimize2 className="h-5 w-5 ml-2" />
+              צא ממסך מלא
+            </>
+          ) : (
+            <>
+              <Maximize2 className="h-5 w-5 ml-2" />
+              מסך מלא
+            </>
+          )}
+        </Button>
+      </div>
+
+      {/* Auto-scroll Indicator */}
+      <div className="fixed top-6 right-6 z-[200] bg-background/95 backdrop-blur-sm px-6 py-3 rounded-full border-2 border-sage/30 shadow-xl">
+        <span className="text-sm font-semibold text-sage flex items-center gap-2">
+          <span className="w-2 h-2 bg-sage rounded-full animate-pulse"></span>
+          גלילה אוטומטית
         </span>
       </div>
 
