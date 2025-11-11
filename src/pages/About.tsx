@@ -101,10 +101,10 @@ const About = () => {
               {/* CTA to go back */}
               <div className="text-center mt-16">
                 <Link 
-                  to="/#contact" 
+                  to="/#faq" 
                   className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-colors"
                 >
-                  צור קשר
+                  איך מתקדמים
                 </Link>
               </div>
             </div>
