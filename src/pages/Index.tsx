@@ -49,7 +49,7 @@ const Index = () => {
   return (
     <div className="min-h-screen snap-container">
       <LogoIntro showIntro={showIntro} />
-      <div className={showIntro ? 'invisible pointer-events-none' : 'visible pointer-events-auto'}>
+      <div className={`transition-all duration-500 ${showIntro ? 'invisible pointer-events-none' : 'visible pointer-events-auto'}`}>
         <FloatingBubbles />
         <ScrollProgressBar />
         <ScrollProgressDots />
