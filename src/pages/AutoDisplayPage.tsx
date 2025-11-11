@@ -44,8 +44,8 @@ const AutoDisplayPage = () => {
         // Loop back to top smoothly
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        // Scroll down by 1 pixel for ultra-smooth movement
-        window.scrollBy({ top: 1, behavior: "auto" });
+        // Scroll down by 2 pixels for smooth movement
+        window.scrollBy({ top: 2, behavior: "auto" });
       }
     }, 50); // 50ms interval = smooth 20fps scrolling
   };
