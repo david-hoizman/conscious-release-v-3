@@ -35,9 +35,11 @@ const Index = () => {
   
   return (
     <div className="min-h-screen snap-container">
-      <LogoIntro showIntro={showIntro} />
-      {!showIntro && (
+      {showIntro ? (
+        <LogoIntro showIntro={true} />
+      ) : (
         <>
+          <HeroSection />
           <FloatingBubbles />
           <ScrollProgressBar />
           <ScrollProgressDots />
@@ -47,7 +49,6 @@ const Index = () => {
           <WhatsAppButton />
           <FloatingWhatsAppCTA />
           <ScrollToTop />
-          <HeroSection />
           <WhatIsSection />
           <TraumaConnectionSection />
           <HowItWorksSection />

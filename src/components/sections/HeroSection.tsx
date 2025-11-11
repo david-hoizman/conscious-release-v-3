@@ -44,7 +44,7 @@ const HeroSection = () => {
         </div>
         
         <div className="space-y-1">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gradient-shimmer leading-tight px-4 flex items-center justify-center font-varela">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary leading-tight px-4 flex items-center justify-center font-varela">
             {heroText}
           </h1>
           
