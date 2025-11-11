@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import logoHeader from "@/assets/logo-header-dark.png";
 
 const Header = () => {
@@ -63,44 +62,28 @@ const Header = () => {
           />
           
           {/* Navigation */}
-          <nav className="grid grid-cols-5 md:flex gap-1 md:gap-3 lg:gap-4 justify-center flex-1 max-w-md md:max-w-none mx-auto">
+          <nav className="grid grid-cols-4 md:flex gap-1 md:gap-3 lg:gap-4 justify-center flex-1 max-w-md md:max-w-none mx-auto">
             {[
-              { id: "about", label: "אודות", path: "/about" },
               { id: "what-is", label: "ריפוי תודעתי" },
               { id: "how-it-works", label: "איך זה עובד", scrollTo: "trauma-connection" },
               { id: "why-here", label: "למה כאן" },
               { id: "next-steps", label: "איך מתקדמים", scrollTo: "faq" }
-            ].map((item) => {
-              if (item.path) {
-                return (
-                  <Link
-                    key={item.id}
-                    to={item.path}
-                    className="relative text-[0.648rem] md:text-[1.05rem] lg:text-[1.2rem] transition-all group whitespace-nowrap px-0.5 md:px-0 text-foreground/70 opacity-40 hover:opacity-70 hover:text-accent font-medium"
-                  >
-                    {item.label}
-                    <span className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-sage to-primary transition-all duration-300 w-0 group-hover:w-full"></span>
-                  </Link>
-                );
-              }
-              
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.scrollTo || item.id)}
-                  className={`relative text-[0.648rem] md:text-[1.05rem] lg:text-[1.2rem] transition-all group whitespace-nowrap px-0.5 md:px-0 ${
-                    activeSection === item.id 
-                      ? "text-foreground opacity-100 font-bold" 
-                      : "text-foreground/70 opacity-40 hover:opacity-70 hover:text-accent font-medium"
-                  }`}
-                >
-                  {item.label}
-                  <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-sage to-primary transition-all duration-300 ${
-                    activeSection === item.id ? "w-full" : "w-0 group-hover:w-full"
-                  }`}></span>
-                </button>
-              );
-            })}
+            ].map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.scrollTo || item.id)}
+                className={`relative text-[0.648rem] md:text-[1.05rem] lg:text-[1.2rem] transition-all group whitespace-nowrap px-0.5 md:px-0 ${
+                  activeSection === item.id 
+                    ? "text-foreground opacity-100 font-bold" 
+                    : "text-foreground/70 opacity-40 hover:opacity-70 hover:text-accent font-medium"
+                }`}
+              >
+                {item.label}
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-sage to-primary transition-all duration-300 ${
+                  activeSection === item.id ? "w-full" : "w-0 group-hover:w-full"
+                }`}></span>
+              </button>
+            ))}
           </nav>
         </div>
       </div>
