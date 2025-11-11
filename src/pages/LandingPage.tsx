@@ -139,10 +139,10 @@ const LandingPage = () => {
             howItWorksRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-sage">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-sage opacity-0" style={{ animation: 'fade-in 1s ease-out 3.3s forwards' }}>
             💫 איך זה עובד
           </h2>
-          <div className="space-y-3 max-w-3xl mx-auto text-center">
+          <div className="space-y-3 max-w-3xl mx-auto text-center opacity-0" style={{ animation: 'fade-in 1s ease-out 3.8s forwards' }}>
             <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
               בתהליך אישי נזהה את שורש הקושי – בתודעה, ברגש ובזיכרון –
               נשחרר את המטען שמנהל את הגוף, וניצור רוגע ואיזון אמיתי מבפנים.
