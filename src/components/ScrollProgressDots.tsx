@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 const sections = [
   { id: "hero", label: "בית" },
-  { id: "about", label: "אודות" },
   { id: "what-is", label: "מה זה" },
   { id: "how-it-works", label: "איך זה עובד" },
   { id: "questionnaire", label: "שאלון" },
