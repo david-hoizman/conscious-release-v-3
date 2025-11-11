@@ -6,7 +6,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import AboutSection from "@/components/sections/AboutSection";
 
 const Header = () => {
   const [showLogo, setShowLogo] = useState(false);
@@ -105,10 +104,10 @@ const Header = () => {
         </div>
       </header>
 
-      <Dialog open={isAboutDialogOpen} onOpenChange={setIsAboutDialogOpen}>
-        <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto" dir="rtl">
-          <DialogHeader>
-            <DialogTitle className="text-3xl md:text-4xl font-bold bg-gradient-to-l from-sage via-primary to-accent bg-clip-text text-transparent">
+      <Dialog open={isAboutDialogOpen} onOpenChange={setIsAboutDialogOpen} modal={true}>
+        <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto overflow-x-hidden" dir="rtl">
+          <DialogHeader className="text-center">
+            <DialogTitle className="text-3xl md:text-4xl font-bold bg-gradient-to-l from-sage via-primary to-accent bg-clip-text text-transparent text-center">
               אודות המרכז לריפוי תודעתי
             </DialogTitle>
           </DialogHeader>
