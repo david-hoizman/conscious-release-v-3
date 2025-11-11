@@ -8,6 +8,7 @@ import { useMagnetic } from "@/hooks/use-magnetic";
 const HeroSection = () => {
   const { ref, isVisible } = useScrollAnimation();
   const heroText = "ריפוי תודעתי, בגישה עדינה ומדויקת.";
+  const { displayedText } = useTypingEffect({ text: heroText, speed: 80, delay: 3000 });
   const magneticBtn1 = useMagnetic({ strength: 0.25, tolerance: 120 });
   const magneticBtn2 = useMagnetic({ strength: 0.25, tolerance: 120 });
   
@@ -44,8 +45,8 @@ const HeroSection = () => {
         </div>
         
         <div className="space-y-1">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary leading-tight px-4 flex items-center justify-center font-varela">
-            {heroText}
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary leading-tight px-4 flex items-center justify-center font-varela min-h-[1.2em]">
+            {displayedText}
           </h1>
           
           <div className="flex items-center justify-center gap-2 md:gap-3 px-4">
