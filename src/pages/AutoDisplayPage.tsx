@@ -40,8 +40,8 @@ const AutoDisplayPage = () => {
       const currentScroll = window.scrollY;
       
       if (currentScroll >= maxScroll) {
-        // Loop back to top smoothly
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        // Reload page when reaching the end
+        window.location.reload();
       } else {
         // Scroll down by 2 pixels for smooth movement
         window.scrollBy({ top: 2, behavior: "auto" });
