@@ -89,29 +89,22 @@ const AutoDisplayPage = () => {
         <Button
           onClick={handleExit}
           variant="outline"
-          size="lg"
-          className="bg-background/95 backdrop-blur-sm hover:bg-destructive hover:text-destructive-foreground border-2 shadow-xl transition-all"
+          size="icon"
+          className="bg-background/95 backdrop-blur-sm hover:bg-destructive hover:text-destructive-foreground border-2 shadow-xl transition-all h-11 w-11"
         >
-          <X className="h-5 w-5 ml-2" />
-          יציאה
+          <X className="h-5 w-5" />
         </Button>
         
         <Button
           onClick={toggleFullscreen}
           variant="outline"
-          size="lg"
-          className="bg-background/95 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground border-2 shadow-xl transition-all"
+          size="icon"
+          className="bg-background/95 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground border-2 shadow-xl transition-all h-11 w-11"
         >
           {isFullscreen ? (
-            <>
-              <Minimize2 className="h-5 w-5 ml-2" />
-              צא ממסך מלא
-            </>
+            <Minimize2 className="h-5 w-5" />
           ) : (
-            <>
-              <Maximize2 className="h-5 w-5 ml-2" />
-              מסך מלא
-            </>
+            <Maximize2 className="h-5 w-5" />
           )}
         </Button>
       </div>
