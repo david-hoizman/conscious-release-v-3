@@ -18,7 +18,7 @@ import FloatingBubbles from "@/components/FloatingBubbles";
 
 const LandingPage = () => {
   useSmoothScroll();
-  const heroText = "🌿 המרכז לריפוי תודעתי";
+  const heroText = "המרכז לריפוי תודעתי";
   const { displayedText } = useTypingEffect({ text: heroText, speed: 80, delay: 1800 });
   
   const howItWorksRef = useScrollAnimation({ threshold: 0.2, variant: "fade-up" });
@@ -27,7 +27,7 @@ const LandingPage = () => {
   const ctaRef = useScrollAnimation({ threshold: 0.2, variant: "zoom" });
   
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/972527176000?text=שלום 🌿 ראיתי את הפרסום ואשמח לקבל מידע נוסף על התהליך", "_blank");
+    window.open("https://wa.me/972527176000?text=שלום ראיתי את הפרסום ואשמח לקבל מידע נוסף על התהליך", "_blank");
   };
 
 
@@ -314,7 +314,7 @@ const LandingPage = () => {
           
           <div className="pt-4 md:pt-6 pb-3 border-t border-border/30 mt-6">
             <div className="text-sm text-muted-foreground space-y-1">
-              <p>© כל הזכויות שמורות — המרכז לריפוי תודעתי 🌿</p>
+              <p>© כל הזכויות שמורות — המרכז לריפוי תודעתי</p>
               <p>mindcenter.co.il</p>
             </div>
             <div className="text-xs text-muted-foreground/60 mt-4 space-y-2">
