@@ -58,9 +58,9 @@ const Header = ({ isFullscreen, onToggleFullscreen }: HeaderProps) => {
       dir="rtl"
     >
       <div className="container mx-auto px-4 h-full">
-        <div className="flex items-center h-full gap-4">
-          {/* Logo - right side */}
-          <div className="order-3 flex-shrink-0 mr-auto">
+        <div className="flex items-center justify-between h-full gap-4">
+          {/* Logo - right side (first in RTL) */}
+          <div className="flex-shrink-0">
             <img 
               src={logoHeader} 
               alt="המרכז לריפוי תודעתי" 
@@ -71,7 +71,7 @@ const Header = ({ isFullscreen, onToggleFullscreen }: HeaderProps) => {
           </div>
           
           {/* Navigation - centered */}
-          <nav className="order-2 grid grid-cols-4 md:flex gap-1 md:gap-3 lg:gap-4 justify-center flex-1 max-w-md md:max-w-none relative z-10">
+          <nav className="grid grid-cols-4 md:flex gap-1 md:gap-3 lg:gap-4 justify-center flex-1 max-w-md md:max-w-none relative z-10">
             {[
               { id: "what-is", label: "ריפוי תודעתי" },
               { id: "how-it-works", label: "איך זה עובד", scrollTo: "trauma-connection" },
@@ -95,9 +95,9 @@ const Header = ({ isFullscreen, onToggleFullscreen }: HeaderProps) => {
             ))}
           </nav>
           
-          {/* Fullscreen Button - left side */}
+          {/* Fullscreen Button - left side (last in RTL) */}
           {onToggleFullscreen && (
-            <div className="order-1 flex-shrink-0 ml-auto">
+            <div className="flex-shrink-0">
               <Button
                 onClick={onToggleFullscreen}
                 variant="ghost"
