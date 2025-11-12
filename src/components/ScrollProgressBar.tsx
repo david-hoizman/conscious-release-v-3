@@ -15,7 +15,7 @@ const ScrollProgressBar = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-2 bg-gradient-to-r from-muted/20 via-muted/30 to-muted/20 z-[100] shadow-lg">
+    <div className="fixed top-0 left-0 w-full h-2 bg-gradient-to-r from-muted/20 via-muted/30 to-muted/20 z-[99] shadow-lg pointer-events-none">
       <div
         className="h-full bg-gradient-to-r from-primary via-sage to-primary transition-all duration-150 ease-out relative overflow-hidden"
         style={{ width: `${scrollProgress}%` }}

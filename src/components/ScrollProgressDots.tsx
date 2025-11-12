@@ -40,12 +40,12 @@ const ScrollProgressDots = () => {
   };
 
   return (
-    <div className="fixed left-4 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-3" dir="ltr">
+    <div className="fixed left-4 top-1/2 -translate-y-1/2 z-[150] hidden lg:flex flex-col gap-3 pointer-events-auto" dir="ltr">
       {sections.map((section, index) => (
         <button
           key={section.id}
           onClick={() => scrollToSection(section.id)}
-          className="group relative"
+          className="group relative cursor-pointer pointer-events-auto"
           aria-label={section.label}
         >
           <div
