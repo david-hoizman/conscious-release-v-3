@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import logoHeader from "@/assets/logo-header-dark.png";
 import { Maximize2, Minimize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
 
 interface HeaderProps {
   isFullscreen?: boolean;
@@ -11,6 +12,9 @@ interface HeaderProps {
 const Header = ({ isFullscreen, onToggleFullscreen }: HeaderProps) => {
   const [showLogo, setShowLogo] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isLandingPage = location.pathname === '/landing';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,11 +50,29 @@ const Header = ({ isFullscreen, onToggleFullscreen }: HeaderProps) => {
   }, []);
 
   const scrollToSection = (id: string) => {
+    // If on landing page, navigate to home first
+    if (isLandingPage) {
+      navigate('/', { state: { scrollTo: id } });
+      return;
+    }
+    
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Handle scroll on navigation from landing page
+  useEffect(() => {
+    if (!isLandingPage && location.state?.scrollTo) {
+      setTimeout(() => {
+        const element = document.getElementById(location.state.scrollTo);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, [location, isLandingPage]);
 
   return (
     <header
