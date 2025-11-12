@@ -16,6 +16,7 @@ import { useTypingEffect } from "@/hooks/use-typing-effect";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import FloatingBubbles from "@/components/FloatingBubbles";
+import Header from "@/components/Header";
 
 const LandingPage = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -138,6 +139,8 @@ const LandingPage = () => {
 
   return (
     <div ref={containerRef} className="min-h-screen relative overflow-hidden font-assistant" dir="rtl">
+      <Header />
+      
       {/* Fullscreen Button - subtle and non-intrusive */}
       <div className="fixed bottom-6 left-6 z-[200]">
         <Button
@@ -170,7 +173,7 @@ const LandingPage = () => {
       <div className="fixed inset-0 bg-gradient-to-b from-background/70 via-background/70 to-background/70 backdrop-blur-sm" style={{ zIndex: -1 }} />
 
       {/* Main content */}
-      <div className="container mx-auto px-4 py-4 md:py-6 max-w-5xl">
+      <div className="container mx-auto px-4 py-4 md:py-6 max-w-5xl pt-20 md:pt-24">
         
         {/* Hero Section */}
         <section className="text-center space-y-4 mb-8 md:mb-12">
