@@ -79,7 +79,10 @@ const Header = () => {
             <button 
               onClick={() => {
                 if (location.pathname === '/') {
-                  window.location.reload();
+                  window.scrollTo({ top: 0, behavior: 'instant' });
+                  setTimeout(() => {
+                    window.location.reload();
+                  }, 50);
                 } else {
                   navigate('/');
                 }
