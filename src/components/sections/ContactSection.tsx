@@ -52,9 +52,9 @@ const ContactSection = () => {
                 className="group relative bg-[#25D366] hover:bg-[#20BA5A] text-white w-full py-10 md:py-12 text-xl md:text-2xl font-semibold rounded-3xl shadow-2xl hover:shadow-[#25D366]/40 transition-all overflow-hidden min-h-[80px] touch-manipulation active:scale-95"
                 style={{ transition: 'transform 0.2s ease-out' }}
               >
-                <div className="flex flex-col items-center gap-3">
+                <div className="flex flex-col items-center justify-center gap-2">
                   <MessageCircle className="h-10 w-10 md:h-12 md:w-12 group-hover:scale-110 transition-all" />
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-0.5">
                     <span className="text-2xl md:text-3xl font-bold">וואטסאפ</span>
                     <span className="text-sm md:text-base font-normal opacity-90">לשיחה מהירה</span>
                   </div>
@@ -70,9 +70,9 @@ const ContactSection = () => {
                 className="group relative bg-gradient-to-br from-primary via-sage to-primary hover:from-primary/90 hover:via-sage/90 hover:to-primary/90 text-primary-foreground w-full py-10 md:py-12 text-xl md:text-2xl font-semibold rounded-3xl shadow-2xl hover:shadow-primary/40 transition-all overflow-hidden min-h-[80px] touch-manipulation active:scale-95"
                 style={{ transition: 'transform 0.2s ease-out' }}
               >
-                <div className="flex flex-col items-center gap-3">
+                <div className="flex flex-col items-center justify-center gap-2">
                   <Phone className="h-10 w-10 md:h-12 md:w-12 group-hover:scale-110 group-hover:rotate-12 transition-all" />
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-0.5">
                     <span className="text-2xl md:text-3xl font-bold">052-717-6000</span>
                     <span className="text-sm md:text-base font-normal opacity-90">התקשרו עכשיו</span>
                   </div>
