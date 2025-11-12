@@ -1,4 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Maximize2, Minimize2 } from "lucide-react";
 import FloatingBubbles from "@/components/FloatingBubbles";
 import Header from "@/components/Header";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
@@ -15,6 +17,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 const Index = () => {
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -105,8 +108,52 @@ const Index = () => {
     }, 50); // 50ms interval = smooth 20fps scrolling
   };
 
+  const toggleFullscreen = async () => {
+    if (!document.fullscreenElement) {
+      try {
+        await document.documentElement.requestFullscreen();
+        setIsFullscreen(true);
+      } catch (err) {
+        console.error("Error entering fullscreen:", err);
+      }
+    } else {
+      try {
+        await document.exitFullscreen();
+        setIsFullscreen(false);
+      } catch (err) {
+        console.error("Error exiting fullscreen:", err);
+      }
+    }
+  };
+
+  // Listen for fullscreen changes
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
+
   return (
     <div ref={containerRef} className="min-h-screen relative">
+      {/* Fullscreen Button */}
+      <div className="fixed top-6 left-6 z-[200]">
+        <Button
+          onClick={toggleFullscreen}
+          variant="outline"
+          size="icon"
+          className="bg-background/95 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground border-2 shadow-xl transition-all h-11 w-11"
+        >
+          {isFullscreen ? (
+            <Minimize2 className="h-5 w-5" />
+          ) : (
+            <Maximize2 className="h-5 w-5" />
+          )}
+        </Button>
+      </div>
+
       <Header />
       <ScrollProgressBar />
       <ScrollProgressDots />

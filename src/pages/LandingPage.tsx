@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Forward, CheckCheck } from "lucide-react";
+import { MessageCircle, Forward, CheckCheck, Maximize2, Minimize2 } from "lucide-react";
 import landingBg from "@/assets/landing-background.jpg";
 import logoHeader from "@/assets/logo-header.png";
 import { Link } from "react-router-dom";
@@ -19,6 +19,7 @@ import FloatingBubbles from "@/components/FloatingBubbles";
 import Header from "@/components/Header";
 
 const LandingPage = () => {
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -122,6 +123,34 @@ const LandingPage = () => {
     window.open("https://wa.me/972527176000?text=שלום ראיתי את הפרסום ואשמח לקבל מידע נוסף על התהליך", "_blank");
   };
 
+  const toggleFullscreen = async () => {
+    if (!document.fullscreenElement) {
+      try {
+        await document.documentElement.requestFullscreen();
+        setIsFullscreen(true);
+      } catch (err) {
+        console.error("Error entering fullscreen:", err);
+      }
+    } else {
+      try {
+        await document.exitFullscreen();
+        setIsFullscreen(false);
+      } catch (err) {
+        console.error("Error exiting fullscreen:", err);
+      }
+    }
+  };
+
+  // Listen for fullscreen changes
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
+
 
 
   const testimonials = [
@@ -161,6 +190,22 @@ const LandingPage = () => {
 
   return (
     <div ref={containerRef} className="min-h-screen relative overflow-hidden font-assistant" dir="rtl">
+      {/* Fullscreen Button */}
+      <div className="fixed top-6 left-6 z-[200]">
+        <Button
+          onClick={toggleFullscreen}
+          variant="outline"
+          size="icon"
+          className="bg-background/95 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground border-2 shadow-xl transition-all h-11 w-11"
+        >
+          {isFullscreen ? (
+            <Minimize2 className="h-5 w-5" />
+          ) : (
+            <Maximize2 className="h-5 w-5" />
+          )}
+        </Button>
+      </div>
+
       <Header />
       <FloatingBubbles />
       
