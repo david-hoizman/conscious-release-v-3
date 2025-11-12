@@ -87,7 +87,7 @@ const Index = () => {
 
   return (
     <div ref={containerRef} className="min-h-screen relative">
-      <Header />
+      <Header isFullscreen={isFullscreen} onToggleFullscreen={toggleFullscreen} />
       <ScrollProgressBar />
       <ScrollProgressDots />
       <StickyCTA />

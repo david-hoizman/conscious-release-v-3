@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
 import logoHeader from "@/assets/logo-header-dark.png";
+import { Maximize2, Minimize2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-const Header = () => {
+interface HeaderProps {
+  isFullscreen?: boolean;
+  onToggleFullscreen?: () => void;
+}
+
+const Header = ({ isFullscreen, onToggleFullscreen }: HeaderProps) => {
   const [showLogo, setShowLogo] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
 
@@ -60,6 +67,22 @@ const Header = () => {
               showLogo ? "opacity-100" : "opacity-0"
             }`}
           />
+          
+          {/* Fullscreen Button */}
+          {onToggleFullscreen && (
+            <Button
+              onClick={onToggleFullscreen}
+              variant="ghost"
+              size="icon"
+              className="absolute left-0 bg-background/50 backdrop-blur-sm hover:bg-background/80 border border-border/30 shadow-sm transition-all h-8 w-8 md:h-9 md:w-9"
+            >
+              {isFullscreen ? (
+                <Minimize2 className="h-3.5 w-3.5 md:h-4 md:w-4" />
+              ) : (
+                <Maximize2 className="h-3.5 w-3.5 md:h-4 md:w-4" />
+              )}
+            </Button>
+          )}
           
           {/* Navigation */}
           <nav className="grid grid-cols-4 md:flex gap-1 md:gap-3 lg:gap-4 justify-center flex-1 max-w-md md:max-w-none mx-auto">
