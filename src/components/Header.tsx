@@ -54,12 +54,12 @@ const Header = ({ isFullscreen, onToggleFullscreen }: HeaderProps) => {
 
   return (
     <header
-      className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border/30 h-16 md:h-20"
+      className="fixed top-0 w-full z-[100] bg-background/95 backdrop-blur-sm border-b border-border/30 h-16 md:h-20"
       dir="rtl"
     >
-      <div className="container mx-auto px-4 h-full flex items-center">
-        <div className="flex items-center justify-between relative w-full">
-          {/* Logo */}
+      <div className="container mx-auto px-4 h-full flex items-center justify-between">
+        {/* Logo - always on the right */}
+        <div className="flex-shrink-0">
           <img 
             src={logoHeader} 
             alt="המרכז לריפוי תודעתי" 
@@ -67,14 +67,41 @@ const Header = ({ isFullscreen, onToggleFullscreen }: HeaderProps) => {
               showLogo ? "opacity-100" : "opacity-0"
             }`}
           />
-          
-          {/* Fullscreen Button */}
-          {onToggleFullscreen && (
+        </div>
+        
+        {/* Navigation - centered */}
+        <nav className="grid grid-cols-4 md:flex gap-1 md:gap-3 lg:gap-4 justify-center flex-1 max-w-md md:max-w-none">
+          {[
+            { id: "what-is", label: "ריפוי תודעתי" },
+            { id: "how-it-works", label: "איך זה עובד", scrollTo: "trauma-connection" },
+            { id: "why-here", label: "למה כאן" },
+            { id: "next-steps", label: "איך מתקדמים", scrollTo: "faq" }
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.scrollTo || item.id)}
+              className={`relative text-[0.648rem] md:text-[1.05rem] lg:text-[1.2rem] transition-all group whitespace-nowrap px-0.5 md:px-0 ${
+                activeSection === item.id 
+                  ? "text-foreground opacity-100 font-bold" 
+                  : "text-foreground/70 opacity-40 hover:opacity-70 hover:text-accent font-medium"
+              }`}
+            >
+              {item.label}
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-sage to-primary transition-all duration-300 ${
+                activeSection === item.id ? "w-full" : "w-0 group-hover:w-full"
+              }`}></span>
+            </button>
+          ))}
+        </nav>
+        
+        {/* Fullscreen Button - on the left */}
+        {onToggleFullscreen && (
+          <div className="flex-shrink-0">
             <Button
               onClick={onToggleFullscreen}
               variant="ghost"
               size="icon"
-              className="absolute left-0 bg-background/50 backdrop-blur-sm hover:bg-background/80 border border-border/30 shadow-sm transition-all h-8 w-8 md:h-9 md:w-9"
+              className="bg-background/50 backdrop-blur-sm hover:bg-background/80 border border-border/30 shadow-sm transition-all h-8 w-8 md:h-9 md:w-9"
             >
               {isFullscreen ? (
                 <Minimize2 className="h-3.5 w-3.5 md:h-4 md:w-4" />
@@ -82,33 +109,8 @@ const Header = ({ isFullscreen, onToggleFullscreen }: HeaderProps) => {
                 <Maximize2 className="h-3.5 w-3.5 md:h-4 md:w-4" />
               )}
             </Button>
-          )}
-          
-          {/* Navigation */}
-          <nav className="grid grid-cols-4 md:flex gap-1 md:gap-3 lg:gap-4 justify-center flex-1 max-w-md md:max-w-none mx-auto">
-            {[
-              { id: "what-is", label: "ריפוי תודעתי" },
-              { id: "how-it-works", label: "איך זה עובד", scrollTo: "trauma-connection" },
-              { id: "why-here", label: "למה כאן" },
-              { id: "next-steps", label: "איך מתקדמים", scrollTo: "faq" }
-            ].map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.scrollTo || item.id)}
-                className={`relative text-[0.648rem] md:text-[1.05rem] lg:text-[1.2rem] transition-all group whitespace-nowrap px-0.5 md:px-0 ${
-                  activeSection === item.id 
-                    ? "text-foreground opacity-100 font-bold" 
-                    : "text-foreground/70 opacity-40 hover:opacity-70 hover:text-accent font-medium"
-                }`}
-              >
-                {item.label}
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-sage to-primary transition-all duration-300 ${
-                  activeSection === item.id ? "w-full" : "w-0 group-hover:w-full"
-                }`}></span>
-              </button>
-            ))}
-          </nav>
-        </div>
+          </div>
+        )}
       </div>
     </header>
   );
