@@ -1,15 +1,8 @@
 import { useState, useEffect } from "react";
 import logoHeader from "@/assets/logo-header-dark.png";
-import { Maximize2, Minimize2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 
-interface HeaderProps {
-  isFullscreen?: boolean;
-  onToggleFullscreen?: () => void;
-}
-
-const Header = ({ isFullscreen, onToggleFullscreen }: HeaderProps) => {
+const Header = () => {
   const [showLogo, setShowLogo] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
   const navigate = useNavigate();
@@ -116,24 +109,6 @@ const Header = ({ isFullscreen, onToggleFullscreen }: HeaderProps) => {
               </button>
             ))}
           </nav>
-          
-          {/* Fullscreen Button - left side (last in RTL) */}
-          {onToggleFullscreen && (
-            <div className="flex-shrink-0">
-            <Button
-              onClick={onToggleFullscreen}
-              variant="ghost"
-              size="icon"
-              className="bg-background/50 backdrop-blur-sm hover:bg-background/80 border border-border/30 shadow-sm transition-all h-8 w-8 md:h-9 md:w-9 relative cursor-pointer pointer-events-auto"
-            >
-                {isFullscreen ? (
-                  <Minimize2 className="h-3.5 w-3.5 md:h-4 md:w-4" />
-                ) : (
-                  <Maximize2 className="h-3.5 w-3.5 md:h-4 md:w-4" />
-                )}
-              </Button>
-            </div>
-          )}
         </div>
       </div>
     </header>

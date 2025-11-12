@@ -1,6 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { Maximize2, Minimize2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useEffect, useRef } from "react";
 import FloatingBubbles from "@/components/FloatingBubbles";
 import Header from "@/components/Header";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
@@ -17,7 +15,6 @@ import FAQSection from "@/components/sections/FAQSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 const Index = () => {
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const isPausedRef = useRef(false);
@@ -79,56 +76,12 @@ const Index = () => {
     }, 50); // 50ms interval = smooth 20fps scrolling
   };
 
-  const toggleFullscreen = async () => {
-    if (!document.fullscreenElement) {
-      try {
-        await document.documentElement.requestFullscreen();
-        setIsFullscreen(true);
-      } catch (err) {
-        console.error("Error entering fullscreen:", err);
-      }
-    } else {
-      try {
-        await document.exitFullscreen();
-        setIsFullscreen(false);
-      } catch (err) {
-        console.error("Error exiting fullscreen:", err);
-      }
-    }
-  };
-
-  // Listen for fullscreen changes
-  useEffect(() => {
-    const handleFullscreenChange = () => {
-      setIsFullscreen(!!document.fullscreenElement);
-    };
-
-    document.addEventListener("fullscreenchange", handleFullscreenChange);
-    return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
-  }, []);
-
   return (
     <div ref={containerRef} className="min-h-screen relative">
-      <Header isFullscreen={isFullscreen} onToggleFullscreen={toggleFullscreen} />
+      <Header />
       <ScrollProgressBar />
       <ScrollProgressDots />
       <StickyCTA />
-      
-      {/* Fullscreen Button - subtle and non-intrusive */}
-      <div className="fixed bottom-6 left-6 z-[200]">
-        <Button
-          onClick={toggleFullscreen}
-          variant="ghost"
-          size="icon"
-          className="bg-background/50 backdrop-blur-sm hover:bg-background/80 border border-border/30 shadow-lg transition-all h-9 w-9 opacity-30 hover:opacity-100"
-        >
-          {isFullscreen ? (
-            <Minimize2 className="h-4 w-4" />
-          ) : (
-            <Maximize2 className="h-4 w-4" />
-          )}
-        </Button>
-      </div>
 
       {/* Content */}
       <div className="snap-container">

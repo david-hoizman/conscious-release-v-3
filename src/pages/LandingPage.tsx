@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Forward, CheckCheck, Maximize2, Minimize2 } from "lucide-react";
+import { MessageCircle, Forward, CheckCheck } from "lucide-react";
 import landingBg from "@/assets/landing-background.jpg";
 import logoHeader from "@/assets/logo-header.png";
 import { Link } from "react-router-dom";
@@ -19,7 +19,6 @@ import FloatingBubbles from "@/components/FloatingBubbles";
 import Header from "@/components/Header";
 
 const LandingPage = () => {
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const isPausedRef = useRef(false);
@@ -88,34 +87,6 @@ const LandingPage = () => {
     }, 50); // 50ms interval = smooth 20fps scrolling
   };
 
-  const toggleFullscreen = async () => {
-    if (!document.fullscreenElement) {
-      try {
-        await document.documentElement.requestFullscreen();
-        setIsFullscreen(true);
-      } catch (err) {
-        console.error("Error entering fullscreen:", err);
-      }
-    } else {
-      try {
-        await document.exitFullscreen();
-        setIsFullscreen(false);
-      } catch (err) {
-        console.error("Error exiting fullscreen:", err);
-      }
-    }
-  };
-
-  // Listen for fullscreen changes
-  useEffect(() => {
-    const handleFullscreenChange = () => {
-      setIsFullscreen(!!document.fullscreenElement);
-    };
-
-    document.addEventListener("fullscreenchange", handleFullscreenChange);
-    return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
-  }, []);
-
   const handleWhatsAppClick = () => {
     window.open("https://wa.me/972527176000?text=שלום ראיתי את הפרסום ואשמח לקבל מידע נוסף על התהליך", "_blank");
   };
@@ -159,24 +130,7 @@ const LandingPage = () => {
 
   return (
     <div ref={containerRef} className="min-h-screen relative overflow-hidden font-assistant" dir="rtl">
-      <Header isFullscreen={isFullscreen} onToggleFullscreen={toggleFullscreen} />
-      
-      {/* Fullscreen Button - subtle and non-intrusive */}
-      <div className="fixed bottom-6 left-6 z-[200]">
-        <Button
-          onClick={toggleFullscreen}
-          variant="ghost"
-          size="icon"
-          className="bg-background/50 backdrop-blur-sm hover:bg-background/80 border border-border/30 shadow-lg transition-all h-9 w-9 opacity-30 hover:opacity-100"
-        >
-          {isFullscreen ? (
-            <Minimize2 className="h-4 w-4" />
-          ) : (
-            <Maximize2 className="h-4 w-4" />
-          )}
-        </Button>
-      </div>
-
+      <Header />
       <FloatingBubbles />
       
       {/* Background with 20% opacity */}
