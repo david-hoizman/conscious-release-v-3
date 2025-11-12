@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mindcenter.co.il/</loc>
+    <loc>https://www.mindcenter.co.il/</loc>
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mindcenter.co.il/landing</loc>
+    <loc>https://www.mindcenter.co.il/landing</loc>
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://mindcenter.co.il/auto-display</loc>
+    <loc>https://www.mindcenter.co.il/auto-display</loc>
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://mindcenter.co.il/terms-of-service</loc>
+    <loc>https://www.mindcenter.co.il/terms-of-service</loc>
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>yearly</changefreq>
   </url>
 </urlset>
