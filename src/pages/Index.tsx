@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Maximize2, Minimize2 } from "lucide-react";
+import { Maximize2, Minimize2, MessageCircle } from "lucide-react";
 import FloatingBubbles from "@/components/FloatingBubbles";
 import Header from "@/components/Header";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
@@ -172,6 +172,15 @@ const Index = () => {
         <FAQSection />
         <ContactSection />
       </div>
+
+      {/* Floating WhatsApp Button */}
+      <button
+        onClick={() => window.open("https://wa.me/972527176000?text=שלום ראיתי את האתר ואשמח לקבל מידע נוסף על התהליך", "_blank")}
+        className="fixed bottom-4 left-4 md:bottom-6 md:left-6 z-50 bg-[#25D366] hover:bg-[#20BA5A] text-white p-4 rounded-full shadow-2xl hover:shadow-[#25D366]/50 transition-all hover:scale-110 active:scale-95 group"
+        aria-label="שלח הודעת וואטסאפ"
+      >
+        <MessageCircle className="h-6 w-6 md:h-7 md:w-7 group-hover:animate-pulse" />
+      </button>
     </div>
   );
 };
