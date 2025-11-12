@@ -21,7 +21,7 @@ import Header from "@/components/Header";
 const LandingPage = () => {
   const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const isPausedRef = useRef(false);
+  const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useSmoothScroll();
   const heroText = "המרכז לריפוי תודעתי";
@@ -38,36 +38,54 @@ const LandingPage = () => {
       startAutoScroll();
     }, 2000);
 
-    // Pause scrolling on any user interaction
-    const pauseScrolling = () => {
-      isPausedRef.current = true;
-      setTimeout(() => {
-        isPausedRef.current = false;
+    // Stop scrolling on any user interaction and resume after delay
+    const stopScrolling = () => {
+      // Clear existing interval
+      if (scrollIntervalRef.current) {
+        clearInterval(scrollIntervalRef.current);
+        scrollIntervalRef.current = null;
+      }
+      
+      // Clear existing resume timeout
+      if (resumeTimeoutRef.current) {
+        clearTimeout(resumeTimeoutRef.current);
+      }
+      
+      // Resume after 3 seconds of no interaction
+      resumeTimeoutRef.current = setTimeout(() => {
+        startAutoScroll();
       }, 3000);
     };
 
-    document.addEventListener('mousedown', pauseScrolling);
-    document.addEventListener('touchstart', pauseScrolling);
-    document.addEventListener('wheel', pauseScrolling);
+    // Add listeners for user interactions
+    document.addEventListener('mousedown', stopScrolling);
+    document.addEventListener('touchstart', stopScrolling);
+    document.addEventListener('wheel', stopScrolling);
+    document.addEventListener('keydown', stopScrolling);
 
     return () => {
       clearTimeout(startDelay);
       if (scrollIntervalRef.current) {
         clearInterval(scrollIntervalRef.current);
       }
-      document.removeEventListener('mousedown', pauseScrolling);
-      document.removeEventListener('touchstart', pauseScrolling);
-      document.removeEventListener('wheel', pauseScrolling);
+      if (resumeTimeoutRef.current) {
+        clearTimeout(resumeTimeoutRef.current);
+      }
+      document.removeEventListener('mousedown', stopScrolling);
+      document.removeEventListener('touchstart', stopScrolling);
+      document.removeEventListener('wheel', stopScrolling);
+      document.removeEventListener('keydown', stopScrolling);
     };
   }, []);
 
   const startAutoScroll = () => {
-    // Continuous smooth scroll - 1 pixel every 50ms = very slow and readable
-    scrollIntervalRef.current = setInterval(() => {
-      if (isPausedRef.current) {
-        return;
-      }
+    // Don't start if already running
+    if (scrollIntervalRef.current) {
+      return;
+    }
 
+    // Continuous smooth scroll - 2 pixels every 50ms = very slow and readable
+    scrollIntervalRef.current = setInterval(() => {
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       const currentScroll = window.scrollY;
       
@@ -75,6 +93,7 @@ const LandingPage = () => {
         // Stop scrolling when reaching the end
         if (scrollIntervalRef.current) {
           clearInterval(scrollIntervalRef.current);
+          scrollIntervalRef.current = null;
         }
         // Wait 5 seconds before reloading
         setTimeout(() => {
