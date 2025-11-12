@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Maximize2, Minimize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import FloatingBubbles from "@/components/FloatingBubbles";
+import Header from "@/components/Header";
 import HeroSection from "@/components/sections/HeroSection";
 import WhatIsSection from "@/components/sections/WhatIsSection";
 import TraumaConnectionSection from "@/components/sections/TraumaConnectionSection";
@@ -83,6 +84,8 @@ const Index = () => {
 
   return (
     <div ref={containerRef} className="min-h-screen relative">
+      <Header />
+      
       {/* Fullscreen Button - subtle and non-intrusive */}
       <div className="fixed bottom-6 left-6 z-[200]">
         <Button
